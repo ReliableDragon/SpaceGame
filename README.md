@@ -12,6 +12,8 @@ An exercise in web programming.
 * Create virtual host in whatever file is appropriate for your environment, following the pattern of the one in the repo.
 * Update /etc/hosts so that www.spacegame.com and spacegame.com point at your localhost.
 * Double check your permissions! The .wsgi file should not be in the document root for security reasons (I put mine in /usr/local/www/wsgi-scripts/), so make sure the webserver can read at all the locations necessary.
+* Restart apache with 'sudo apachectl restart'.
 * Run the command: mod_wsgi-express start-server
 * Go to www.spacegame.com, and hopefully see a hello world message!
 * (Bonus tip! If you set up the document root of your apache server to by symlinked to your github repo, you won't have to worry about copying files back and forth.)
+* (Other bonus tip: If you go to localhost:8000 once the server is running you'll see the WSGI splash page, which includes a link to the setup docs.)
