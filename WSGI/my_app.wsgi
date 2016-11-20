@@ -30,6 +30,7 @@ def process_uri(uri, env):
   query = ""
   if len(url_pieces) > 1:
     query = url_pieces[1]
+  path = forwardPath(path)
   if isValidPage(path):
     landingPage = open(path[1:], 'r')
     output += landingPage.read()
@@ -45,6 +46,12 @@ def process_uri(uri, env):
   output += "\n"
 
   return output,status
+
+def forwardPath(path):
+  if path == "/":
+    return "/default.html"
+  else:
+    return path
 
 def isValidPage(path):
   if path == "/default.html" or path == "/default.js":
