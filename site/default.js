@@ -4,7 +4,7 @@ function AlertOnSuccess() {
 }
 
 // AJAX testing. This is a work in progress, I'm not 100% sure how this will work with WSGI, but it should be possible.
-function asyncDbCall() {
+function asyncCall() {
   
   // Mostly boilerplate.
   var xhttp = new XMLHttpRequest();
@@ -21,16 +21,9 @@ function asyncDbCall() {
     }
   };
   
-  var elems = document.getElementsByClassName("formEntry");
   // Set up post arguments.
-  var params = "";
-  for (var i = 0; i < elems.length; i++) {
-    if (i !== 0) {
-      params += "&";
-    }
-    params += elems.item(i).name;
-    params += "=" + elems.item(i).value;
-  }
+  var params = "thisGuy=Mr. Yell-y Man";
+
   // These ensure that the request will be sent every time, and prevent the
   // browser from caching our page and pre-empting the ajax request.
   // TODO(gabe): Find out if there's a better way to achieve this.
