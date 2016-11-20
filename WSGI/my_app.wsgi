@@ -1,11 +1,15 @@
-import os 
+import os
+import logging
 #os.environ['PYTHON_EGG_CACHE'] = '/Libary/WebServer/Documents/spacegame.com'
 
+logger = logging.getLogger(__name__)
 
 def application(env, start_response):
   os.chdir(env['CONTEXT_DOCUMENT_ROOT'])
+  logging.basicConfig(filename="server_log.txt", level="INFO")
   output = ""
   status = '200 OK'
+  logger.info("Got a {0} request for URI {1}".format(env["REQUEST_METHOD"], env["REQUEST_URI"]))
   output += process_uri(env["REQUEST_URI"], env)
   
   byte_output = output.encode('utf-8')
