@@ -9,14 +9,15 @@ def application(env, start_response):
   os.chdir(env['CONTEXT_DOCUMENT_ROOT'])
   logging.basicConfig(filename="server_log.txt", level="INFO")
   output = ""
+  content_type = ""
   status = '200 OK'
   logger.info("Got a {0} request for URI {1}".format(env["REQUEST_METHOD"], env["REQUEST_URI"]))
 
-  output,status = process_uri(env["REQUEST_URI"], env)
+  output,status,content_type = process_uri(env["REQUEST_URI"], env)
   
   byte_output = output.encode('utf-8')
 
-  response_headers = [('Content-type', 'text/HTML'),
+  response_headers = [('Content-type', content_type),
                       ('Content-length', str(len(byte_output)))]
   start_response(status, response_headers)
 
@@ -25,6 +26,7 @@ def application(env, start_response):
 def process_uri(uri, env):
   output = ""
   status = "200 OK"
+  content_type = "text/HTML"
   url_pieces = uri.split("?")
   path = url_pieces[0]
   query = ""
@@ -32,8 +34,10 @@ def process_uri(uri, env):
     query = url_pieces[1]
   path = forwardPath(path)
   if isValidPage(path):
-    landingPage = open(path[1:], 'r')
-    output += landingPage.read()
+    page = open(path[1:], 'r')
+    output += page.read()
+    if path[-4:] == ".css":
+      content_type = "text/CSS"
   elif isValidAjax(path):
     output += processAjax(env, path, query)
   else:
@@ -45,7 +49,7 @@ def process_uri(uri, env):
   
   output += "\n"
 
-  return output,status
+  return output,status,content_type
 
 def forwardPath(path):
   if path == "/":
@@ -54,7 +58,7 @@ def forwardPath(path):
     return path
 
 def isValidPage(path):
-  if path == "/default.html" or path == "/default.js":
+  if path == "/default.html" or path == "/default.js" or path == "/default.css":
     return True
   else:
     return False

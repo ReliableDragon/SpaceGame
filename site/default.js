@@ -3,6 +3,23 @@ function AlertOnSuccess() {
   alert("Alert!");
 }
 
+function rotate(img) {
+  var image = document.getElementById(img);
+  if (image.classList.contains('north')) {
+    image.classList.add('east');
+    image.classList.remove('north');
+  } else if (image.classList.contains('east')) {
+    image.classList.add('south');
+    image.classList.remove('east');
+  } else if (image.classList.contains('south')) {
+    image.classList.add('west');
+    image.classList.remove('south');
+  } else if (image.classList.contains('west')) {
+    image.classList.add('north');
+    image.classList.remove('west');
+  } 
+}
+
 // AJAX testing. This is a work in progress, I'm not 100% sure how this will work with WSGI, but it should be possible.
 function asyncCall() {
   
