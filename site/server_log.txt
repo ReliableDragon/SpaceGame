@@ -1,1 +1,6 @@
 INFO:_mod_wsgi_6631ed9e1fcd0d1e501da8e3aad62ec1:Got a GET request for URI /test/test.test?DEBUG=DEBUG
+INFO:_mod_wsgi_6631ed9e1fcd0d1e501da8e3aad62ec1:Got a GET request for URI /default.html
+INFO:_mod_wsgi_6631ed9e1fcd0d1e501da8e3aad62ec1:Got a GET request for URI /default.js
+INFO:_mod_wsgi_6631ed9e1fcd0d1e501da8e3aad62ec1:Got a GET request for URI /default.html
+INFO:_mod_wsgi_6631ed9e1fcd0d1e501da8e3aad62ec1:Got a GET request for URI /default.js
+INFO:_mod_wsgi_6631ed9e1fcd0d1e501da8e3aad62ec1:Got a GET request for URI /default.html

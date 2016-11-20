@@ -27,8 +27,8 @@ def process_uri(uri, env):
   query = ""
   if len(url_pieces) > 1:
     query = url_pieces[1]
-  if path == "/default.html":
-    landingPage = open('default.html', 'r')
+  if isValid(path):
+    landingPage = open(path[1:], 'r')
     output += landingPage.read()
   else:
     output += "Hello, World!"
@@ -37,6 +37,12 @@ def process_uri(uri, env):
     output += getDebugInfo(env, path, query)
 
   return output + "\n"
+
+def isValid(path):
+  if path == "/default.html" or path == "/default.js":
+    return True
+  else:
+    return False
 
 def getDebugInfo(env, path, query):
   output = ""
