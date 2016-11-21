@@ -7,7 +7,7 @@ An exercise in web programming.
 * pip(3) install mod-wsgi
 * Run the command: mod_wsgi-express install-module
 * Run the command 'mod_wsgi-express module-location', and note the output. Put this in your httpd.conf list of modules.
-* httpd.conf will also need a few other changes, such as providing the WSGIPythonHome directive at the bottom, setting the 'Listen' line to *:80, setting LogLevel to info for development purposes, and... I think that's it? I may be forgetting something.
+* httpd.conf will also need a few other changes, such as providing the WSGIPythonHome directive at the bottom, setting the 'Listen' line to *:80, setting LogLevel to info for development purposes, and... I think that's it? I may be forgetting something. (Note: If you're worried about other people finding your server, you can set the listen values to 127.0.0.1:80 instead for some extra security.)
 * Create a WSGI application file, like the one provided in the repo.
 * Create virtual host in whatever file is appropriate for your environment, following the pattern of the one in the repo.
 * Update /etc/hosts so that www.spacegame.com and spacegame.com point at your localhost.
