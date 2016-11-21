@@ -1,7 +1,6 @@
 import os
 import logging
 import http.cookies
-#os.environ['PYTHON_EGG_CACHE'] = '/Libary/WebServer/Documents/spacegame.com'
 
 logger = logging.getLogger(__name__)
 
@@ -58,10 +57,13 @@ def forwardPath(path):
     return path
 
 def isValidPage(path):
-  if path == "/default.html" or path == "/default.js" or path == "/default.css":
+  if (path in withEndings("/default") or path in withEndings("/breakout")):
     return True
   else:
     return False
+
+def withEndings(file):
+  return [file + ".html", file + ".css", file + ".js"]
 
 def isValidAjax(path):
   return path == "/ajax.html"
