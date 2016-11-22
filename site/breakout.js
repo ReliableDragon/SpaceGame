@@ -1,7 +1,7 @@
 // Globals
 var canvas, ctx, x, y, paddleX;
-var dx = 2;
-var dy = -2;
+var dx = 3;
+var dy = -3;
 var ballRadius = 10;
 var paddleHeight = 10;
 var paddleWidth = 75;
@@ -55,10 +55,20 @@ function draw() {
   
   if (y + dy < ballRadius)  {
     dy = -dy;
-  } else if (y + dy > canvas.height - ballRadius) {
+  } else if (y + dy > canvas.height - ballRadius - paddleHeight && dy > 0) {
     if (x > paddleX && x < paddleX + paddleWidth) {
-      dy = -dy;
-    } else {
+      var paddleFrac = 1 - (x - paddleX) / paddleWidth;
+      console.log(paddleFrac);
+      //var angle = Math.sin(paddleFrac * Math.PI);
+      paddleFrac = clamp(paddleFrac, 0.1, 0.9);
+      //console.log(angle);
+      if (paddleFrac > 0.6 || paddleFrac < 0.4) {
+        dx = Math.cos(paddleFrac * Math.PI) * 5;
+        dy = -Math.sin(paddleFrac * Math.PI) * 5;
+      } else {
+        dy = -dy;
+      }
+    } else if (y + dy > canvas.height - ballRadius) {
       lives--;
       if (!lives) {
       //alert("GAME OVER");
@@ -66,8 +76,8 @@ function draw() {
       } else {
         x = canvas.width/2;
         y = canvas.height - 30;
-        dx = 2;
-        dy = -2;
+        dx = 3;
+        dy = -3;
         paddleX = (canvas.width - paddleWidth)/2;
       }
     }
@@ -156,12 +166,22 @@ function collisionDetection() {
           b.status = 0;
           score += 1;
           if (score == brickColumnCount*brickRowCount) {
-            alert("YOU WIN");
+            //alert("YOU WIN");
             document.location.reload();
           }
         }
       }
     }
+  }
+}
+
+function clamp(val, min, max) {
+  if (val > max) {
+    return max;
+  } else if (val < min) {
+    return min;
+  } else {
+    return val;
   }
 }
 
