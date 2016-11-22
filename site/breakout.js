@@ -58,10 +58,7 @@ function draw() {
   } else if (y + dy > canvas.height - ballRadius - paddleHeight && dy > 0) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       var paddleFrac = 1 - (x - paddleX) / paddleWidth;
-      console.log(paddleFrac);
-      //var angle = Math.sin(paddleFrac * Math.PI);
       paddleFrac = clamp(paddleFrac, 0.1, 0.9);
-      //console.log(angle);
       if (paddleFrac > 0.6 || paddleFrac < 0.4) {
         dx = Math.cos(paddleFrac * Math.PI) * 5;
         dy = -Math.sin(paddleFrac * Math.PI) * 5;
