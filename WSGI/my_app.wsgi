@@ -5,7 +5,7 @@ import site
 site.addsitedir(os.path.dirname(__file__))
 import ajax
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("spacegame")
 
 def application(env, start_response):
   os.chdir(env['CONTEXT_DOCUMENT_ROOT'])
@@ -42,7 +42,8 @@ def process_uri(uri, env):
     if path[-4:] == ".css":
       content_type = "text/CSS"
   elif ajax.isValidAjax(path):
-    output += ajax.processAjax(env, path, query)
+    output = ajax.processAjax(env, path, query)
+    return output,"200 OK","text/plain"
   else:
     output += "No luck finding that URI!"
     status = "404 Not Found Dawg"

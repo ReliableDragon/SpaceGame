@@ -1,7 +1,7 @@
 // Globals
 var canvas, ctx, x, y, paddleX;
-var dx = 3;
-var dy = -3;
+var dx = 0;
+var dy = -2;
 var ballRadius = 10;
 var paddleHeight = 10;
 var paddleWidth = 75;
@@ -19,6 +19,7 @@ var bricks = [];
 
 var score = 0;
 var lives = 3;
+var highscore = 0;
 
 window.onload = function() {
   canvas = document.getElementById("myCanvas");
@@ -40,6 +41,8 @@ window.onload = function() {
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
   
+  getHighscore();
+  
   draw();
 };
 
@@ -51,6 +54,7 @@ function draw() {
   drawBricks();
   drawScore();
   drawLives();
+  drawHighscore();
   collisionDetection();
   
   if (y + dy < ballRadius)  {
@@ -137,6 +141,12 @@ function drawLives() {
   ctx.fillText("Lives: " + lives, canvas.width - 85, 20);
 }
 
+function drawHighscore() {
+  ctx.font = "16pt Arial";
+  ctx.fillStyle = "#0095DD";
+  ctx.fillText("Highscore: " + highscore, canvas.width/2 - 60, 20);
+}
+
 function keyDownHandler(e) {
   if (e.keyCode == 39) {
     rightPressed = true;
@@ -180,6 +190,41 @@ function clamp(val, min, max) {
   } else {
     return val;
   }
+}
+
+// AJAX testing. This is a work in progress, I'm not 100% sure how this will work with WSGI, but it should be possible.
+function getHighscore() {
+  
+  // Mostly boilerplate.
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "highscore.html", true);
+  xhttp.onreadystatechange = function()  {
+    if (xhttp.status == 200) {
+      if (xhttp.readyState == 4) {
+        highscore = xhttp.responseText;
+      } else if (xhttp.readyState == 2) {
+        highscore = "Loading...";
+      }
+    } else {
+      alert("There was an error: " + xhttp.status);
+    }
+  };
+  
+  // Set up post arguments.
+  var params = "highscore=what";
+
+  // These ensure that the request will be sent every time, and prevent the
+  // browser from caching our page and pre-empting the ajax request.
+  // TODO(gabe): Find out if there's a better way to achieve this.
+  xhttp.setRequestHeader("Pragma", "no-cache");
+  xhttp.setRequestHeader("Cache-Control", "no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
+  xhttp.setRequestHeader("Expires", 0);
+  xhttp.setRequestHeader("Last-Modified", new Date(0));
+  xhttp.setRequestHeader("If-Modified-Since", new Date(0));
+  // Tell the XMLRequest that we're sending POST arguments.
+  
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(params);
 }
 
 
