@@ -197,3 +197,223 @@ INFO:spacegame:Output: 7 | <class 'str'>
 INFO:spacegame:Got a GET request for URI /
 INFO:spacegame:Got a GET request for URI /default.js
 INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Output: That's president-elect Mr. Yell-y Man!
+ | <class 'str'>
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Output: That's president-elect Mr. Yell-y Man!
+ | <class 'str'>
+INFO:spacegame:Ajax response: That's president-elect Mr. Yell-y Man!
+
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Output: That's president-elect Mr. Yell-y Man!
+ | <class 'str'>
+INFO:spacegame:Ajax response: That's president-elect Mr. Yell-y Man!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Output: That's president-elect Mr. Yell-y Man!
+ | <class 'str'>
+INFO:spacegame:Ajax response: That's president-elect Mr. Yell-y Man!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Output: That's president-elect Mr. Yell-y Man!
+ | <class 'str'>
+INFO:spacegame:Ajax response: That's president-elect Mr. Yell-y Man!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Output: That's president-elect Mr. Yell-y Man!
+ | <class 'str'>
+INFO:spacegame:Ajax response: That's president-elect Mr. Yell-y Man!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Output: That's president-elect Mr. Yell-y Man!
+ | <class 'str'>
+INFO:spacegame:Ajax response: That's president-elect Mr. Yell-y Man!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Output: That's president-elect Mr. Yell-y Man!
+ | <class 'str'>
+INFO:spacegame:Ajax response: That's president-elect Mr. Yell-y Man!
+
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
