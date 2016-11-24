@@ -1,12 +1,16 @@
-import os
+import os, sys
 import logging
 import http.cookies
+import site 
+site.addsitedir(os.path.dirname(__file__))
+import ajax
 
 logger = logging.getLogger(__name__)
 
 def application(env, start_response):
   os.chdir(env['CONTEXT_DOCUMENT_ROOT'])
   logging.basicConfig(filename="server_log.txt", level="INFO")
+  
   output = ""
   content_type = ""
   status = '200 OK'
@@ -37,8 +41,8 @@ def process_uri(uri, env):
     output += page.read()
     if path[-4:] == ".css":
       content_type = "text/CSS"
-  elif isValidAjax(path):
-    output += processAjax(env, path, query)
+  elif ajax.isValidAjax(path):
+    output += ajax.processAjax(env, path, query)
   else:
     output += "No luck finding that URI!"
     status = "404 Not Found Dawg"
@@ -64,7 +68,6 @@ def isValidPage(path):
 
 def withEndings(file):
   return [file + ".html", file + ".css", file + ".js"]
-
 def isValidAjax(path):
   return path == "/ajax.html"
 
