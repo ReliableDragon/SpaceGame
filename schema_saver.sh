@@ -8,4 +8,4 @@ GITREPO=/Users/gabeleonard/GitHub/SpaceGame/
 cd $GITREPO
 mysqldump -h $DBHOST -u $DBUSER -p$DBPASS -d $DBNAME > $GITREPO/schema.sql
 git add schema.sql
-git commit -m "$DBNAME schema version $('date')"
+git commit --no-verify -m "$DBNAME schema version $('date')"
