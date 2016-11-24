@@ -34,7 +34,8 @@ def process_uri(uri, env_dict):
     logger.log(env, "Ajax response: {0}".format(output))
     return output,"200 OK","text/plain"
   elif isValidResource(path):
-    return openImg(path),"200 OK","image/jpg"
+    imageType = path.split('.')[-1]
+    return openImg(path),"200 OK","image/{0}".format(imageType)
   else:
     output += "No luck finding that URI!"
     status = "404 Not Found Dawg"
@@ -57,7 +58,8 @@ def isValidPage(path):
     return False
 
 def isValidResource(path):
-  if path == "/img/space.jpg":
+  resources = ["/img/space.jpg", "/img/illusion.png"]
+  if path in resources:
     return True
   else:
     return False

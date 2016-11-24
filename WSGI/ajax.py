@@ -20,7 +20,7 @@ def processAjax(env, path, query):
       headers[h[0]] = h[1]
 
   if path == "/ajax.html":
-    output += "That's president-elect {0}!\n".format(headers['thisGuy'])
+    output += "{0}!\n".format(headers['message'])
   elif path == "/highscore.html":
     output = highscore()
 

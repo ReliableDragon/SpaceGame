@@ -20,7 +20,7 @@ function rotate(img) {
   } 
 }
 
-// AJAX testing. This is a work in progress, I'm not 100% sure how this will work with WSGI, but it should be possible.
+// AJAX testing.
 function asyncCall() {
   
   // Mostly boilerplate.
@@ -39,7 +39,7 @@ function asyncCall() {
   };
   
   // Set up post arguments.
-  var params = "thisGuy=Mr. Yell-y Man";
+  var params = "message=Which is it? A duck or a bunny?";
 
   // These ensure that the request will be sent every time, and prevent the
   // browser from caching our page and pre-empting the ajax request.
