@@ -15,5 +15,6 @@ An exercise in web programming.
 * Restart apache with 'sudo apachectl restart'.
 * Run the command: mod_wsgi-express start-server
 * Go to www.spacegame.com, and hopefully see a hello world message!
+* Copy schema_saver.sh to .git/hooks/pre-commit (the file pre-commit, not the folder). This will (once it's working) keep the database schema in the repository.
 * (Bonus tip! If you set up the document root of your apache server to by symlinked to your github repo, you won't have to worry about copying files back and forth.)
 * (Other bonus tip: If you go to localhost:8000 once the server is running you'll see the WSGI splash page, which includes a link to the setup docs.)
