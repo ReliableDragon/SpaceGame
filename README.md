@@ -20,7 +20,7 @@ Trello board is here: https://trello.com/b/g4PNq8ho/space-game-main
 * Run the command: mod_wsgi-express start-server
 * Go to www.spacegame.com, and hopefully see a hello world message!
 * Copy schema_saver.sh to .git/hooks/pre-commit (the file pre-commit, not the folder). This will (once it's working) keep the database schema in the repository. Make sure to turn execute permissions on, or git won't have much luck trying to run it.
-* (Bonus tip! If you set up the document root of your apache server to by symlinked to your github repo, you won't have to worry about copying files back and forth.)
+* (Bonus tip! If you set up the document root of your apache server to by symlinked to your github repo, you won't have to worry about copying files back and forth. This works for the WSGI folder too.)
 * (Other bonus tip: If you go to localhost:8000 once the server is running you'll see the WSGI splash page, which includes a link to the setup docs.)
 
 # Set Up Database
