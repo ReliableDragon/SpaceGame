@@ -477,3 +477,2619 @@ INFO:spacegame:Got a POST request for URI /highscore.html
 INFO:spacegame:Looking for path: /highscore.html
 INFO:spacegame:Output: 7 | <class 'str'>
 INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Output: 7 | <class 'str'>
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Ajax response: 7
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Ajax response: 3
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 3
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 3
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: 10
+INFO:spacegame:Ajax response: 2
+INFO:spacegame:UPDATE
+INFO:spacegame:Ajax response: 1
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 15
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
