@@ -20,11 +20,10 @@ var bricks = [];
 var score, lives, time, name;
 var highscore = 0;
 
-var requestId;
+var requestId, timeId;
 var currentFunction;
 
 window.onload = function() {
-  window.setInterval(addSec, 1000);
   startGame();
   loop();
 };
@@ -73,6 +72,7 @@ function startGame() {
             }
     );
   
+  timeId = window.setInterval(addSec, 1000);
   animate(drawGame);
 }
 
@@ -145,6 +145,8 @@ function animate(f) {
 function gameOver() {
   document.removeEventListener("keydown", keyDownHandler, false);
   document.removeEventListener("keyup", keyUpHandler, false);
+  
+  window.clearInterval(timeId);
   
   if (score == brickRowCount * brickColumnCount) {
     document.addEventListener("keydown", letterListener, false);
