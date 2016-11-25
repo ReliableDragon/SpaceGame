@@ -1,6 +1,8 @@
 # SpaceGame
 An exercise in web programming.
 
+Design Doc: https://docs.google.com/document/d/1JXoDWlAkCuwvB_h88CZQTN37Kz0b176Fl4FXOW26tEo/edit?usp=sharing
+
 Trello board is here: https://trello.com/b/g4PNq8ho/space-game-main
 
 # Set Up App
