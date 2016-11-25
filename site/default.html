@@ -7,11 +7,19 @@
     <link rel="stylesheet" type="text/css" href="default.css">
 </head>
 <body>
-    <h1>WELCOME TO THE SPACE GAME</h1>
-    <p id="ajaxTest">There's not really anything here at the moment. Hopefully there'll be a javascript bouncy ball or something in the future.</p>
-    <img id="dunny" class="north" src="img/illusion.png" onclick=rotate("dunny");>
-    <button onclick=asyncCall();>Click me!</button>
-    <br>
-    <a href="/breakout.html">I lied, the bouncing ball is here.</a>
+    <div id="header">
+        <h1>WELCOME TO THE SPACE GAME</h1>
+        <p id="ajaxTest">There's not really anything here at the moment. Hopefully there'll be a javascript bouncy ball or something in the future.</p>
+    </div>
+    <img id="dunny" class="north" src="img/illusion.png" onclick=rotate("dunny"); style="width:160px;height:128px;">
+    <div>
+        <button onclick=asyncCall();>Click me!</button>
+    </div>
+    <div>
+        <a href="/breakout.html" class="link">I lied, the bouncing ball is here.</a>
+    </div>
+    <div>
+        <a href="/game.html" class="link">The Actual Game</a>
+    </div>
 </body>
 </html>

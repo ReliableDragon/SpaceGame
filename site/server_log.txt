@@ -3093,3 +3093,725 @@ INFO:spacegame:Ajax response: None
 INFO:spacegame:Got a POST request for URI /highscore.html
 INFO:spacegame:Looking for path: /highscore.html
 INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: None
+INFO:spacegame:Ajax response: 63
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 63
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 63
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 63
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 63
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: 63
+INFO:spacegame:Ajax response: 38
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 38
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 38
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 38
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: 38
+INFO:spacegame:Ajax response: 26
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: 26
+INFO:spacegame:Ajax response: 46
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 26
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 26
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 26
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 26
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: 63
+INFO:spacegame:Ajax response: 26
+INFO:spacegame:UPDATE
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a POST request for URI /ajax.html
+INFO:spacegame:Looking for path: /ajax.html
+INFO:spacegame:Ajax response: Which is it? A duck or a bunny?!
+
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /game.html
+INFO:spacegame:Looking for path: /game.html
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /game.html
+INFO:spacegame:Looking for path: /game.html
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13

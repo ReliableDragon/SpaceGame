@@ -1,5 +1,5 @@
-import os, sys
-import logging
+import os, sys, itertools
+#import logging
 import site 
 site.addsitedir(os.path.dirname(__file__))
 import ajax, logger
@@ -52,7 +52,9 @@ def forwardPath(path):
     return path
 
 def isValidPage(path):
-  if (path in withEndings("/default") or path in withEndings("/breakout")):
+  pages = ["/default", "/breakout", "/game"]
+  with_endings = itertools.chain.from_iterable([withEndings(a) for a in pages])
+  if path in with_endings:
     return True
   else:
     return False

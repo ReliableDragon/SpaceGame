@@ -31,9 +31,7 @@ window.onload = function() {
 
 function startGame() {
   animate(false);
-  if (requestId) {
-    window.cancelAnimationFrame(requestId);
-  }
+
   canvas = document.getElementById("myCanvas");
   ctx = canvas.getContext("2d");
   
@@ -59,6 +57,8 @@ function startGame() {
   lives = 3;
   leftPressed = false;
   rightPressed = false;
+  dx = 0;
+  dy = -5;
   
   //getHighscore();
   asyncCall(
@@ -164,8 +164,8 @@ function drawMenu() {
   
   drawNamePrompt();
   
-  window.cancelAnimationFrame(requestId);
-  requestId = requestAnimationFrame(drawMenu);
+  //window.cancelAnimationFrame(requestId);
+  //requestId = requestAnimationFrame(drawMenu);
 }
 
 function letterListener(e) {
