@@ -39,7 +39,7 @@ DockerHub Link: https://hub.docker.com/r/sethborder/wsgi-server/
 * Install MySQL locally. Note that even if you're using a containerized version of the site with Docker, you still need to install the database on your host machine. Docker should be set up to talk to it, and this way the data will persist.
 * Using schema.sql as a reference, create the tables with the appropriate columns. This can be done two ways:
 1. Manually.
-2. By running mysql -u root -p$ROOT_PASSWORD_GOES_HERE SpaceGame < $GIT_DIRECTORY_GOES_HERE/schema.sql
+2. By running mysql -u root -p$MYSQL_ROOT_PASSWORD_GOES_HERE SpaceGame < $GIT_DIRECTORY_GOES_HERE/schema.sql (Please note, there is no space inbetween the -p and the root password. If you include one, it will assume it's part of the password.)
 * (Note: If you're later editing the database, you can use mysqldump to generate a new schema.sql file, or install the git hook in the repository root so that it will automatically update the schema file whenever you commit.)
 * Run the following commands to add the users that will be needed:
 1. CREATE USER 'backup'@'%' IDENTIFIED BY 'beepbeepbeep';
