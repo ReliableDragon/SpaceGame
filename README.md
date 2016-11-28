@@ -5,7 +5,7 @@ Design Doc: https://docs.google.com/document/d/1JXoDWlAkCuwvB_h88CZQTN37Kz0b176F
 
 Trello board is here: https://trello.com/b/g4PNq8ho/space-game-main
 
-# Set Up App
+# Set Up App Manually
 * Install Python 3.5
 * Set up pip (or pip3) and make sure it's the 3.5 version.
 * pip(3) install mod-wsgi
@@ -23,7 +23,7 @@ Trello board is here: https://trello.com/b/g4PNq8ho/space-game-main
 * (Bonus tip! If you set up the document root of your apache server to by symlinked to your github repo, you won't have to worry about copying files back and forth. This works for the WSGI folder too.)
 * (Other bonus tip: If you go to localhost:8000 once the server is running you'll see the WSGI splash page, which includes a link to the setup docs.)
 
-# Set Up Database
+# Set Up Database Manually
 * Install mysql-connector-python from here: http://dev.mysql.com/downloads/connector/python/
 * (Note: If the default version of python is not the version you want to install mysql-connector-python for, you'll need to grab the tarball instead, and then install it by following the instructions here: http://dev.mysql.com/doc/connector-python/en/connector-python-installation-source.html, substituting 'python' out for your version's name where appropriate.)
 * Using schema.sql as a reference, create the tables with the appropriate columns.
@@ -31,3 +31,9 @@ Trello board is here: https://trello.com/b/g4PNq8ho/space-game-main
 1. Username 'backup', with password 'beepbeepbeep'. Permissions SELECT, and LOCK TABLES.
 2. Username 'space', with password 'spaaaaace'. (Five a's, like space has five letters.) Permissions SELECT, DELETE, UPDATE, INSERT, and LOCK TABLES.
 * Once everything is running a little smoother, we'll secure these passwords more. At the moment I'm prioritizing ease of setup over security a little more than I normally would.
+
+# Automatic Setup with Docker
+* Install docker.
+* Pull down sethborder/wsgi_server.
+* Run the start_container.sh script, replacing the ~/GitHub/SpaceGame/WSGI and ~/GitHub/SpaceGame/site directories with the links to where the WSGI and site folders in your git repository are located.
+* Once you get the terminal, run /usr/local/bin/start.sh to start the server.
