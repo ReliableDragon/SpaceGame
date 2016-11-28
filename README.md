@@ -1,11 +1,13 @@
 # SpaceGame
 An exercise in web programming.
 
-Design Doc: https://docs.google.com/document/d/1JXoDWlAkCuwvB_h88CZQTN37Kz0b176Fl4FXOW26tEo/edit?usp=sharing
+[Design Doc](https://docs.google.com/document/d/1JXoDWlAkCuwvB_h88CZQTN37Kz0b176Fl4FXOW26tEo/edit?usp=sharing)
 
-Trello board is here: https://trello.com/b/g4PNq8ho/space-game-main
+[Trello board!](https://trello.com/b/g4PNq8ho/space-game-main)
 
-DockerHub Link: https://hub.docker.com/r/sethborder/wsgi-server/
+[Slack channel!](https://spacegameproject.slack.com)
+
+[WSGI_Server on DockerHub](https://hub.docker.com/r/sethborder/wsgi-server/)
 
 # Set Up App Manually
 * Install Python 3.5
