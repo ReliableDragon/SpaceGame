@@ -37,7 +37,7 @@ def processAjax(env_dict, path, query):
 
 def highscore(headers):
   if "request" in headers and headers["request"] == "score":
-    cnx = mysql.connector.connect(user='space', password='spaaaaace', host='127.0.0.1', database='SpaceGame')
+    cnx = mysql.connector.connect(user='space', password='spaaaaace', host='dblocation', database='SpaceGame')
     try:
       cursor = cnx.cursor()
       cursor.execute("SELECT MIN(score) FROM Highscore") #TODO: Investigate injection.

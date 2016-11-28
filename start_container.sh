@@ -1,1 +1,2 @@
-docker run -p 80:80 -t -i --name space -v ~/GitHub/SpaceGame/WSGI/:/var/www/wsgi-scripts -v ~/GitHub/SpaceGame/site/:/var/www/spacegame.com sethborder/wsgi_server /bin/bash
+HOST_IP="$(ifconfig | grep inet[^6] | sed -n 's/.*[[:blank:]]\([0-9]\{1,3\}\(\.[0-9]\{1,3\}\)\{3\}\)[[:blank:]].*/\1/p' | sed -n 2p)"
+docker run -p 80:80 -t -i --name space --add-host=dblocation:$HOST_IP -v ~/GitHub/SpaceGame/WSGI/:/var/www/wsgi-scripts -v ~/GitHub/SpaceGame/site/:/var/www/spacegame.com sethborder/wsgi_server /bin/bash
