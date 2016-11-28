@@ -1,0 +1,1 @@
+docker run -p 80:80 -t -i --name space -v ~/GitHub/SpaceGame/WSGI/:/var/www/wsgi-scripts -v ~/GitHub/SpaceGame/site/:/var/www/spacegame.com sethborder/wsgi_server /bin/bash
