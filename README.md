@@ -31,13 +31,16 @@ DockerHub Link: https://hub.docker.com/r/sethborder/wsgi-server/
 * Install docker.
 * While it's installing, edit your /etc/hosts file so that www.spacegame.com, spacegame.com, and dblocation all point at your local machine.
 * Pull down sethborder/wsgi_server.
-* Run the start_container.sh script, replacing the ~/GitHub/SpaceGame/WSGI and ~/GitHub/SpaceGame/site directories with the links to where the WSGI and site folders in your git repository are located.
+* Run the start_container.sh script, replacing the ~/GitHub/SpaceGame/WSGI and ~/GitHub/SpaceGame/site directories with the links to where the WSGI and site folders in your git repository are located. (In your local copy, please! The 
 * (Note: This script assumes you have only one network interface running, you're using IPV4, and that ifconfig works on your system. If this isn't true, you'll have to manually run the 2nd line, substituting in your IP address for the variable $HOST_IP.)
 * Once you get the terminal, run /usr/local/bin/start.sh to start the server.
 
 # Set Up Database (Always Manual.)
 * Install MySQL locally. Note that even if you're using a containerized version of the site with Docker, you still need to install the database on your host machine. Docker should be set up to talk to it, and this way the data will persist.
-* Using schema.sql as a reference, create the tables with the appropriate columns. If you're editing the database, you can use mysqldump to generate a new schema.sql file, or install the git hook in the repository root so that it will automatically update the schema file whenever you commit.
+* Using schema.sql as a reference, create the tables with the appropriate columns. This can be done two ways:
+1. Manually.
+2. By running mysql -u root -p$ROOT_PASSWORD_GOES_HERE SpaceGame < $GIT_DIRECTORY_GOES_HERE/schema.sql
+* (Note: If you're later editing the database, you can use mysqldump to generate a new schema.sql file, or install the git hook in the repository root so that it will automatically update the schema file whenever you commit.)
 * Run the following commands to add the users that will be needed:
 1. CREATE USER 'backup'@'%' IDENTIFIED BY 'beepbeepbeep';
 2. CREATE USER 'space'@'%' IDENTIFIED BY 'spaaaaace';
