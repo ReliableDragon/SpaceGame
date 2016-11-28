@@ -3841,3 +3841,104 @@ INFO:spacegame:Ajax response: 13
 INFO:spacegame:Score: -1
 INFO:spacegame:INSERT
 INFO:spacegame:Ajax response: 26
+INFO:spacegame:Got a GET request for URI /
+INFO:spacegame:Looking for path: /default.html
+INFO:spacegame:Got a GET request for URI /default.css
+INFO:spacegame:Looking for path: /default.css
+INFO:spacegame:Got a GET request for URI /default.js
+INFO:spacegame:Got a GET request for URI /img/illusion.png
+INFO:spacegame:Looking for path: /default.js
+INFO:spacegame:Looking for path: /img/illusion.png
+INFO:spacegame:Attempting to open image /img/illusion.png.
+INFO:spacegame:Got a GET request for URI /img/space.jpg
+INFO:spacegame:Looking for path: /img/space.jpg
+INFO:spacegame:Attempting to open image /img/space.jpg.
+INFO:spacegame:Got a GET request for URI /game.html
+INFO:spacegame:Looking for path: /game.html
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: 13
+INFO:spacegame:Ajax response: 17
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: 13
+INFO:spacegame:Ajax response: 25
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Score: 13
+INFO:spacegame:Ajax response: 20
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: 13
+INFO:spacegame:Ajax response: 27
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: 13
+INFO:spacegame:Ajax response: 23
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Ajax response: 32
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a GET request for URI /breakout.html
+INFO:spacegame:Looking for path: /breakout.html
+INFO:spacegame:Got a GET request for URI /breakout.js
+INFO:spacegame:Looking for path: /breakout.js
+INFO:spacegame:Got a GET request for URI /breakout.css
+INFO:spacegame:Looking for path: /breakout.css
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Got a POST request for URI /highscore.html
+INFO:spacegame:Looking for path: /highscore.html
+INFO:spacegame:Score: -1
+INFO:spacegame:INSERT
+INFO:spacegame:Ajax response: 31
+INFO:spacegame:Ajax response: 13
+INFO:spacegame:Got a GET request for URI /spacegame.com:1234
+INFO:spacegame:Looking for path: /spacegame.com:1234
+INFO:spacegame:Got a GET request for URI /spacegame.com/default.html:1234
+INFO:spacegame:Looking for path: /spacegame.com/default.html:1234
+INFO:spacegame:Got a GET request for URI /spacegame.com/default.html:1234?DEBUG=DEBUG
+INFO:spacegame:Looking for path: /spacegame.com/default.html:1234
+INFO:spacegame:Got a GET request for URI /spacegame.com/default.html:1234?DEBUG=DEBUG
+INFO:spacegame:Looking for path: /spacegame.com/default.html:1234
+INFO:spacegame:Got a GET request for URI /spacegame.com:1234?DEBUG=DEBUG
+INFO:spacegame:Looking for path: /spacegame.com:1234

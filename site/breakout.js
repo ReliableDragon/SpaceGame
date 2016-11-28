@@ -189,11 +189,7 @@ function submitListener(e) {
             "highscore.html",
             "submit=score&score=" + time + "&username=" + name,
             function(resp, code) {
-              if (code == 2) {
-                highscore = "Loading...";
-              } else if (code == 4) {
-                highscore = resp;
-              }
+              // Do nothing. This should be an API call in the future.
             }
     );
     document.removeEventListener("keydown", letterListener, false);
