@@ -5,6 +5,8 @@ Design Doc: https://docs.google.com/document/d/1JXoDWlAkCuwvB_h88CZQTN37Kz0b176F
 
 Trello board is here: https://trello.com/b/g4PNq8ho/space-game-main
 
+DockerHub Link: https://hub.docker.com/r/sethborder/wsgi-server/
+
 # Set Up App Manually
 * Install Python 3.5
 * Set up pip (or pip3) and make sure it's the 3.5 version.
