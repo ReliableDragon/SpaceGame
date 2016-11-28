@@ -3,7 +3,7 @@ An exercise in web programming.
 
 [Design Doc](https://docs.google.com/document/d/1JXoDWlAkCuwvB_h88CZQTN37Kz0b176Fl4FXOW26tEo/edit?usp=sharing)
 
-[Trello board!](https://trello.com/b/g4PNq8ho/space-game-main)
+[Trello board!](https://trello.com/b/g4PNq8ho/space-game-main) [Link to join.](https://trello.com/invite/b/g4PNq8ho/1b7d45d6e9cba26c7bd632350a605df9/space-game-main)
 
 [Slack channel!](https://spacegameproject.slack.com)
 
