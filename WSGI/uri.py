@@ -2,7 +2,7 @@ import os, sys, itertools
 #import logging
 import site 
 site.addsitedir(os.path.dirname(__file__))
-import ajax, logger
+import ajax, logger, socket
 
 #logger = logging.getLogger("spacegame")
 env = ""
@@ -36,6 +36,9 @@ def process_uri(uri, env_dict):
   elif isValidResource(path):
     imageType = path.split('.')[-1]
     return openImg(path),"200 OK","image/{0}".format(imageType)
+  elif isValidSocket(path):
+    output = socket.process(path, env)
+    return output,"200 OK","text/plain"
   else:
     output += "No luck finding that URI!"
     status = "404 Not Found Dawg"
