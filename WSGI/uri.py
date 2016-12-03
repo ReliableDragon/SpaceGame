@@ -1,8 +1,8 @@
-import os, sys, itertools
+import os, sys, itertools, http.cookies
 #import logging
-import site 
-site.addsitedir(os.path.dirname(__file__))
-import ajax, logger, socket
+#import site 
+#site.addsitedir(os.path.dirname(__file__))
+import ajax, logger, wsgi_socket
 
 #logger = logging.getLogger("spacegame")
 env = ""
@@ -32,13 +32,13 @@ def process_uri(uri, env_dict):
   elif ajax.isValidAjax(path):
     output = ajax.processAjax(env, path, query)
     logger.log(env, "Ajax response: {0}".format(output))
-    return output,"200 OK","text/plain"
+    return output,"200 OK","text/plain", []
   elif isValidResource(path):
     imageType = path.split('.')[-1]
-    return openImg(path),"200 OK","image/{0}".format(imageType)
-  elif isValidSocket(path):
-    output = socket.process(path, env)
-    return output,"200 OK","text/plain"
+    return openImg(path),"200 OK","image/{0}".format(imageType), []
+  elif wsgi_socket.isValidSocket(path):
+    full_response = wsgi_socket.process(path, env)
+    return full_response
   else:
     output += "No luck finding that URI!"
     status = "404 Not Found Dawg"
@@ -46,7 +46,7 @@ def process_uri(uri, env_dict):
   if  "DEBUG"  in query:
     output += getDebugInfo(env, path, query)
   
-  return output,status,content_type
+  return output,status,content_type,[]
 
 def forwardPath(path):
   if path == "/":
