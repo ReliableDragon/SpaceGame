@@ -1,6 +1,6 @@
 function onButton() {
   //alert("Started!");
-  var socket = new WebSocket('ws://www.spacegame.com/socket');
+  var socket = new WebSocket('ws://localhost:52917');
   socket.onopen = function() {
   socket.send(JSON.stringify({
     id: 1,
