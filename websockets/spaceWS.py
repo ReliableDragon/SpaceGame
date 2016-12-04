@@ -11,8 +11,9 @@ def handshake(headers):
   #debuginfo = debug.getDebugInfo(env, path, "")
 
   #logger.log(env, "SOCKET: {0}".format(debuginfo))
+  #print("Shaking hands! Headers:\n{0}".format(str(headers)))
 
-  accCode = headers["HTTP_SEC_WEBSOCKET_KEY"] + magic_string
+  accCode = headers["Sec-WebSocket-Key"] + magic_string
   accCode = accCode.encode("utf-8")
 
   m = hashlib.sha1()
@@ -20,9 +21,14 @@ def handshake(headers):
 
   accCode = base64.b64encode(m.digest()).decode("utf-8")
 
-  resp_headers += [("Sec-WebSocket-Accept", accCode)]
+  #resp_headers += [("Sec-WebSocket-Accept", accCode)]
 
-  return "HTTP/1.1 101 Switching Protocols\n" + \
+  resp = "HTTP/1.1 101 Switching Protocols\n" + \
           "Upgrade: websocket\n" + \
           "Connection: Upgrade\n" + \
           "Sec-WebSocket-Accept: {0}\n\n".format(accCode)
+  return resp.encode('utf-8')
+
+def handle(data):
+  print(data)
+  return data
