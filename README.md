@@ -9,7 +9,17 @@ An exercise in web programming.
 
 [WSGI_Server on DockerHub](https://hub.docker.com/r/sethborder/wsgi-server/)
 
+# Automatic Setup with Docker
+* Install docker.
+* While it's installing, edit your /etc/hosts file so that www.spacegame.com, spacegame.com, and dblocation all point at your local machine.
+* Pull down sethborder/wsgi_server and sethborder/websocket_server.
+* Run the start_container.sh  and start_websocket_container.sh scripts, replacing the ~/GitHub/SpaceGame/WSGI, ~/GitHub/SpaceGame/site, and ~/GitHub/SpaceGame/websockets directories with the links to where you've put the WSGI, site and websockets folders from this git repository. (In your local copy, please! The version on git should stay with the links as they are, so that this walkthrough makes sense.)
+* (Note: This script assumes you have only one network interface running, you're using IPV4, and that ifconfig works on your system. If this isn't true, you'll have to manually run the 2nd line, substituting in your IP address for the variable $HOST_IP.)
+* Once you get the terminal, run /usr/local/bin/start.sh to start the server. (The same script is used to start both servers.)
+
+
 # Set Up App Manually
+This setup is slightly outdated, and Docker is the prefered way to run this project now. Please note that these docs may be somewhat out of date, and do not include instructions to set up the websocket server, though it is fairly straightforward and vanilla python, so if you want to do it locally it shouldn't be hard.
 * Install Python 3.5
 * Set up pip (or pip3) and make sure it's the 3.5 version.
 * Install mysql-connector-python from here: http://dev.mysql.com/downloads/connector/python/
@@ -28,14 +38,6 @@ An exercise in web programming.
 * Copy schema_saver.sh to .git/hooks/pre-commit (the file pre-commit, not the folder). This will (once it's working) keep the database schema in the repository. Make sure to turn execute permissions on, or git won't have much luck trying to run it.
 * (Bonus tip! If you set up the document root of your apache server to by symlinked to your github repo, you won't have to worry about copying files back and forth. This works for the WSGI folder too.)
 * (Other bonus tip: If you go to localhost:8000 once the server is running you'll see the WSGI splash page, which includes a link to the setup docs.)
-
-# Automatic Setup with Docker
-* Install docker.
-* While it's installing, edit your /etc/hosts file so that www.spacegame.com, spacegame.com, and dblocation all point at your local machine.
-* Pull down sethborder/wsgi_server.
-* Run the start_container.sh script, replacing the ~/GitHub/SpaceGame/WSGI and ~/GitHub/SpaceGame/site directories with the links to where the WSGI and site folders in your git repository are located. (In your local copy, please! The 
-* (Note: This script assumes you have only one network interface running, you're using IPV4, and that ifconfig works on your system. If this isn't true, you'll have to manually run the 2nd line, substituting in your IP address for the variable $HOST_IP.)
-* Once you get the terminal, run /usr/local/bin/start.sh to start the server.
 
 # Set Up Database (Always Manual.)
 * Install MySQL locally. Note that even if you're using a containerized version of the site with Docker, you still need to install the database on your host machine. Docker should be set up to talk to it, and this way the data will persist.
