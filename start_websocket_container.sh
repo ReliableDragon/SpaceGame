@@ -1,0 +1,2 @@
+HOST_IP="$(ifconfig | grep inet[^6] | sed -n 's/.*[[:blank:]]\([0-9]\{1,3\}\(\.[0-9]\{1,3\}\)\{3\}\)[[:blank:]].*/\1/p' | sed -n 2p)"
+docker run -p 8080:8080 -t -i --name space_sockets --add-host=dblocation:$HOST_IP -v ~/GitHub/SpaceGame/websockets/:/var/www/websockets sethborder/websocket_server /bin/bash
