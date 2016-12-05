@@ -14,7 +14,7 @@ function onButton() {
     console.log("Sent!");
   };
   socket.onmessage = function(s) {
-    console.log("Received Message: " + s);
+    console.log("Received Message: " + s.data);
   };
   sock = socket;
 }
