@@ -4,123 +4,20 @@ var x,y;
 var dir; // In radians.
 var speed;
 var kaleidoscopeMode = false;
+var lives = 1;
+var score = 0;
+
 var ship;
+var deathHandled = false;
+var asteroids = [];
+var gameOver = false;
+
+var ASTEROID_SIZE = 45
+var NUM_ASTEROIDS = 1;
 
 var leftPressed, rightPressed, upPressed, downPressed, spacePressed;
 
 var currentFunction = false;
-
-var SHIP_SIZE = 10;
-var BULLET_SIZE = 3;
-var BULLET_COUNTDOWN = 2;
-var BULLET_LIFE = 75;
-var MAX_BULLETS = 7;
-
-class Point {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
-}
-
-class Vector {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
-}
-
-class Bullet {
-  constructor(point, direction, speed) {
-    this.ticks = 0;
-    this.dead = false;
-    this.center = point;
-    this.dir = direction;
-    this.speed = speed || 10;
-  }
-  // Repeats ship. Look into JS inheritance.
-  move() {
-    this.center.x += Math.sin(this.dir) * this.speed;
-    this.center.y += -Math.cos(this.dir) * this.speed;
-    
-    if (this.center.x > canvas.width || this.center.x < 0) {
-      this.center.x = canvas.width - this.center.x;
-    }
-    if (this.center.y > canvas.height || this.center.y < 0) {
-      this.center.y = canvas.height - this.center.y;
-    }
-  }
-  update() {
-    this.move();
-    this.ticks++;
-    if (this.ticks > BULLET_LIFE) {
-      this.dead = true;
-    }
-  }
-}
-
-class Ship {
-  constructor(point, direction, speed) {
-    this.center = point;
-    this.bulletCountdown = 0;
-    this.dir = dir;
-    this.speed = speed;
-    this.bullets = [];
-  }
-  rotate(rads) {
-    this.dir += rads;
-  }
-  nose() {
-    return rotate(new Point(this.center.x, this.center.y - 2*SHIP_SIZE), this.center, this.dir);
-  }
-  backLeft() {
-    return rotate(new Point(this.center.x - SHIP_SIZE, this.center.y+SHIP_SIZE), this.center, this.dir);
-  }
-  backRight() {
-    return rotate(new Point(this.center.x + SHIP_SIZE, this.center.y+SHIP_SIZE), this.center, this.dir);
-  }
-  update() {
-    if (this.bulletCountdown > 0) {
-      this.bulletCountdown -= 1;
-    }
-    this.move();
-    this.updateBullets();
-  }
-  move() {
-    this.center.x += Math.sin(this.dir) * this.speed;
-    this.center.y += -Math.cos(this.dir) * this.speed;
-    
-    if (this.center.x > canvas.width || this.center.x < 0) {
-      this.center.x = canvas.width - this.center.x;
-    }
-    if (this.center.y > canvas.height || this.center.y < 0) {
-      this.center.y = canvas.height - this.center.y;
-    }
-  }
-  fire() {
-    if (this.bulletCountdown === 0) {
-      this.bullets.push(new Bullet(new Point(this.nose().x, this.nose().y), this.dir, 10));
-      if (this.bullets.length > MAX_BULLETS) {
-        this.bullets.shift();
-      }
-      this.bulletCountdown = BULLET_COUNTDOWN;
-    }
-  }
-  // Note we could currently do this with a for loop, breaking when we find a dead bullet, since
-  // there's a delay, but I want to support a possible future trigun or some-such.
-  updateBullets() {
-    var i = 0;
-    var length = this.bullets.length;
-    while (i < length) {
-      if (this.bullets[i].dead) {
-        this.bullets.splice(i, 1);
-        length--;
-      } else {
-        i++;
-      }
-    }
-  }
-}
 
 window.onload = function() {
   canvas = document.getElementById("canvas");
@@ -172,12 +69,11 @@ function onSendButton() {
 }
 
 function startGame() {
-  x = canvas.width / 2;
-  y = canvas.height / 2;
-  dir = 0;
-  speed = 0;
+  newShip();
   
-  ship = new Ship(new Point(x, y), dir, speed);
+  for (var i = 0; i < NUM_ASTEROIDS; i++) {
+    asteroids.push(new Asteroid(Point.random(), Vector.zero(), ASTEROID_SIZE, 3));
+  }
   
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
@@ -185,30 +81,59 @@ function startGame() {
   animate(gameLoop);
 }
 
+function handleDeath() {
+  if (lives > 0) {
+    newShip();
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
+  } else {
+    gameOver = true;
+  }
+}
+
+function newShip() {
+  x = canvas.width / 2;
+  y = canvas.height / 2;
+  dir = 0;
+  speed = 0;
+  
+  ship = new Ship(new Point(x, y), dir, speed);
+}
+
 function gameLoop() {
   draw();
+  collisionDetection();
+  handleInput();
+  updateObjects();
 }
 
 function draw() {
   if (!kaleidoscopeMode) {
     ctx.clearRect(0, 0, canvas.width, canvas.width);
   }
-  
-  drawShip(ship);
-  drawBullets(ship.bullets);
-  collisionDetection();
-  handleInput();
-  updateObjects();
+  if (!gameOver) {
+    drawShip(ship);
+    drawBullets(ship.bullets);
+    drawAsteroids(asteroids);
+  } else {
+    drawGameOverText();
+  }
+  drawLives();
+  drawScore();
 }
 
 function drawShip(ship) {
+  if (!ship.dead) {
+    drawAliveShip();
+  } else {
+    drawDeadShip();
+  }
+}
+
+function drawAliveShip() {
   ctx.beginPath();
   ctx.strokeStyle = "#FFFFFF";
   
-  //var bodyCenter = new Point(x, y);
-  //var nose = rotate(new Point(x, y - 2*SHIP_SIZE), bodyCenter, dir);
-  //var backLeft = rotate(new Point(x - SHIP_SIZE, y+SHIP_SIZE), bodyCenter, dir);
-  //var backRight = rotate(new Point(x + SHIP_SIZE, y+SHIP_SIZE), bodyCenter, dir);
   var nose = ship.nose();
   var backLeft = ship.backLeft();
   var backRight = ship.backRight();
@@ -220,25 +145,61 @@ function drawShip(ship) {
   ctx.stroke();
 }
 
+function drawDeadShip() {
+  ctx.beginPath();
+  ctx.strokeStyle = "#FFFFFF";
+  
+  var verts = ship.deadVerts();
+  
+  ctx.moveTo(verts[0].x, verts[0].y);
+  ctx.lineTo(verts[1].x, verts[1].y);
+  ctx.moveTo(verts[2].x, verts[2].y);
+  ctx.lineTo(verts[3].x, verts[3].y);
+  ctx.moveTo(verts[4].x, verts[4].y);
+  ctx.lineTo(verts[5].x, verts[5].y);
+  ctx.closePath();
+  ctx.stroke();
+}
+
 function drawBullets(bullets) {
   for (var i = 0; i < bullets.length; i++) {
     var bullet = bullets[i];
     ctx.beginPath();
     ctx.strokeStyle = "#FFFFFF";
-    ctx.arc(bullet.center.x, bullet.center.y, BULLET_SIZE, 0, 2*Math.PI, true);
+    ctx.arc(bullet.center.x, bullet.center.y, bullet.size, 0, 2*Math.PI, true);
     ctx.stroke();
   }
 }
 
-// Amount should be in radians.
-function rotate(point, base, amount) {
-  base = base || new Point(0, 0);
-  
-  var translated = new Point(point.x - base.x, point.y - base.y);
-  var rotX = translated.x * Math.cos(amount) - translated.y * Math.sin(amount);
-  var rotY = translated.y * Math.cos(amount) + translated.x * Math.sin(amount);
-  var unTranslated = new Point(rotX + base.x, rotY + base.y);
-  return unTranslated;
+// TODO: Make asteroids jaggier and more fun looking. Circles are boring, and the rotation
+// function means we can just do the draw work once, then rotate around the center each time.
+function drawAsteroids(asteroids) {
+  for (var i = 0; i < asteroids.length; i++) {
+    var asteroid = asteroids[i];
+    ctx.beginPath();
+    ctx.strokeStyle = "#FFFFFF";
+    ctx.arc(asteroid.center.x, asteroid.center.y, asteroid.size, 0, 2*Math.PI, true);
+    ctx.stroke();
+  }
+}
+
+function drawLives() {
+  ctx.font = "16pt Arial";
+  ctx.fillStyle = "#EEEEEE";
+  ctx.fillText("Lives: " + lives, canvas.width - 85, 20);
+}
+
+function drawScore() {
+  ctx.font = "16pt Arial";
+  ctx.fillStyle = "#EEEEEE";
+  ctx.fillText("Score: " + score, 8, 20);
+}
+
+// TODO: Add "YOUR SCORE:", "ENTER YOUR NAME:", "REPLAY? Y/N" fields.
+function drawGameOverText() {
+  ctx.font = "48pt Arial";
+  ctx.fillStyle = "#BB0000";
+  ctx.fillText("GAME OVER :(", canvas.width/2 - 220, canvas.height/2);
 }
 
 function handleInput() {
@@ -257,12 +218,39 @@ function handleInput() {
   if (spacePressed) {
     ship.fire();
   }
+  clamp(ship.speed, -5, 5);
 }
 
 function updateObjects() {
-  ship.update();
   for (var i = 0; i < ship.bullets.length; i++) {
     ship.bullets[i].update();
+  }
+  ship.update();
+  i = 0;
+  var length = asteroids.length;
+  while (i < length) {
+    asteroids[i].update();
+    if (asteroids[i].dead) {
+      asteroids.splice(i, 1);
+      length--;
+    } else {
+      i++;
+    }
+  }
+  if (ship.dead && !deathHandled) {
+    keysOff();
+    deathHandled = true;
+    ship.speed = 0;
+    document.removeEventListener("keydown", keyDownHandler, false);
+    document.removeEventListener("keyup", keyUpHandler, false);
+    setTimeout(function() {
+      lives--;
+      handleDeath();
+      deathHandled = false;
+      }, 1500);
+  } else if (ship.dead) {
+    // Spin because it makes an "animation" on death.
+    ship.rotate(0.05);
   }
 }
 
@@ -290,6 +278,7 @@ function keyDownHandler(e) {
 function log() {
   console.log("X: " + x + "\nY:" + y);
   console.log("Ship:\n", ship);
+  console.log("X-Max: " + canvas.width + "\nY-Max: " + canvas.height);
 }
 
 function keyUpHandler(e) {
@@ -306,9 +295,48 @@ function keyUpHandler(e) {
   }
 }
 
-function collisionDetection() {
-  // Pass. Only one object at the moment.
+function keysOff() {
+  rightPressed = false;
+  upPressed = false;
+  leftPressed = false;
+  downPressed = false;
+  spacePressed = false;
 }
+
+function collisionDetection() {
+  // Declared at the top because JS has no block scope, only function scope.
+  var i, j, asteroid;
+  for (i = 0; i < ship.bullets.length; i++) {
+    var bullet = ship.bullets[i];
+    for (j = 0; j < asteroids.length; j++) {
+      asteroid = asteroids[j];
+      var distance =
+          Math.hypot(bullet.center.x - asteroid.center.x, bullet.center.y - asteroid.center.y);
+      if (distance < asteroid.size && !bullet.dead && !asteroid.dead) {
+        score += 100 * (5 - asteroid.stage);
+        bullet.dead = true;
+        asteroid.dead = true;
+        var newAsteroids = asteroid.split();
+        asteroids.push.apply(asteroids, newAsteroids);
+      }
+    }
+  }
+  var shipBox = ship.getBoundingBox();
+  for (i = 0; i < asteroids.length; i++) {
+    asteroid = asteroids[i];
+    for (j = 0; j < shipBox.points.length; j++) {
+      console.log(asteroid);
+      console.log(shipBox);
+      if (!asteroid.dead && asteroid.center.dist(shipBox.points[j]) < asteroid.size) {
+        ship.dead = true;
+      }
+    }
+  }
+}
+
+
+
+
 
 
 
