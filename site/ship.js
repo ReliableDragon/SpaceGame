@@ -3,34 +3,37 @@ var BULLET_COUNTDOWN = 7;
 var MAX_BULLETS = 7;
 
 class Ship {
-  constructor(point, direction, speed) {
+  constructor(point, facing, movementVector) {
     this.center = point;
     this.bulletCountdown = 0;
-    this.dir = dir;
+    this.dir = facing;
     this.dead = false;
-    this.speed = speed;
+    this.speed = movementVector;
     this.bullets = [];
   }
   rotate(rads) {
     this.dir += rads;
   }
+  accelerate(isForwards) {
+    this.speed.addInDirection(isForwards ? 0.1 : -0.1, this.dir);
+  }
   nose() {
-    return rotate(new Point(this.center.x, this.center.y - 2*SHIP_SIZE), this.center, this.dir);
+    return rotate(new Point(this.center.x + 2*SHIP_SIZE, this.center.y), this.center, this.dir);
   }
   backLeft() {
-    return rotate(new Point(this.center.x - SHIP_SIZE, this.center.y+SHIP_SIZE), this.center, this.dir);
+    return rotate(new Point(this.center.x-SHIP_SIZE, this.center.y+SHIP_SIZE), this.center, this.dir);
   }
   backRight() {
-    return rotate(new Point(this.center.x + SHIP_SIZE, this.center.y+SHIP_SIZE), this.center, this.dir);
+    return rotate(new Point(this.center.x-SHIP_SIZE, this.center.y-SHIP_SIZE), this.center, this.dir);
   }
   deadVerts() {
     var verts = [];
-    verts.push(rotate(new Point(this.center.x, this.center.y - 2.5*SHIP_SIZE), this.nose(), 0.2));
-    verts.push(rotate(new Point(this.center.x - SHIP_SIZE, this.center.y + 0.5*SHIP_SIZE), this.nose(), 0.2));
-    verts.push(rotate(new Point(this.center.x - SHIP_SIZE, this.center.y + 0.5*SHIP_SIZE), this.nose(), -0.2));
-    verts.push(rotate(new Point(this.center.x + SHIP_SIZE, this.center.y + 0.5*SHIP_SIZE), this.nose(), -0.2));
-    verts.push(rotate(new Point(this.center.x - SHIP_SIZE, this.center.y + 0.5*SHIP_SIZE), this.backRight(), -0.2));
-    verts.push(rotate(new Point(this.center.x + SHIP_SIZE, this.center.y + 0.5*SHIP_SIZE), this.backRight(), -0.2));
+    verts.push(rotate(new Point(this.center.x + 2.5*SHIP_SIZE, this.center.y), this.nose(), 0.2));
+    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.nose(), 0.2));
+    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.nose(), -0.2));
+    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y - SHIP_SIZE), this.nose(), -0.2));
+    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.backRight(), -0.2));
+    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y - SHIP_SIZE), this.backRight(), -0.2));
     return verts;
   }
   update() {
@@ -41,19 +44,14 @@ class Ship {
     this.updateBullets();
   }
   move() {
-    this.center.x += Math.sin(this.dir) * this.speed;
-    this.center.y += -Math.cos(this.dir) * this.speed;
+    this.center.x += this.speed.x;
+    this.center.y += this.speed.y;
     
-    if (this.center.x > canvas.width || this.center.x < 0) {
-      this.center.x = canvas.width - this.center.x;
-    }
-    if (this.center.y > canvas.height || this.center.y < 0) {
-      this.center.y = canvas.height - this.center.y;
-    }
+    wrapAround(this.center);
   }
   fire() {
     if (this.bulletCountdown === 0 && !ship.dead) {
-      this.bullets.push(new Bullet(new Point(this.nose().x, this.nose().y), this.dir, 10));
+      this.bullets.push(new Bullet(this.nose().copy(), this.dir, Vector.dirMag(this.dir, 10)));
       if (this.bullets.length > MAX_BULLETS) {
         this.bullets.shift();
       }

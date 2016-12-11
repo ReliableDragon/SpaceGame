@@ -4,7 +4,7 @@ class Asteroid {
     this.speed = vector;
     this.size = size;
     this.stage = stage;
-    this.numChildren = 3;
+    this.numChildren = Math.floor(Math.random() * 2) + 2;
     this.rotation = Math.random();
     this.dead = false;
   }

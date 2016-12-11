@@ -2,25 +2,20 @@ var BULLET_SIZE = 3;
 var BULLET_LIFE = 75;
 
 class Bullet {
-  constructor(point, direction, speed) {
+  constructor(point, direction, vector) {
     this.ticks = 0;
     this.dead = false;
     this.center = point;
     this.dir = direction;
-    this.speed = speed || 10;
+    this.speed = vector || 10;
     this.size = BULLET_SIZE;
   }
   // Repeats ship. Look into JS inheritance.
   move() {
-    this.center.x += Math.sin(this.dir) * this.speed;
-    this.center.y += -Math.cos(this.dir) * this.speed;
+    this.center.x += this.speed.x;
+    this.center.y += this.speed.y;
     
-    if (this.center.x > canvas.width || this.center.x < 0) {
-      this.center.x = canvas.width - this.center.x;
-    }
-    if (this.center.y > canvas.height || this.center.y < 0) {
-      this.center.y = canvas.height - this.center.y;
-    }
+    wrapAround(this.center);
   }
   update() {
     this.move();

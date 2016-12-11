@@ -1,30 +1,63 @@
 var sock;
-var opened = false;
 var x,y;
 var dir; // In radians.
 var speed;
 var kaleidoscopeMode = false;
-var lives = 1;
+var logSocketCalls = false;
+var lives = 3;
 var score = 0;
+var level = 1;
+var socket;
 
 var ship;
-var deathHandled = false;
+var waiting = false;
 var asteroids = [];
 var gameOver = false;
 
-var ASTEROID_SIZE = 45
+var ASTEROID_SIZE = 45;
 var NUM_ASTEROIDS = 1;
 
-var leftPressed, rightPressed, upPressed, downPressed, spacePressed;
+var leftPressed = false;
+var rightPressed = false;
+var upPressed = false;
+var downPressed = false;
+var spacePressed = false;
 
 var currentFunction = false;
+var resumeFunction = false;
 
 window.onload = function() {
   canvas = document.getElementById("canvas");
   ctx = canvas.getContext("2d");
+
+  openSocket();
+  setInterval(sendKeys, 100);
+  
   startGame();
   loop();
 };
+
+function openSocket() {
+  socket = new WebSocket('ws://spacegame.com:8080');
+  socket.onopen = function() {
+    opened = true;
+    socket.send(JSON.stringify({
+      id: 1,
+      data: "test"
+      }));
+  };
+  socket.onmessage = function(s) {
+    if (logSocketCalls) {
+      console.log("Received Message: " + s.data);
+    }
+  };
+  socket.onclose = function() {
+    if (logSocketCalls) {
+      console.log("State is " + socket.readyState + ", restarting in 250ms.");
+    }
+    setTimeout(openSocket, 250);
+  };
+}
 
 function loop() {
   if (currentFunction) {
@@ -37,48 +70,28 @@ function animate(f) {
   currentFunction = f;
 }
 
-function onButton() {
-  console.log("Started!");
-  var socket = new WebSocket('ws://spacegame.com:8080');
-  socket.onopen = function() {
-    console.log("Opened!");
-    opened = true;
-    socket.send(JSON.stringify({
-      id: 1,
-      data: "test"
-      }));
-    console.log("Sent!");
-  };
-  socket.onmessage = function(s) {
-    console.log("Received Message: " + s.data);
-  };
-  sock = socket;
-}
-
-function onSendButton() {
-  if (opened) {
-    console.log("Sending...");
-    sock.send(JSON.stringify({
-      id: 1,
-      data: "test"
-      }));
-    console.log("Sent!");
-  } else {
-    console.log("Socket not open!");
-  }
-}
-
 function startGame() {
   newShip();
-  
-  for (var i = 0; i < NUM_ASTEROIDS; i++) {
-    asteroids.push(new Asteroid(Point.random(), Vector.zero(), ASTEROID_SIZE, 3));
-  }
+  makeAsteroids(level);
   
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
   
   animate(gameLoop);
+}
+
+function makeAsteroids(num) {
+  var asteroidsMade = [];
+  var asteroidSize = ASTEROID_SIZE + Math.random() * 10 - 5;
+  
+  while (asteroidsMade.length < num) {
+    var asteroid = new Asteroid(Point.random(), Vector.random(2), asteroidSize, 3);
+    if (!asteroidIntersectsShip(asteroid, ship)) {
+      asteroidsMade.push(asteroid);
+    }
+  }
+  
+  asteroids.push.apply(asteroids, asteroidsMade);
 }
 
 function handleDeath() {
@@ -94,8 +107,8 @@ function handleDeath() {
 function newShip() {
   x = canvas.width / 2;
   y = canvas.height / 2;
-  dir = 0;
-  speed = 0;
+  dir = -Math.PI/2;
+  speed = Vector.zero();
   
   ship = new Ship(new Point(x, y), dir, speed);
 }
@@ -118,88 +131,8 @@ function draw() {
   } else {
     drawGameOverText();
   }
-  drawLives();
-  drawScore();
-}
-
-function drawShip(ship) {
-  if (!ship.dead) {
-    drawAliveShip();
-  } else {
-    drawDeadShip();
-  }
-}
-
-function drawAliveShip() {
-  ctx.beginPath();
-  ctx.strokeStyle = "#FFFFFF";
-  
-  var nose = ship.nose();
-  var backLeft = ship.backLeft();
-  var backRight = ship.backRight();
-  
-  ctx.moveTo(nose.x, nose.y);
-  ctx.lineTo(backLeft.x, backLeft.y);
-  ctx.lineTo(backRight.x, backRight.y);
-  ctx.closePath();
-  ctx.stroke();
-}
-
-function drawDeadShip() {
-  ctx.beginPath();
-  ctx.strokeStyle = "#FFFFFF";
-  
-  var verts = ship.deadVerts();
-  
-  ctx.moveTo(verts[0].x, verts[0].y);
-  ctx.lineTo(verts[1].x, verts[1].y);
-  ctx.moveTo(verts[2].x, verts[2].y);
-  ctx.lineTo(verts[3].x, verts[3].y);
-  ctx.moveTo(verts[4].x, verts[4].y);
-  ctx.lineTo(verts[5].x, verts[5].y);
-  ctx.closePath();
-  ctx.stroke();
-}
-
-function drawBullets(bullets) {
-  for (var i = 0; i < bullets.length; i++) {
-    var bullet = bullets[i];
-    ctx.beginPath();
-    ctx.strokeStyle = "#FFFFFF";
-    ctx.arc(bullet.center.x, bullet.center.y, bullet.size, 0, 2*Math.PI, true);
-    ctx.stroke();
-  }
-}
-
-// TODO: Make asteroids jaggier and more fun looking. Circles are boring, and the rotation
-// function means we can just do the draw work once, then rotate around the center each time.
-function drawAsteroids(asteroids) {
-  for (var i = 0; i < asteroids.length; i++) {
-    var asteroid = asteroids[i];
-    ctx.beginPath();
-    ctx.strokeStyle = "#FFFFFF";
-    ctx.arc(asteroid.center.x, asteroid.center.y, asteroid.size, 0, 2*Math.PI, true);
-    ctx.stroke();
-  }
-}
-
-function drawLives() {
-  ctx.font = "16pt Arial";
-  ctx.fillStyle = "#EEEEEE";
-  ctx.fillText("Lives: " + lives, canvas.width - 85, 20);
-}
-
-function drawScore() {
-  ctx.font = "16pt Arial";
-  ctx.fillStyle = "#EEEEEE";
-  ctx.fillText("Score: " + score, 8, 20);
-}
-
-// TODO: Add "YOUR SCORE:", "ENTER YOUR NAME:", "REPLAY? Y/N" fields.
-function drawGameOverText() {
-  ctx.font = "48pt Arial";
-  ctx.fillStyle = "#BB0000";
-  ctx.fillText("GAME OVER :(", canvas.width/2 - 220, canvas.height/2);
+  drawLives(lives);
+  drawScore(score);
 }
 
 function handleInput() {
@@ -209,16 +142,28 @@ function handleInput() {
   if (leftPressed) {
     ship.rotate(-0.1);
   }
-  if (upPressed && speed < 5) {
-    ship.speed += 0.1;
+  if (upPressed) {
+    ship.accelerate(true);
   }
-  if (downPressed && speed > -5) {
-    ship.speed -= 0.1;
+  if (downPressed) {
+    ship.accelerate(false);
   }
   if (spacePressed) {
     ship.fire();
   }
   clamp(ship.speed, -5, 5);
+}
+
+function sendKeys() {
+  if (socket.readyState == 1) {
+    socket.send(JSON.stringify({
+      up: upPressed,
+      down: downPressed,
+      left: leftPressed,
+      right: rightPressed,
+      space: spacePressed
+    }));
+  }
 }
 
 function updateObjects() {
@@ -237,16 +182,28 @@ function updateObjects() {
       i++;
     }
   }
-  if (ship.dead && !deathHandled) {
+  if (asteroids.length === 0 && !waiting) {
+    level++;
+    drawLevelPassedText();
+    waiting = true;
+    animate(false);
+    setTimeout(function() {
+      makeAsteroids(level);
+      newShip();
+      waiting = false;
+      animate(gameLoop);
+    }, 1500);
+  }
+  if (ship.dead && !waiting) {
     keysOff();
-    deathHandled = true;
-    ship.speed = 0;
+    waiting = true;
+    ship.speed = Vector.zero();
     document.removeEventListener("keydown", keyDownHandler, false);
     document.removeEventListener("keyup", keyUpHandler, false);
     setTimeout(function() {
       lives--;
       handleDeath();
-      deathHandled = false;
+      waiting = false;
       }, 1500);
   } else if (ship.dead) {
     // Spin because it makes an "animation" on death.
@@ -255,23 +212,38 @@ function updateObjects() {
 }
 
 function keyDownHandler(e) {
-  if (e.keyCode == 39) {
-    rightPressed = true;
-  } else if (e.keyCode == 37) {
-    leftPressed = true;
-  } else if (e.keyCode == 38) {
-    upPressed = true;
-  } else if (e.keyCode == 40) {
-    downPressed = true;
-  } else if (e.keyCode == 32) {
-    spacePressed = true;
-  } else if (e.keyCode == 76) { // "l", for log.
-    log();
-  } else if (e.keyCode == 75) {
-    kaleidoscopeMode = !kaleidoscopeMode;
-  }
-  else {
-    console.log(e.keyCode);
+  switch(e.keyCode) {
+    case 39:
+      rightPressed = true;
+      break;
+    case 37:
+      leftPressed = true;
+      break;
+    case 38:
+      upPressed = true;
+      break;
+    case 40:
+      downPressed = true;
+      break;
+    case 32:
+      spacePressed = true;
+      break;
+    case 76: // "l", for log.
+      log();
+      break;
+    case 75:
+      kaleidoscopeMode = !kaleidoscopeMode;
+      break;
+    case 80:
+      if (currentFunction) {
+        resumeFunction = currentFunction;
+        animate(false);
+      } else {
+        animate(resumeFunction);
+      }
+      break;
+    default:
+      console.log(e.keyCode);
   }
 }
 
@@ -279,6 +251,7 @@ function log() {
   console.log("X: " + x + "\nY:" + y);
   console.log("Ship:\n", ship);
   console.log("X-Max: " + canvas.width + "\nY-Max: " + canvas.height);
+  console.log("Websocket:\n", socket);
 }
 
 function keyUpHandler(e) {
@@ -313,7 +286,7 @@ function collisionDetection() {
       var distance =
           Math.hypot(bullet.center.x - asteroid.center.x, bullet.center.y - asteroid.center.y);
       if (distance < asteroid.size && !bullet.dead && !asteroid.dead) {
-        score += 100 * (5 - asteroid.stage);
+        score += Math.floor(100 * (5 - asteroid.stage) * Math.pow(1.2, level-1));
         bullet.dead = true;
         asteroid.dead = true;
         var newAsteroids = asteroid.split();
@@ -321,17 +294,22 @@ function collisionDetection() {
       }
     }
   }
-  var shipBox = ship.getBoundingBox();
   for (i = 0; i < asteroids.length; i++) {
     asteroid = asteroids[i];
-    for (j = 0; j < shipBox.points.length; j++) {
-      console.log(asteroid);
-      console.log(shipBox);
-      if (!asteroid.dead && asteroid.center.dist(shipBox.points[j]) < asteroid.size) {
+    if (!asteroid.dead && asteroidIntersectsShip(asteroid, ship)) {
         ship.dead = true;
-      }
     }
   }
+}
+
+function asteroidIntersectsShip(asteroid, ship) {
+  var shipBox = ship.getBoundingBox();
+  for (j = 0; j < shipBox.points.length; j++) {
+    if (asteroid.center.dist(shipBox.points[j]) < asteroid.size) {
+      return true;
+    }
+  }
+  return false;
 }
 
 

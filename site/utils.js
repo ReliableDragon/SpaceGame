@@ -13,10 +13,21 @@ class Vector {
   // TODO: Currently this goes faster diagonally. Change it to randomly decide speed, then
   // direction properly using trig.
   static random(max) {
-    return new Vector(Math.floor(Math.random() * max - max/2), Math.floor(Math.random() * max - max/2));
+    return Vector.zero().addInDirection(Math.random() * max, Math.random() * Math.PI * 2);
+    //return new Vector(Math.floor(Math.random() * max - max/2), Math.floor(Math.random() * max - max/2));
+  }
+  static dirMag(dir, speed) {
+    return new Vector(Math.cos(dir) * speed, Math.sin(dir) * speed);
   }
   copy() {
     return new Vector(this.x, this.y);
+  }
+  // As always, dir in radians.
+  addInDirection(amount, dir) {
+    this.x += amount * Math.cos(dir);
+    this.y += amount * Math.sin(dir);
+    // For chaining purposes.
+    return this;
   }
 }
 
