@@ -9,7 +9,9 @@ An exercise in web programming.
 
 [WSGI_Server on DockerHub](https://hub.docker.com/r/sethborder/wsgi-server/)
 
-# Automatic Setup with Docker
+[Socket Server on DocketHub](https://hub.docker.com/r/sethborder/websocket_server/)
+
+# Setup with Docker
 * Install docker.
 * While it's installing, edit your /etc/hosts file so that www.spacegame.com, spacegame.com, and dblocation all point at your local machine.
 * Pull down sethborder/wsgi_server and sethborder/websocket_server.
