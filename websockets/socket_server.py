@@ -19,12 +19,12 @@ class WSHandler(socketserver.BaseRequestHandler):
       if self.data == b"":
         print("Connection closed!")
         return
-      self.data = self.data.strip()
 
       WSLogger.log(str(self.data))
       print(str(self.data))
       
       if not handshook:
+        self.data = self.data.strip()
         lines = self.data.split(b"\r\n")
         if not http_msg in lines:
           print("Not websocket request!")

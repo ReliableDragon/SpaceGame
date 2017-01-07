@@ -2,6 +2,7 @@ import os, hashlib, base64, struct
 
 test = b'\x81\x96\xa8z\xc8\r\xd3X\xa1i\x8a@\xf9!\x8a\x1e\xa9y\xc9X\xf2/\xdc\x1f\xbby\x8a\x07'
 test2 = b"\x88\x9a\rA\x80\xec\x0e\xab\xcd\x8d~*\xe5\x88-'\xf2\x8d`$\xa0\x8a\x7f.\xed\xcc~$\xf2\x9ah3"
+test3 =  b'\x81\xc2\xabv\\\xdd\xd0T)\xad\x89L:\xbc\xc7\x059\xf1\x89\x123\xaa\xc5Tf\xbb\xca\x1a/\xb8\x87T0\xb8\xcd\x02~\xe7\xcd\x170\xae\xceZ~\xaf\xc2\x114\xa9\x89L:\xbc\xc7\x059\xf1\x89\x05,\xbc\xc8\x13~\xe7\xcd\x170\xae\xce'
 
 magic_string = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11"
 
@@ -30,11 +31,20 @@ class Handler:
     self.done = True
     self.length = -1
     self.decoded = b""
+    self.buffer = b""
 
   def handle(self, data):
     print("Handling data frame: " + str(data))
-    self.decodeMessage(data)
-    return self.done
+    self.buffer += data
+    msgLen,bytes_used = getMsgLenAndSize(self.buffer)
+    overheadLen = 5 + bytes_used
+    if  len(self.buffer) - overheadLen < msgLen:
+      print("Message not finished. Buffering...")
+      return False
+    else:
+      print("Decoding!")
+      self.decodeMessage(self.buffer)
+      return self.done
 
   def getMessage(self):
     return self.msg
@@ -68,6 +78,7 @@ class Handler:
 
     if lastMessage:
       #TODO: Decrypt differently depending on data type.
+      self.buffer = b""
       print("Done! Precoding: {0}".format(self.decoded))
       self.msg = self.decoded.decode('utf-8')
 
@@ -86,6 +97,19 @@ class Handler:
       result += struct.pack('>Q', len(msg))
     result += msg
     return result
+  
+  
+def getMsgLenAndSize(data):
+  msgLen = getSix(data)
+  bloc = 1
+  if msgLen == 126:
+    msgLen = getSixteen(data, bloc)
+    bloc = 3
+  elif msgLen == 127:
+    msgLen = getSixtyFour(data, bloc)
+    bloc = 9
+  return msgLen,bloc
+
 
 def unmask(data, mask, msgLen):
   result = b""
