@@ -2,15 +2,18 @@ import socket
 import threading
 import time
 import socketserver
-import spaceWS, WSLogger
+import spaceWS, WSLogger, game_logic
 
 http_msg = b'GET / HTTP/1.1'
+
+game = ""
 
 class WSHandler(socketserver.BaseRequestHandler):
 
   def handle(self):
+    global game
     handshook = False
-    handler = spaceWS.Handler()
+    handler = spaceWS.Handler(game)
     while True:
       print("Handling!")
       global http_msg
@@ -67,6 +70,10 @@ def client(ip, port, message):
     sock.close()
 
 def startServer():
+  global game
+  
+  game = game_logic.AsteroidsGame()
+  
   HOST, PORT = "", 8080
   print(str(HOST) + " " + str(PORT))
 

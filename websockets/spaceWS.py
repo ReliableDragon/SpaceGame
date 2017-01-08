@@ -1,4 +1,5 @@
 import os, hashlib, base64, struct
+import game_logic
 
 test = b'\x81\x96\xa8z\xc8\r\xd3X\xa1i\x8a@\xf9!\x8a\x1e\xa9y\xc9X\xf2/\xdc\x1f\xbby\x8a\x07'
 test2 = b"\x88\x9a\rA\x80\xec\x0e\xab\xcd\x8d~*\xe5\x88-'\xf2\x8d`$\xa0\x8a\x7f.\xed\xcc~$\xf2\x9ah3"
@@ -23,7 +24,7 @@ def handshake(headers):
 
 class Handler:
 
-  def __init__(self):
+  def __init__(self, game):
     self.msg = ""
     self.mask = b""
     self.opcode = 0
@@ -32,6 +33,7 @@ class Handler:
     self.length = -1
     self.decoded = b""
     self.buffer = b""
+    self.game = game
 
   def handle(self, data):
     print("Handling data frame: " + str(data))
@@ -80,7 +82,7 @@ class Handler:
       #TODO: Decrypt differently depending on data type.
       self.buffer = b""
       print("Done! Precoding: {0}".format(self.decoded))
-      self.msg = self.decoded.decode('utf-8')
+      self.msg = self.game.input(self.decoded.decode('utf-8'))
 
     self.done = lastMessage
 
