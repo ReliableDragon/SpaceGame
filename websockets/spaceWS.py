@@ -40,6 +40,7 @@ class Handler:
     self.buffer += data
     msgLen,bytes_used = getMsgLenAndSize(self.buffer)
     overheadLen = 5 + bytes_used
+    print("Buffer size: {0}\nMessage length: {1}\nBytes used: {2}".format(len(self.buffer), msgLen, bytes_used))
     if  len(self.buffer) - overheadLen < msgLen:
       print("Message not finished. Buffering...")
       return False
@@ -87,13 +88,14 @@ class Handler:
     self.done = lastMessage
 
   def frameForMessage(self, msg, opcode):
+    print("Encoding message: {0}".format(msg))
     result = b""
     result += bytes([128 + opcode])
     if len(msg) < 126:
       result += bytes([len(msg)])
     elif len(msg) < 2**16-1:
       result += bytes([126])
-      result += struct.pack('>I', len(msg))
+      result += struct.pack('>H', len(msg))
     else:
       result += bytes([127])
       result += struct.pack('>Q', len(msg))
@@ -103,14 +105,14 @@ class Handler:
   
 def getMsgLenAndSize(data):
   msgLen = getSix(data)
-  bloc = 1
+  bloc = 2
   if msgLen == 126:
     msgLen = getSixteen(data, bloc)
-    bloc = 3
+    bloc = 4
   elif msgLen == 127:
     msgLen = getSixtyFour(data, bloc)
-    bloc = 9
-  return msgLen,bloc
+    bloc = 8
+  return msgLen,bloc-1
 
 
 def unmask(data, mask, msgLen):
@@ -125,10 +127,10 @@ def getSix(bs):
 # Start byte is zero indexed.                                                                                             
 def getSixteen(bs, startByte = 2):
   numBytes = 2
-  return struct.unpack('>H', bs[startByte:startByte+numBytes])
+  return struct.unpack('>H', bs[startByte:startByte+numBytes])[0]
 
 # Start byte is zero indexed.                                                                                             
 def getSixtyFour(bs, startByte = 2):
   numBytes = 8
-  return struct.unpack('>Q', bs[startByte:startByte+numBytes])
+  return struct.unpack('>Q', bs[startByte:startByte+numBytes])[0]
 

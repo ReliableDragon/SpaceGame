@@ -8,6 +8,9 @@ var lives = 3;
 var score = 0;
 var level = 1;
 var socket;
+var gameId = -1;
+var username = "testy mc test";
+var levelover = false;
 
 var ship;
 var waiting = false;
@@ -16,6 +19,10 @@ var gameOver = false;
 
 var ASTEROID_SIZE = 45;
 var NUM_ASTEROIDS = 1;
+var HEIGHT = 600;
+var WIDTH = 1000;
+var X_RAT = 10;
+var Y_RAT = 6;
 
 var leftPressed = false;
 var rightPressed = false;
@@ -31,7 +38,7 @@ window.onload = function() {
   ctx = canvas.getContext("2d");
 
   openSocket();
-  setInterval(sendKeys, 100);
+  setInterval(sendData, 100);
   
   startGame();
   loop();
@@ -43,20 +50,70 @@ function openSocket() {
     opened = true;
     socket.send(JSON.stringify({
       id: 1,
-      data: "test"
+      data: "test",
+      gamestate: "new",
+      name: username,
       }));
   };
   socket.onmessage = function(s) {
     if (logSocketCalls) {
       console.log("Received Message: " + s.data);
     }
+    var data = JSON.parse(s.data);
+    startGameFromData(data);
   };
+
   socket.onclose = function() {
     if (logSocketCalls) {
       console.log("State is " + socket.readyState + ", restarting in 250ms.");
     }
     setTimeout(openSocket, 250);
   };
+}
+
+function sendData() {
+  if (socket.readyState == 1) {
+    var message = JSON.stringify({
+      keys: {
+        up: upPressed,
+        down: downPressed,
+        left: leftPressed,
+        right: rightPressed,
+        space: spacePressed,
+      },
+      gamestate: "ongoing",
+      name: username,
+      game_id: gameId,
+    });
+    console.log("Sending message:\n" + message);
+    socket.send(message);
+  }
+}
+
+function startGameFromData(data) {
+  if (data.ship) {
+    ship.setPosition(
+                     new Point(data.ship.center.x * X_RAT, data.ship.center.y * Y_RAT),
+                     data.ship.dir,
+                     new Vector(data.ship.speed.x, data.ship.speed.y));
+  }
+  if (data.game_id) {
+    gameId = data.game_id;
+  } else {
+    console.log("Error! No game id provided by server.");
+  }
+  if (data.asteroids) {
+    asteroids = [];
+    for (var i = 0; i < data.asteroids.length; i++) {
+      dataAsteroid = data.asteroids[i];
+      asteroids.push(new Asteroid(
+                                  new Point(dataAsteroid.center.x * X_RAT, dataAsteroid.center.y * Y_RAT),
+                                  new Vector(dataAsteroid.speed.x, dataAsteroid.speed.y),
+                                  dataAsteroid.size,
+                                  dataAsteroid.stage,
+                                  dataAsteroid.num_children));
+    }
+  }
 }
 
 function loop() {
@@ -72,7 +129,8 @@ function animate(f) {
 
 function startGame() {
   newShip();
-  makeAsteroids(level);
+  //makeAsteroids(level);
+  //startGameFromData(data);
   
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
@@ -80,19 +138,19 @@ function startGame() {
   animate(gameLoop);
 }
 
-function makeAsteroids(num) {
-  var asteroidsMade = [];
-  var asteroidSize = ASTEROID_SIZE + Math.random() * 10 - 5;
-  
-  while (asteroidsMade.length < num) {
-    var asteroid = new Asteroid(Point.random(), Vector.random(2), asteroidSize, 3);
-    if (!asteroidIntersectsShip(asteroid, ship)) {
-      asteroidsMade.push(asteroid);
-    }
-  }
-  
-  asteroids.push.apply(asteroids, asteroidsMade);
-}
+//function makeAsteroids(num) {
+//  var asteroidsMade = [];
+//  var asteroidSize = ASTEROID_SIZE + Math.random() * 10 - 5;
+//  
+//  while (asteroidsMade.length < num) {
+//    var asteroid = new Asteroid(Point.random(), Vector.random(2), asteroidSize, 3, Math.floor(Math.random() * 2) + 2);
+//    if (!asteroidIntersectsShip(asteroid, ship)) {
+//      asteroidsMade.push(asteroid);
+//    }
+//  }
+//  
+//  asteroids.push.apply(asteroids, asteroidsMade);
+//}
 
 function handleDeath() {
   if (lives > 0) {
@@ -154,18 +212,6 @@ function handleInput() {
   clamp(ship.speed, -5, 5);
 }
 
-function sendKeys() {
-  if (socket.readyState == 1) {
-    socket.send(JSON.stringify({
-      up: upPressed,
-      down: downPressed,
-      left: leftPressed,
-      right: rightPressed,
-      space: spacePressed
-    }));
-  }
-}
-
 function updateObjects() {
   for (var i = 0; i < ship.bullets.length; i++) {
     ship.bullets[i].update();
@@ -182,13 +228,14 @@ function updateObjects() {
       i++;
     }
   }
-  if (asteroids.length === 0 && !waiting) {
+  if (levelover === true && !waiting) {
     level++;
     drawLevelPassedText();
     waiting = true;
     animate(false);
+    levelover = false;
     setTimeout(function() {
-      makeAsteroids(level);
+      //makeAsteroids(level);
       newShip();
       waiting = false;
       animate(gameLoop);
@@ -198,8 +245,8 @@ function updateObjects() {
     keysOff();
     waiting = true;
     ship.speed = Vector.zero();
-    document.removeEventListener("keydown", keyDownHandler, false);
-    document.removeEventListener("keyup", keyUpHandler, false);
+    //document.removeEventListener("keydown", keyDownHandler, false);
+    //document.removeEventListener("keyup", keyUpHandler, false);
     setTimeout(function() {
       lives--;
       handleDeath();
@@ -214,19 +261,24 @@ function updateObjects() {
 function keyDownHandler(e) {
   switch(e.keyCode) {
     case 39:
-      rightPressed = true;
+      if (!waiting)
+        rightPressed = true;
       break;
     case 37:
-      leftPressed = true;
+      if (!waiting)
+        leftPressed = true;
       break;
     case 38:
-      upPressed = true;
+      if (!waiting)
+        upPressed = true;
       break;
     case 40:
-      downPressed = true;
+      if (!waiting)
+        downPressed = true;
       break;
     case 32:
-      spacePressed = true;
+      if (!waiting)
+        spacePressed = true;
       break;
     case 76: // "l", for log.
       log();
@@ -291,6 +343,9 @@ function collisionDetection() {
         asteroid.dead = true;
         var newAsteroids = asteroid.split();
         asteroids.push.apply(asteroids, newAsteroids);
+        if (asteroids.length === 0) {
+          levelover = true;
+        }
       }
     }
   }

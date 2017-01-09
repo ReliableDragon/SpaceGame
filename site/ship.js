@@ -11,6 +11,11 @@ class Ship {
     this.speed = movementVector;
     this.bullets = [];
   }
+  setPosition(point, facing, movementVector) {
+    this.center = point;
+    this.dir = facing;
+    this.speed = movementVector;
+  }
   rotate(rads) {
     this.dir += rads;
   }

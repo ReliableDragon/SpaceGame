@@ -1,10 +1,10 @@
 class Asteroid {
-  constructor(point, vector, size, stage) {
+  constructor(point, vector, size, stage, numChildren) {
     this.center = point;
     this.speed = vector;
     this.size = size;
     this.stage = stage;
-    this.numChildren = Math.floor(Math.random() * 2) + 2;
+    this.numChildren = numChildren;
     this.rotation = Math.random();
     this.dead = false;
   }
@@ -13,7 +13,7 @@ class Asteroid {
     if (this.stage > 0) {
       var babies = [];
       for (var i = 0; i < this.numChildren; i++) {
-        babies.push(new Asteroid(this.center.copy(), Vector.random(5), this.size * 0.6, this.stage - 1));
+        babies.push(new Asteroid(this.center.copy(), Vector.random(5), this.size * 0.6, this.stage - 1, Math.floor(Math.random() * 2) + 2));
       }
       return babies;
     } else {

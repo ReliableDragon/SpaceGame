@@ -15,7 +15,7 @@ class WSHandler(socketserver.BaseRequestHandler):
     handshook = False
     handler = spaceWS.Handler(game)
     while True:
-      print("Handling!")
+      #print("Handling!")
       global http_msg
 
       self.data = self.request.recv(4096)
@@ -24,7 +24,7 @@ class WSHandler(socketserver.BaseRequestHandler):
         return
 
       WSLogger.log(str(self.data))
-      print(str(self.data))
+      #print(str(self.data))
       
       if not handshook:
         self.data = self.data.strip()
