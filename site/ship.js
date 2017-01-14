@@ -10,6 +10,7 @@ class Ship {
     this.dead = false;
     this.speed = movementVector;
     this.bullets = [];
+    this.size = SHIP_SIZE;
   }
   setPosition(point, facing, movementVector) {
     this.center = point;
@@ -19,29 +20,30 @@ class Ship {
   rotate(rads) {
     this.dir += rads;
   }
-  accelerate(isForwards) {
-    this.speed.addInDirection(isForwards ? 0.1 : -0.1, this.dir);
+  accelerate(amount) {
+    this.speed.addInDirection(amount, this.dir);
   }
-  nose() {
-    return rotate(new Point(this.center.x + 2*SHIP_SIZE, this.center.y), this.center, this.dir);
-  }
-  backLeft() {
-    return rotate(new Point(this.center.x-SHIP_SIZE, this.center.y+SHIP_SIZE), this.center, this.dir);
-  }
-  backRight() {
-    return rotate(new Point(this.center.x-SHIP_SIZE, this.center.y-SHIP_SIZE), this.center, this.dir);
-  }
-  deadVerts() {
-    var verts = [];
-    verts.push(rotate(new Point(this.center.x + 2.5*SHIP_SIZE, this.center.y), this.nose(), 0.2));
-    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.nose(), 0.2));
-    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.nose(), -0.2));
-    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y - SHIP_SIZE), this.nose(), -0.2));
-    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.backRight(), -0.2));
-    verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y - SHIP_SIZE), this.backRight(), -0.2));
-    return verts;
-  }
+  //nose() {
+  //  return rotate(new Point(this.center.x * X_RAT + 2*SHIP_SIZE, this.center.y), this.center, this.dir);
+  //}
+  //backLeft() {
+  //  return rotate(new Point(this.center.x-SHIP_SIZE, this.center.y+SHIP_SIZE), this.center, this.dir);
+  //}
+  //backRight() {
+  //  return rotate(new Point(this.center.x-SHIP_SIZE, this.center.y-SHIP_SIZE), this.center, this.dir);
+  //}
+  //deadVerts() {
+  //  var verts = [];
+  //  verts.push(rotate(new Point(this.center.x + 2.5*SHIP_SIZE, this.center.y), this.nose(), 0.2));
+  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.nose(), 0.2));
+  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.nose(), -0.2));
+  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y - SHIP_SIZE), this.nose(), -0.2));
+  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.backRight(), -0.2));
+  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y - SHIP_SIZE), this.backRight(), -0.2));
+  //  return verts;
+  //}
   update() {
+    //console.log(this.center);
     if (this.bulletCountdown > 0) {
       this.bulletCountdown -= 1;
     }

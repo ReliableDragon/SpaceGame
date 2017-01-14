@@ -1,6 +1,5 @@
-var X_MAX = 1000;
-var Y_MAX = 600;
-
+var X_MAX = 100;
+var Y_MAX = 100;
 
 class Vector {
   constructor(x, y) {
@@ -29,6 +28,25 @@ class Vector {
     // For chaining purposes.
     return this;
   }
+  magnitude() {
+    return Math.sqrt(this.x*this.x + this.y*this.y);
+  }
+  clamp(abs) {
+    var mag = this.magnitude();
+    if (!mag) {
+      return;
+    }
+    this.x = this.x * abs / mag;
+    this.y = this.y * abs / mag;
+  }
+  times(scalar) {
+    this.x = this.x * scalar;
+    this.y = this.y * scalar;
+  }
+  times2(s1, s2) {
+    this.x = this.x * s1;
+    this.y = this.y * s2;
+  }
 }
 
 class Point {
@@ -47,6 +65,13 @@ class Point {
   }
   dist(point) {
     return Math.hypot(this.x - point.x, this.y - point.y);
+  }
+  times(scalar) {
+    this.x = this.x * scalar;
+    this.y = this.y * scalar;
+  }
+  times2(s1, s2) {
+    return new Point(this.x * s1, this.y * s2);
   }
 }
 
@@ -67,12 +92,12 @@ function rotate(point, base, amount) {
 }
 
 function wrapAround(point) {
-    if (point.x > X_MAX || point.x < 0) {
-      point.x = X_MAX - point.x;
-    }
-    if (point.y > Y_MAX || point.y < 0) {
-      point.y = Y_MAX - point.y;
-    }
+    //if (point.x > X_MAX || point.x < 0) {
+    //  point.x = X_MAX - point.x;
+    //}
+    //if (point.y > Y_MAX || point.y < 0) {
+    //  point.y = Y_MAX - point.y;
+    //}
 }
 
 function clamp(val, min, max) {

@@ -7,7 +7,7 @@ class Bullet {
     this.dead = false;
     this.center = point;
     this.dir = direction;
-    this.speed = vector || 10;
+    this.speed = vector || BULLET_SPEED;
     this.size = BULLET_SIZE;
   }
   // Repeats ship. Look into JS inheritance.

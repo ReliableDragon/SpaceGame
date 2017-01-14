@@ -11,6 +11,9 @@ var socket;
 var gameId = -1;
 var username = "testy mc test";
 var levelover = false;
+var time;
+var dt = 0;
+var fps = 60;
 
 var ship;
 var waiting = false;
@@ -19,10 +22,6 @@ var gameOver = false;
 
 var ASTEROID_SIZE = 45;
 var NUM_ASTEROIDS = 1;
-var HEIGHT = 600;
-var WIDTH = 1000;
-var X_RAT = 10;
-var Y_RAT = 6;
 
 var leftPressed = false;
 var rightPressed = false;
@@ -32,6 +31,27 @@ var spacePressed = false;
 
 var currentFunction = false;
 var resumeFunction = false;
+
+var gameData;
+
+// Okay, I need to define movement speeds so that we can translate between the server and client.
+// All units are in server units per millisecond.
+// Since we're aiming for 60 fps, we have some math: 0.5 @ 60fps = 0.03 / ms.
+// Ship:
+//  Forward = 0.03
+//  Backward = -0.03
+//  Turn = +/- 0.03
+//  Top Speed = 0.29
+// Asteroids:
+//  Speed <= .3 * (3 - size)
+// Bullets:
+//  Speed = 0.6
+
+// Related constants:
+var ACCELERTATION = 0.015;
+var TURN_SPEED = 0.0075;
+var SHIP_TOP_SPEED = 5;
+var BULLET_SPEED = 0.6;
 
 window.onload = function() {
   canvas = document.getElementById("canvas");
@@ -91,9 +111,10 @@ function sendData() {
 }
 
 function startGameFromData(data) {
+  gameData = data;
   if (data.ship) {
     ship.setPosition(
-                     new Point(data.ship.center.x * X_RAT, data.ship.center.y * Y_RAT),
+                     new Point(data.ship.center.x, data.ship.center.y),
                      data.ship.dir,
                      new Vector(data.ship.speed.x, data.ship.speed.y));
   }
@@ -107,7 +128,7 @@ function startGameFromData(data) {
     for (var i = 0; i < data.asteroids.length; i++) {
       dataAsteroid = data.asteroids[i];
       asteroids.push(new Asteroid(
-                                  new Point(dataAsteroid.center.x * X_RAT, dataAsteroid.center.y * Y_RAT),
+                                  new Point(dataAsteroid.center.x, dataAsteroid.center.y),
                                   new Vector(dataAsteroid.speed.x, dataAsteroid.speed.y),
                                   dataAsteroid.size,
                                   dataAsteroid.stage,
@@ -117,10 +138,16 @@ function startGameFromData(data) {
 }
 
 function loop() {
+  var now = new Date().getTime();
+  dt = now - (time || now);
+  time = now;
+  
   if (currentFunction) {
     currentFunction();
   }
-  requestId = requestAnimationFrame(loop);
+  requestId = setTimeout(function() {
+    requestAnimationFrame(loop);
+  }, 1000 / fps);
 }
 
 function animate(f) {
@@ -163,8 +190,8 @@ function handleDeath() {
 }
 
 function newShip() {
-  x = canvas.width / 2;
-  y = canvas.height / 2;
+  x = X_MAX / 2;
+  y = Y_MAX / 2;
   dir = -Math.PI/2;
   speed = Vector.zero();
   
@@ -195,21 +222,21 @@ function draw() {
 
 function handleInput() {
   if (rightPressed) {
-    ship.rotate(0.1);
+    ship.rotate(TURN_SPEED * dt);
   }
   if (leftPressed) {
-    ship.rotate(-0.1);
+    ship.rotate(TURN_SPEED * -dt);
   }
   if (upPressed) {
-    ship.accelerate(true);
+    ship.accelerate(ACCELERTATION * dt);
   }
   if (downPressed) {
-    ship.accelerate(false);
+    ship.accelerate(ACCELERTATION * -dt);
   }
   if (spacePressed) {
     ship.fire();
   }
-  clamp(ship.speed, -5, 5);
+  ship.speed.clamp(SHIP_TOP_SPEED);
 }
 
 function updateObjects() {
