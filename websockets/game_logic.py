@@ -1,4 +1,4 @@
-import json, random, string, math, time
+import json, random, string, math, time, threading
 from player_ship import Ship
 import utils
 
@@ -9,11 +9,15 @@ import utils
 #   - The client will provide a username, and the server will create a game_id.
 #   - The server will then return the inital state of the game space.
 # TODO: Add a unique ship identifier to avoid collisions and prevent spoofing.
+# TODO: Require usernames to be unique.
 # On update:
 #   - The client will provide their game_id and username, which uniquely identify
 #     their ship, along with information on inputs.
 #   - The server will then update the ship's input status, and send back the current
 #     game state.
+
+lock = threading.Lock()
+
 class AsteroidsGame(object):
   X_MAX = 200
   Y_MAX = 100
@@ -26,10 +30,10 @@ class AsteroidsGame(object):
     
   def loop(self):
     while True:
-      start_time = time.time() * 1000
-      for game_id,game in self.games.items():
-        AsteroidsGame.increment_game(game)
-      end_time = time.time() * 1000
+      start_time = utils.get_time()
+      for game_id in list(self.games):
+        self.increment_game(game_id)
+      end_time = utils.get_time()
       # The goal here is 17ms loops, which corresponds to 60fps, which is the speed that
       # the client updates at, so there's not a lot of reason to update faster. However,
       # if we get behind the algorithm uses delta time, so it will keep up, it just might
@@ -40,12 +44,14 @@ class AsteroidsGame(object):
 
   def input(self, raw_data):
     data = json.loads(raw_data)
-    #print("Data: {0}".format(data))
     state = data['gamestate']
     if state == "new":
       return self.create_new_game(data)
     else:
-      return self.increment_game(data)
+      self.update_player(data)
+      game_id = data["game_id"]
+      with lock:
+        return json.dumps(self.games[game_id])
     
   def create_new_game(self, data):
     game_key = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(8))
@@ -65,33 +71,59 @@ class AsteroidsGame(object):
         asteroid
       ]
     }
-    self.games[game_key] = game_state
+    with lock:
+      self.games[game_key] = game_state
     return json.dumps(game_state)
   
-  @staticmethod
-  def increment_game(game_state):
+  def update_player(self, data):
+    game_id = data["game_id"]
+    name = data["name"]
+    with lock:
+      game_data = self.games[game_id]
+    # List comprehension. Grab the first (only) element in the ships array
+    # where the name matches the username.
+    # TODO: Switch to using unique ids for the ships.
+    ship_index = -1
+    raw_ships = game_data["ships"]
+    for i in range(0, len(raw_ships)):
+      if raw_ships[i]["name"] == name:
+        ship_index = i
+        break
+    if ship_index == -1:
+      raise Exception("Failed to find ship!")
+    ship_dict = raw_ships[i]
+    ship_dict["inputs"] = data["keys"]
+    with lock:
+      self.games[game_id]["ships"][i] = ship_dict
+  
+  def increment_game(self, game_id):
+    with lock:
+      game_state = self.games[game_id]
     time_delta = utils.get_time() - game_state["last_updated"]
-    ships = Ship.from_dict(game_state["ships"])
+    raw_ships = game_state["ships"]
+    ships = [Ship.from_dict(s) for s in raw_ships]
+    for ship in ships:
+      AsteroidsGame.move_ship(ship, time_delta)
+    raw_ships = [s.to_dict() for s in ships]
     
-    ship = self.move_ship(game_state, ship["keys"], ship, time_delta)
-    
-    game_state["ship"] = ship.to_dict()
+    game_state["ships"] = raw_ships
     game_state["last_updated"] = utils.get_time()
-    self.games["game_id"] = game_state
+    with lock:
+      self.games[game_id] = game_state
     return json.dumps(game_state)
   
   @staticmethod
-  def move_ship(game_state, data, ship, dt):
-    print(dt)
-    if data["up"]:
+  def move_ship(ship, dt):
+    # TODO: Potentially move into ship class.
+    if ship.inputs["up"]:
       ship.accelerate(AsteroidsGame.ACCELERATION * dt)
-    if data["down"]:
+    if ship.inputs["down"]:
       ship.accelerate(-AsteroidsGame.ACCELERATION * dt)
-    if data["left"]:
+    if ship.inputs["left"]:
       ship.rotate(-AsteroidsGame.TURN_SPEED * dt)
-    if data["right"]:
+    if ship.inputs["right"]:
       ship.rotate(AsteroidsGame.TURN_SPEED * dt)
-    if data["space"]:
+    if ship.inputs["space"]:
       #TODO: Implement bullets.
       pass
     ship.move()
@@ -115,6 +147,7 @@ class AsteroidsGame(object):
         "up": False,
         "down": False,
         "left": False,
+        "right": False,
         "up": False,
         "space": False,
       }

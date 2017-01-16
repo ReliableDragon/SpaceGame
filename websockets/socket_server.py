@@ -73,7 +73,7 @@ def startServer():
   global game
   
   game = game_logic.AsteroidsGame()
-  game_thread = Thread(target=game.loop, name="game_thread")
+  game_thread = threading.Thread(target=game.loop, name="game_thread")
   game_thread.start()
   
   HOST, PORT = "", 8080

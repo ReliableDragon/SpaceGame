@@ -102,14 +102,14 @@ function sendData() {
 }
 
 function startGameFromData(data) {
-  //var serverSpeed = new Vector(data.ship.speed.x, data.ship.speed.y);
+  //var serverSpeed = new Vector(data.ships[0].speed.x, data.ships[0].speed.y);
   //if (!serverSpeed.equals(ship.speed)) {
   //  console.log("Speed:");
   //  console.log("Server: " + serverSpeed.x + ", " + serverSpeed.y);
   //  console.log("Local:  " + ship.speed.x + ", " + ship.speed.y);
   //  console.log("Diff:   " + (ship.speed.x - serverSpeed.x) + ", " + (ship.speed.y - serverSpeed.y));
   //}
-  //var serverPosition = new Point(data.ship.center.x, data.ship.center.y);
+  //var serverPosition = new Point(data.ships[0].center.x, data.ships[0].center.y);
   //if (!serverPosition.equals(ship.center)) {
   //  console.log("Position:");
   //  console.log("Server: " + serverPosition.x + ", " + serverPosition.y);
