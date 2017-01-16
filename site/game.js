@@ -49,7 +49,6 @@ window.onload = function() {
   ctx = canvas.getContext("2d");
 
   openSocket();
-  setInterval(sendData, 10);
   
   startGame();
   loop();
@@ -65,6 +64,7 @@ function openSocket() {
       gamestate: "new",
       name: username,
       }));
+    setInterval(sendData, 10);
   };
   socket.onmessage = function(s) {
     if (logSocketCalls) {
