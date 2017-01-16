@@ -14,14 +14,14 @@ An exercise in web programming.
 # Setup with Docker
 * Install docker.
 * While it's installing, edit your /etc/hosts file so that www.spacegame.com, spacegame.com, and dblocation all point at your local machine.
-* Pull down sethborder/wsgi_server and sethborder/websocket_server.
+* Pull down sethborder/wsgi_server and sethborder/websocket_server from DockerHub.
 * Run the start_container.sh  and start_websocket_container.sh scripts, replacing the ~/GitHub/SpaceGame/WSGI, ~/GitHub/SpaceGame/site, and ~/GitHub/SpaceGame/websockets directories with the links to where you've put the WSGI, site and websockets folders from this git repository. (In your local copy, please! The version on git should stay with the links as they are, so that this walkthrough makes sense.)
-* (Note: This script assumes you have only one network interface running, you're using IPV4, and that ifconfig works on your system. If this isn't true, you'll have to manually run the 2nd line, substituting in your IP address for the variable $HOST_IP.)
-* Once you get the terminal, run /usr/local/bin/start.sh to start the server. (The same script is used to start both servers.)
+* (Note: This script assumes you have only one network interface running, you're using IPV4, and that ifconfig works on your system. If this isn't true, you'll have to manually run the 2nd line of the script, substituting in your IP address for the variable $HOST_IP.)
+* Once you get the terminal, run /usr/local/bin/start.sh to start the server. (The same script name is used in both servers.)
 
 
-# Set Up App Manually
-This setup is slightly outdated, and Docker is the prefered way to run this project now. Please note that these docs may be somewhat out of date, and do not include instructions to set up the websocket server, though it is fairly straightforward and vanilla python, so if you want to do it locally it shouldn't be hard.
+# Set Up App Manually (Deprecated)
+This setup is slightly outdated, and Docker is the prefered way to run this project now. Please note that these docs may be somewhat out of date, and do not include instructions to set up the websocket server, though it is fairly straightforward vanilla python, so if you want to do it locally it shouldn't be hard.
 * Install Python 3.5
 * Set up pip (or pip3) and make sure it's the 3.5 version.
 * Install mysql-connector-python from here: http://dev.mysql.com/downloads/connector/python/
