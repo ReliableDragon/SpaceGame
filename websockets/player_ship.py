@@ -1,4 +1,5 @@
 import utils, math, json
+import bullet
 
 class Ship(object):
   
@@ -37,13 +38,14 @@ class Ship(object):
     
   @staticmethod
   def from_dict(data):
+    bullet_list = [bullet.Bullet.from_dict(b) for b in data["bullets"]]
     return Ship(
       utils.Point(data["center"]["x"], data["center"]["y"]),
       utils.Vector(data["speed"]["x"], data["speed"]["y"]),
       data["rotation"],
       data["name"],
       data["inputs"],
-      data["bullets"],
+      bullet_list,
       data["bullet_countdown"],
       data["bullet_recharge"],
       data["bullet_speed"],
@@ -52,13 +54,14 @@ class Ship(object):
       data["size"])
   
   def to_dict(self):
+    raw_bullet_list = [bullet.Bullet.to_dict(b) for b in self.bullets]
     return {
       "center": self.center.__dict__,
       "speed": self.speed.__dict__,
       "rotation": self.rotation,
       "name": self.name,
       "inputs": self.inputs,
-      "bullets": self.bullets,
+      "bullets": raw_bullet_list,
       "bullet_countdown": self.bullet_countdown,
       "bullet_recharge": self.bullet_recharge,
       "bullet_speed": self.bullet_speed,
@@ -78,14 +81,14 @@ class Ship(object):
   
   def createBullet(self):
     start_point = self.nose().copy()
-    direction = self.dir
+    direction = self.rotation
     unit_vector_for_direction = utils.Vector.unit_vector(direction)
     # The bullet will always fire straight, but if the ship is going fast the bullets should still outrun it.
     # To do this, we project the ships speed along the unit vector in the direction the bullet will be travelling.
     # Then we add the base bullet speed. This should only have noticable effect when travelling quickly and firing forwards.
     bullet_speed = self.speed.dot_product(unit_vector_for_direction) + self.bullet_speed
-    speed = Vector.dir_mag(direction, bullet_speed)
-    return bullet.Bullet(start_point, direction, speed)
+    speed = utils.Vector.dir_mag(direction, bullet_speed)
+    return bullet.Bullet(start_point, speed)
 
   def update_bullets(self):
     i = 0
@@ -105,6 +108,8 @@ class Ship(object):
     self.rotation += rads
     
   def update(self):
+    if self.bullet_countdown > 0:
+      self.bullet_countdown -= 1
     self.move()
     self.update_bullets()
     

@@ -54,6 +54,7 @@ class AsteroidsGame(object):
     
   def create_new_game(self, data):
     game_key = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(8))
+    print("New game created! Key is {0}".format(game_key))
     username = data["name"]
     ship = self.new_ship(username)
     milli_time = utils.get_time()
@@ -131,13 +132,12 @@ class AsteroidsGame(object):
     if ship.inputs["space"]:
       ship.fire()
       pass
-    ship.move()
+    ship.update()
     return ship
   
   @staticmethod
   def new_ship(username):
     ship_dict = Ship(name=username).to_dict()
-    print(ship_dict)
     return ship_dict
   
   @staticmethod

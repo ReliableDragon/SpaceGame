@@ -22,6 +22,7 @@ def handshake(headers):
           "Sec-WebSocket-Accept: {0}\n\n".format(accCode)
   return resp.encode('utf-8')
 
+# TODO: Investigate if this is threadsafe. I suspect it is not.
 class Handler:
 
   def __init__(self, game):
@@ -33,23 +34,18 @@ class Handler:
     self.length = -1
     self.decoded = b""
     self.buffer = b""
+    self.closed = False
     self.game = game
+    self.status = "starting"
 
   def handle(self, data):
-    # print("Handling data frame: " + str(data))
     
-    # This is opcode 1001, which means "close".
-    if data == b"\x03\xe9":
-      return True
     self.buffer += data
     msgLen,bytes_used = getMsgLenAndSize(self.buffer)
     overheadLen = 5 + bytes_used
-    #print("Buffer size: {0}\nMessage length: {1}\nBytes used: {2}".format(len(self.buffer), msgLen, bytes_used))
     if  len(self.buffer) - overheadLen < msgLen:
-      #print("Message not finished. Buffering...")
       return False
     else:
-      #print("Decoding!")
       self.decodeMessage(self.buffer)
       return self.done
 
@@ -86,9 +82,10 @@ class Handler:
     if lastMessage:
       #TODO: Decrypt differently depending on data type.
       self.buffer = b""
-      #print("Done! Precoding: {0}".format(self.decoded))
+      
       try:
         self.msg = self.game.input(self.decoded.decode('utf-8'))
+        self.status = "reply_ready"
       except UnicodeDecodeError as e:
         print("Got message that was not unicode. Trying close opcodes...")
         opcode = struct.unpack("!h", self.decoded)[0]
@@ -102,13 +99,14 @@ class Handler:
           print("Connection terminated because the endpoint received data it could not accept.")
         else:
           print("Not a valid opcode. (Got {0}. Hex: {1})".format(opcode, self.decoded))
+          self.status = "error"
+          return
         self.decoded = b""
-        #print("Exception: {0}\nError decoding message: {1}\nType: {2}".format(str(e), self.decoded, type(self.decoded)))
+        self.status = "close"
 
     self.done = lastMessage
 
   def frameForMessage(self, msg, opcode):
-    #print("Encoding message: {0}".format(msg))
     result = b""
     result += bytes([128 + opcode])
     if len(msg) < 126:

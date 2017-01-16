@@ -19,7 +19,8 @@ class Point(object):
     translated = Point(point.x - base.x, point.y - base.y)
     rot_X = translated.x * math.cos(amount) - translated.y * math.sin(amount)
     rot_Y = translated.y * math.cos(amount) + translated.x * math.sin(amount)
-    un_translated = Point(rotX + base.x, rotY + base.y)
+    un_translated = Point(rot_X + base.x, rot_Y + base.y)
+    return un_translated
     
   def to_json(self):
     return json.dumps(self.__dict__)

@@ -102,6 +102,9 @@ function sendData() {
 }
 
 function startGameFromData(data) {
+  // Predeclare loop variables, due to js not having block scope. -_-
+  var i;
+  
   //var serverSpeed = new Vector(data.ships[0].speed.x, data.ships[0].speed.y);
   //if (!serverSpeed.equals(ship.speed)) {
   //  console.log("Speed:");
@@ -121,9 +124,14 @@ function startGameFromData(data) {
     var shipData = data.ships[0];
     ship.setPosition(
                      new Point(shipData.center.x, shipData.center.y),
-                     shipData.dir,
+                     shipData.rotation,
                      new Vector(shipData.speed.x, shipData.speed.y));
-    ship.setBullets(shipData.bullets);
+    var rawBullets = shipData.bullets;
+    var realBullets = [];
+    for (i = 0; i < rawBullets.length; i++) {
+      realBullets.push(Bullet.fromDict(rawBullets[i]));
+    }
+    ship.setBullets(realBullets);
   }
   if (data.game_id) {
     gameId = data.game_id;
@@ -132,7 +140,7 @@ function startGameFromData(data) {
   }
   if (data.asteroids) {
     asteroids = [];
-    for (var i = 0; i < data.asteroids.length; i++) {
+    for (i = 0; i < data.asteroids.length; i++) {
       dataAsteroid = data.asteroids[i];
       asteroids.push(new Asteroid(
                                   new Point(dataAsteroid.center.x, dataAsteroid.center.y),

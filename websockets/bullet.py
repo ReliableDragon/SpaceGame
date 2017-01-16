@@ -12,7 +12,7 @@ class Bullet(object):
     self.center = center
     self.speed = speed
     self.size = bullet_size
-    self.lifetime = life
+    self.lifetime = lifetime
     self.ticks = ticks
     self.dead = dead
     

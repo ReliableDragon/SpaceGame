@@ -9,13 +9,11 @@ http_msg = b'GET / HTTP/1.1'
 game = ""
 
 class WSHandler(socketserver.BaseRequestHandler):
-
   def handle(self):
     global game
-    handshook = False
+    handshakes = set()
     handler = spaceWS.Handler(game)
     while True:
-      #print("Handling!")
       global http_msg
 
       self.data = self.request.recv(4096)
@@ -24,9 +22,8 @@ class WSHandler(socketserver.BaseRequestHandler):
         return
 
       WSLogger.log(str(self.data))
-      #print(str(self.data))
-      
-      if not handshook:
+      incoming_ip = self.client_address[0]
+      if not incoming_ip in handshakes:
         self.data = self.data.strip()
         lines = self.data.split(b"\r\n")
         if not http_msg in lines:
@@ -43,13 +40,19 @@ class WSHandler(socketserver.BaseRequestHandler):
 
           self.data = spaceWS.handshake(headers)
           self.request.sendall(self.data)
-          handshook = True
+          handshakes.add(incoming_ip)
       else:
+        # TODO: Handle pings and pongs.
         if handler.handle(self.data):
-          self.data = handler.getMessage()
-          bytedata = self.data.encode('utf-8')
-          frame = handler.frameForMessage(bytedata, 1)
-          self.request.sendall(frame)
+          if handler.status == "reply_ready":
+            self.data = handler.getMessage()
+            bytedata = self.data.encode('utf-8')
+            frame = handler.frameForMessage(bytedata, 1)
+            self.request.sendall(frame)
+          elif handler.status == "close":
+            frame = handler.frameForMessage(b"", 8)
+            self.request.sendall(frame)
+            handshakes.remove(incoming_ip)
 
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
   # Ctrl-C will cleanly kill all spawned threads
@@ -57,6 +60,7 @@ class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
   # much faster rebinding
   allow_reuse_address = True
 
+# Exists for testing purposes. Largely outdated, but kept around just in case.
 def client(ip, port, message):
   sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
   sock.connect((ip, port))

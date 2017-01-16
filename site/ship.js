@@ -19,7 +19,10 @@ class Ship {
     this.speed = movementVector;
   }
   setBullets(bullets) {
-    this.bullets = bullets;
+    this.bullets = [];
+    for (var i = 0; i < bullets.length; i++) {
+      this.bullets.push(bullets[i]);
+    }
   }
   rotate(rads) {
     this.dir += rads;
