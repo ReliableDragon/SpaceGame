@@ -40,7 +40,7 @@ class Ship(object):
     return Ship(
       utils.Point(data["center"]["x"], data["center"]["y"]),
       utils.Vector(data["speed"]["x"], data["speed"]["y"]),
-      data["dir"],
+      data["rotation"],
       data["name"],
       data["inputs"],
       data["bullets"],
@@ -49,13 +49,13 @@ class Ship(object):
       data["bullet_speed"],
       data["dead"],
       data["max_bullets"],
-      data["size"]),
+      data["size"])
   
   def to_dict(self):
     return {
       "center": self.center.__dict__,
       "speed": self.speed.__dict__,
-      "dir": self.rotation,
+      "rotation": self.rotation,
       "name": self.name,
       "inputs": self.inputs,
       "bullets": self.bullets,
@@ -68,7 +68,7 @@ class Ship(object):
     }
   
   def fire(self):
-    if self.bulletCountdown == 0 and not ship.dead:
+    if self.bullet_countdown == 0 and not self.dead:
       self.bullets.append(self.createBullet())
       if len(self.bullets) > self.max_bullets:
         self.bullets.pop(0)
@@ -120,7 +120,7 @@ class Ship(object):
     
     
   def nose(self):
-    return utils.rotate(utils.Point(self.center.x + 2*self.size, self.center.y), self.center, self.dir)
+    return utils.Point.rotate(utils.Point(self.center.x + 2*self.size, self.center.y), self.center, self.rotation)
   
   
   

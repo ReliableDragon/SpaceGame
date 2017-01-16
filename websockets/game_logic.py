@@ -136,7 +136,9 @@ class AsteroidsGame(object):
   
   @staticmethod
   def new_ship(username):
-    return Ship().to_dict()
+    ship_dict = Ship(name=username).to_dict()
+    print(ship_dict)
+    return ship_dict
   
   @staticmethod
   def make_asteroid(uid, stage):

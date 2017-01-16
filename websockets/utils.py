@@ -13,7 +13,9 @@ class Point(object):
     return Point(data["x"], data["y"])
   
   @staticmethod
-  def rotate(point, base = Point(0, 0), amount = 0):
+  def rotate(point, base = None, amount = 0):
+    if base == None:
+      base = Point(0, 0)
     translated = Point(point.x - base.x, point.y - base.y)
     rot_X = translated.x * math.cos(amount) - translated.y * math.sin(amount)
     rot_Y = translated.y * math.cos(amount) + translated.x * math.sin(amount)

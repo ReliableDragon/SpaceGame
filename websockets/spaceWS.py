@@ -36,7 +36,11 @@ class Handler:
     self.game = game
 
   def handle(self, data):
-    #print("Handling data frame: " + str(data))
+    # print("Handling data frame: " + str(data))
+    
+    # This is opcode 1001, which means "close".
+    if data == b"\x03\xe9":
+      return True
     self.buffer += data
     msgLen,bytes_used = getMsgLenAndSize(self.buffer)
     overheadLen = 5 + bytes_used
@@ -86,7 +90,20 @@ class Handler:
       try:
         self.msg = self.game.input(self.decoded.decode('utf-8'))
       except UnicodeDecodeError as e:
-        print("Exception: {0}\nError decoding message: {1}".format(str(e), self.msg))
+        print("Got message that was not unicode. Trying close opcodes...")
+        opcode = struct.unpack("!h", self.decoded)[0]
+        if opcode == 1000:
+          print("Connection closed normally.")
+        elif opcode == 1001:
+          print("Endpoint going away. (Browser navigation or refresh)")
+        elif opcode == 1002:
+          print("Connection terminated due to protocol error.")
+        elif opcode == 1003:
+          print("Connection terminated because the endpoint received data it could not accept.")
+        else:
+          print("Not a valid opcode. (Got {0}. Hex: {1})".format(opcode, self.decoded))
+        self.decoded = b""
+        #print("Exception: {0}\nError decoding message: {1}\nType: {2}".format(str(e), self.decoded, type(self.decoded)))
 
     self.done = lastMessage
 
