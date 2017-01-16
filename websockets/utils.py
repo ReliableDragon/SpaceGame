@@ -1,4 +1,4 @@
-import json, math
+import json, math, time
 
 class Point(object):
   def __init__(self, x, y):
@@ -32,3 +32,12 @@ def wrap_around(point):
   elif point.y < 0:
     point.y += 100
   return point
+
+def get_time():
+    return int(round(time.time() * 1000))
+  
+  
+  
+  
+  
+  

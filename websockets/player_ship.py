@@ -1,6 +1,7 @@
 import utils, math, json
 
 class Ship(object):
+  
   def __init__(self, center=utils.Point(0, 0), speed=utils.Vector(0, 0), rotation=-math.pi/2, name="testy mc testface"):
     self.center = center
     self.speed = speed
@@ -23,8 +24,8 @@ class Ship(object):
       "name": self.name
     }
     
-  def accelerate(self, is_forwards):
-    self.speed.add_in_direction(0.5 * (1 if is_forwards else -1), self.rotation)
+  def accelerate(self, amount):
+    self.speed.add_in_direction(amount, self.rotation)
     
   def rotate(self, rads):
     self.rotation += rads

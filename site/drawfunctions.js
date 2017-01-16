@@ -1,7 +1,7 @@
 var HEIGHT = 600;
 var WIDTH = 1000;
-var X_RAT = 10;
-var Y_RAT = 6;
+var X_RAT = 6; // 1200 / 200 = 6
+var Y_RAT = 6;  // 600 / 100 = 6
 
 function drawShip(ship) {
   if (!ship.dead) {
@@ -15,9 +15,9 @@ function drawAliveShip() {
   ctx.beginPath();
   ctx.strokeStyle = "#FFFFFF";
   
-  var nose = getNose(ship);
-  var backLeft = getBackLeft(ship);
-  var backRight = getBackRight(ship);
+  var nose = ship.nose().times2(X_RAT, Y_RAT);
+  var backLeft = ship.backLeft().times2(X_RAT, Y_RAT);
+  var backRight = ship.backRight().times2(X_RAT, Y_RAT);
   
   ctx.moveTo(nose.x, nose.y);
   ctx.lineTo(backLeft.x, backLeft.y);
@@ -31,7 +31,7 @@ function drawDeadShip() {
   ctx.beginPath();
   ctx.strokeStyle = "#FFFFFF";
   
-  var verts = ship.deadVerts();
+  var verts = deadVerts(ship)
   
   // There's three lines, and six vertices. Hence, three iterations with two steps each.
   for (var i = 0; i < 3; i++) {
@@ -89,22 +89,13 @@ function drawLevelPassedText() {
   ctx.fillText("LEVEL PASSED", canvas.width/2 - 220, canvas.height/2);
 }
 
-function getNose(ship) {
-  return rotate(new Point(ship.center.x + 2*SHIP_SIZE, ship.center.y), ship.center, ship.dir);
-}
-function getBackLeft(ship) {
-  return rotate(new Point(ship.center.x -SHIP_SIZE, ship.center.y+SHIP_SIZE), ship.center, ship.dir);
-}
-function getBackRight(ship) {
-  return rotate(new Point(ship.center.x -SHIP_SIZE, ship.center.y-SHIP_SIZE), ship.center, ship.dir);
-}
 function deadVerts(ship) {
   var verts = [];
-  verts.push(rotate(new Point(ship.center.x * X_RAT + 2.5*SHIP_SIZE, ship.center.y * Y_RAT), getNose(ship), 0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), getNose(ship), 0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), getNose(ship), -0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT - SHIP_SIZE), getNose(ship), -0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), getBackRight(ship), -0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT - SHIP_SIZE), getBackRight(ship), -0.2));
+  verts.push(rotate(new Point(ship.center.x * X_RAT + 2.5*SHIP_SIZE, ship.center.y * Y_RAT), ship.nose(), 0.2));
+  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), ship.nose(), 0.2));
+  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), ship.nose(), -0.2));
+  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT - SHIP_SIZE), ship.nose(), -0.2));
+  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), ship.backRight(), -0.2));
+  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT - SHIP_SIZE), ship.backRight(), -0.2));
   return verts;
 }

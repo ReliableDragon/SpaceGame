@@ -1,4 +1,4 @@
-var X_MAX = 100;
+var X_MAX = 200;
 var Y_MAX = 100;
 
 class Vector {
@@ -9,14 +9,20 @@ class Vector {
   static zero() {
     return new Vector(0, 0);
   }
-  // TODO: Currently this goes faster diagonally. Change it to randomly decide speed, then
-  // direction properly using trig.
+  static unitVector(dir) {
+    return Vector.zero().addInDirection(1, dir);
+  }
   static random(max) {
     return Vector.zero().addInDirection(Math.random() * max, Math.random() * Math.PI * 2);
-    //return new Vector(Math.floor(Math.random() * max - max/2), Math.floor(Math.random() * max - max/2));
   }
   static dirMag(dir, speed) {
     return new Vector(Math.cos(dir) * speed, Math.sin(dir) * speed);
+  }
+  static angleBetween(v1, v2) {
+    return Math.atan2(v1.x, v2.y) - Math.atan2(v2.x, v2.y);
+  }
+  equals(v2) {
+    return this.x === v2.x && this.y === v2.y;
   }
   copy() {
     return new Vector(this.x, this.y);
@@ -31,13 +37,20 @@ class Vector {
   magnitude() {
     return Math.sqrt(this.x*this.x + this.y*this.y);
   }
+  // Projects this onto vector v2.
+  dotProduct(v2) {
+    var angle = Vector.angleBetween(this, v2);
+    var mag = this.magnitude();
+    return mag * Math.cos(angle);
+  }
   clamp(abs) {
     var mag = this.magnitude();
     if (!mag) {
       return;
+    } else if (mag > abs) {
+      this.x = this.x * abs / mag;
+      this.y = this.y * abs / mag;
     }
-    this.x = this.x * abs / mag;
-    this.y = this.y * abs / mag;
   }
   times(scalar) {
     this.x = this.x * scalar;
@@ -56,6 +69,9 @@ class Point {
   }
   static random() {
     return new Point(Math.floor(Math.random() * X_MAX), Math.floor(Math.random() * Y_MAX));
+  }
+  equals(p2) {
+    return this.x === p2.x && this.y === p2.y;
   }
   copy() {
     return new Point(this.x, this.y);
@@ -92,12 +108,12 @@ function rotate(point, base, amount) {
 }
 
 function wrapAround(point) {
-    //if (point.x > X_MAX || point.x < 0) {
-    //  point.x = X_MAX - point.x;
-    //}
-    //if (point.y > Y_MAX || point.y < 0) {
-    //  point.y = Y_MAX - point.y;
-    //}
+    if (point.x > X_MAX || point.x < 0) {
+      point.x = X_MAX - point.x;
+    }
+    if (point.y > Y_MAX || point.y < 0) {
+      point.y = Y_MAX - point.y;
+    }
 }
 
 function clamp(val, min, max) {

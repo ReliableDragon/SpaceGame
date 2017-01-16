@@ -14,6 +14,7 @@ var levelover = false;
 var time;
 var dt = 0;
 var fps = 60;
+var data;
 
 var ship;
 var waiting = false;
@@ -34,24 +35,14 @@ var resumeFunction = false;
 
 var gameData;
 
-// Okay, I need to define movement speeds so that we can translate between the server and client.
-// All units are in server units per millisecond.
-// Since we're aiming for 60 fps, we have some math: 0.5 @ 60fps = 0.03 / ms.
-// Ship:
-//  Forward = 0.03
-//  Backward = -0.03
-//  Turn = +/- 0.03
-//  Top Speed = 0.29
-// Asteroids:
-//  Speed <= .3 * (3 - size)
-// Bullets:
-//  Speed = 0.6
-
-// Related constants:
-var ACCELERTATION = 0.015;
+//TODO: Have server provide these in the initial data package.
+// Okay, I need to define movement speeds in server units per millisecond instead of client units per frame,
+// so that we can translate between the server and client more accurately.
+// Canonical constants:
+var ACCELERTATION = 0.005;
 var TURN_SPEED = 0.0075;
 var SHIP_TOP_SPEED = 5;
-var BULLET_SPEED = 0.6;
+var BULLET_SPEED = 0.05;
 
 window.onload = function() {
   canvas = document.getElementById("canvas");
@@ -105,18 +96,33 @@ function sendData() {
       name: username,
       game_id: gameId,
     });
-    console.log("Sending message:\n" + message);
+    //console.log("Sending message:\n" + message);
     socket.send(message);
   }
 }
 
 function startGameFromData(data) {
-  gameData = data;
-  if (data.ship) {
+  //var serverSpeed = new Vector(data.ship.speed.x, data.ship.speed.y);
+  //if (!serverSpeed.equals(ship.speed)) {
+  //  console.log("Speed:");
+  //  console.log("Server: " + serverSpeed.x + ", " + serverSpeed.y);
+  //  console.log("Local:  " + ship.speed.x + ", " + ship.speed.y);
+  //  console.log("Diff:   " + (ship.speed.x - serverSpeed.x) + ", " + (ship.speed.y - serverSpeed.y));
+  //}
+  //var serverPosition = new Point(data.ship.center.x, data.ship.center.y);
+  //if (!serverPosition.equals(ship.center)) {
+  //  console.log("Position:");
+  //  console.log("Server: " + serverPosition.x + ", " + serverPosition.y);
+  //  console.log("Local:  " + ship.center.x + ", " + ship.center.y);
+  //  console.log("Diff:   " + (ship.center.x - serverPosition.x) + ", " + (ship.center.y - serverPosition.y));
+  //}
+  
+  if (data.ships[0]) {
+    var shipData = data.ships[0];
     ship.setPosition(
-                     new Point(data.ship.center.x, data.ship.center.y),
-                     data.ship.dir,
-                     new Vector(data.ship.speed.x, data.ship.speed.y));
+                     new Point(shipData.center.x, shipData.center.y),
+                     shipData.dir,
+                     new Vector(shipData.speed.x, shipData.speed.y));
   }
   if (data.game_id) {
     gameId = data.game_id;

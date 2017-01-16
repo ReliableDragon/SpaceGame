@@ -36,16 +36,16 @@ class Handler:
     self.game = game
 
   def handle(self, data):
-    print("Handling data frame: " + str(data))
+    #print("Handling data frame: " + str(data))
     self.buffer += data
     msgLen,bytes_used = getMsgLenAndSize(self.buffer)
     overheadLen = 5 + bytes_used
-    print("Buffer size: {0}\nMessage length: {1}\nBytes used: {2}".format(len(self.buffer), msgLen, bytes_used))
+    #print("Buffer size: {0}\nMessage length: {1}\nBytes used: {2}".format(len(self.buffer), msgLen, bytes_used))
     if  len(self.buffer) - overheadLen < msgLen:
-      print("Message not finished. Buffering...")
+      #print("Message not finished. Buffering...")
       return False
     else:
-      print("Decoding!")
+      #print("Decoding!")
       self.decodeMessage(self.buffer)
       return self.done
 
@@ -82,13 +82,13 @@ class Handler:
     if lastMessage:
       #TODO: Decrypt differently depending on data type.
       self.buffer = b""
-      print("Done! Precoding: {0}".format(self.decoded))
+      #print("Done! Precoding: {0}".format(self.decoded))
       self.msg = self.game.input(self.decoded.decode('utf-8'))
 
     self.done = lastMessage
 
   def frameForMessage(self, msg, opcode):
-    print("Encoding message: {0}".format(msg))
+    #print("Encoding message: {0}".format(msg))
     result = b""
     result += bytes([128 + opcode])
     if len(msg) < 126:

@@ -1,6 +1,7 @@
-var SHIP_SIZE = 10;
+var SHIP_SIZE = 10/6;
 var BULLET_COUNTDOWN = 7;
 var MAX_BULLETS = 7;
+var SHIP_BULLET_SPEED = 2.5;
 
 class Ship {
   constructor(point, facing, movementVector) {
@@ -23,25 +24,6 @@ class Ship {
   accelerate(amount) {
     this.speed.addInDirection(amount, this.dir);
   }
-  //nose() {
-  //  return rotate(new Point(this.center.x * X_RAT + 2*SHIP_SIZE, this.center.y), this.center, this.dir);
-  //}
-  //backLeft() {
-  //  return rotate(new Point(this.center.x-SHIP_SIZE, this.center.y+SHIP_SIZE), this.center, this.dir);
-  //}
-  //backRight() {
-  //  return rotate(new Point(this.center.x-SHIP_SIZE, this.center.y-SHIP_SIZE), this.center, this.dir);
-  //}
-  //deadVerts() {
-  //  var verts = [];
-  //  verts.push(rotate(new Point(this.center.x + 2.5*SHIP_SIZE, this.center.y), this.nose(), 0.2));
-  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.nose(), 0.2));
-  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.nose(), -0.2));
-  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y - SHIP_SIZE), this.nose(), -0.2));
-  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y + SHIP_SIZE), this.backRight(), -0.2));
-  //  verts.push(rotate(new Point(this.center.x - 0.5*SHIP_SIZE, this.center.y - SHIP_SIZE), this.backRight(), -0.2));
-  //  return verts;
-  //}
   update() {
     //console.log(this.center);
     if (this.bulletCountdown > 0) {
@@ -58,12 +40,24 @@ class Ship {
   }
   fire() {
     if (this.bulletCountdown === 0 && !ship.dead) {
-      this.bullets.push(new Bullet(this.nose().copy(), this.dir, Vector.dirMag(this.dir, 10)));
+      
+      this.bullets.push(this.createBullet());
       if (this.bullets.length > MAX_BULLETS) {
         this.bullets.shift();
       }
       this.bulletCountdown = BULLET_COUNTDOWN;
     }
+  }
+  createBullet() {
+    var startPoint = this.nose().copy();
+    var direction = this.dir;
+    var unitVectorForDirection = Vector.unitVector(direction);
+    // The bullet will always fire straight, but if the ship is going fast the bullets should still outrun it.
+    // To do this, we project the ships speed along the unit vector in the direction the bullet will be travelling.
+    // Then we add the base bullet speed. This should only have noticable effect when travelling quickly and firing forwards.
+    var bulletSpeed = this.speed.dotProduct(unitVectorForDirection) + SHIP_BULLET_SPEED;
+    var speed = Vector.dirMag(direction, bulletSpeed);
+    return new Bullet(startPoint, direction, speed);
   }
   // Note we could currently do this with a for loop, breaking when we find a dead bullet, since
   // there's a delay, but I want to support a possible future trigun or some-such.
@@ -85,6 +79,15 @@ class Ship {
     var frontLeft = rotate(new Point(this.center.x - SHIP_SIZE, this.center.y-SHIP_SIZE), this.center, this.dir);
     var frontRight = rotate(new Point(this.center.x + SHIP_SIZE, this.center.y-SHIP_SIZE), this.center, this.dir);
     return new Rect(frontLeft, frontRight, backRight, backLeft);
+  }
+  nose() {
+    return rotate(new Point(this.center.x + 2*SHIP_SIZE, this.center.y), this.center, this.dir);
+  }
+  backLeft() {
+    return rotate(new Point(this.center.x -SHIP_SIZE , this.center.y+SHIP_SIZE), this.center, this.dir);
+  }
+  backRight() {
+    return rotate(new Point(this.center.x -SHIP_SIZE, this.center.y-SHIP_SIZE), this.center, this.dir);
   }
 }
 
