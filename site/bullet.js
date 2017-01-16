@@ -2,11 +2,10 @@ var BULLET_SIZE = 3;
 var BULLET_LIFE = 75;
 
 class Bullet {
-  constructor(point, direction, vector) {
+  constructor(point, vector) {
     this.ticks = 0;
     this.dead = false;
     this.center = point;
-    this.dir = direction;
     this.speed = vector || BULLET_SPEED;
     this.size = BULLET_SIZE;
   }

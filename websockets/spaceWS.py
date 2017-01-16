@@ -83,7 +83,10 @@ class Handler:
       #TODO: Decrypt differently depending on data type.
       self.buffer = b""
       #print("Done! Precoding: {0}".format(self.decoded))
-      self.msg = self.game.input(self.decoded.decode('utf-8'))
+      try:
+        self.msg = self.game.input(self.decoded.decode('utf-8'))
+      except UnicodeDecodeError as e:
+        print("Exception: {0}\nError decoding message: {1}".format(str(e), self.msg))
 
     self.done = lastMessage
 

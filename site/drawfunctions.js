@@ -59,7 +59,7 @@ function drawAsteroids(asteroids) {
     var asteroid = asteroids[i];
     ctx.beginPath();
     ctx.strokeStyle = "#FFFFFF";
-    ctx.arc(X_RAT * asteroid.center.x, Y_RAT * asteroid.center.y, asteroid.size, 0, 2*Math.PI, true);
+    ctx.arc(X_RAT * asteroid.center.x, Y_RAT * asteroid.center.y, asteroid.size * X_RAT, 0, 2*Math.PI, true);
     ctx.stroke();
   }
 }

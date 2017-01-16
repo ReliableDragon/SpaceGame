@@ -1,5 +1,6 @@
 import json, random, string, math, time, threading
 from player_ship import Ship
+from asteroid import Asteroid
 import utils
 
 # This class runs the actual asteroids game logic.
@@ -19,8 +20,6 @@ import utils
 lock = threading.Lock()
 
 class AsteroidsGame(object):
-  X_MAX = 200
-  Y_MAX = 100
   ACCELERATION = 0.005;
   TURN_SPEED = 0.0075;
   SHIP_TOP_SPEED = 5;
@@ -101,12 +100,18 @@ class AsteroidsGame(object):
       game_state = self.games[game_id]
     time_delta = utils.get_time() - game_state["last_updated"]
     raw_ships = game_state["ships"]
+    raw_asteroids = game_state["asteroids"]
     ships = [Ship.from_dict(s) for s in raw_ships]
+    asteroids = [Asteroid.from_dict(a) for a in raw_asteroids]
     for ship in ships:
       AsteroidsGame.move_ship(ship, time_delta)
+    for asteroid in asteroids:
+      asteroid.update()
     raw_ships = [s.to_dict() for s in ships]
+    raw_asteroids = [a.to_dict() for a in asteroids]
     
     game_state["ships"] = raw_ships
+    game_state["asteroids"] = raw_asteroids
     game_state["last_updated"] = utils.get_time()
     with lock:
       self.games[game_id] = game_state
@@ -124,34 +129,14 @@ class AsteroidsGame(object):
     if ship.inputs["right"]:
       ship.rotate(AsteroidsGame.TURN_SPEED * dt)
     if ship.inputs["space"]:
-      #TODO: Implement bullets.
+      ship.fire()
       pass
     ship.move()
     return ship
   
   @staticmethod
   def new_ship(username):
-    return {
-      "name": username,
-      "center": {
-        "x": AsteroidsGame.X_MAX / 2,
-        "y": AsteroidsGame.Y_MAX / 2
-        },
-      "dir": -math.pi / 2,
-      "speed": {
-        "x": 0,
-        "y": 0
-        },
-      "invuln_ticks": 50,
-      "inputs": {
-        "up": False,
-        "down": False,
-        "left": False,
-        "right": False,
-        "up": False,
-        "space": False,
-      }
-    }
+    return Ship().to_dict()
   
   @staticmethod
   def make_asteroid(uid, stage):
@@ -164,10 +149,10 @@ class AsteroidsGame(object):
       y = random.randint(0, 100)
       
     direction = random.random() * 2 * math.pi
-    speed = random.random()
+    speed = random.random() / 5
     dx = math.cos(direction) * speed
     dy = math.sin(direction) * speed
-    size = 40 + random.random() * 10
+    size = 8 + random.random() * 2
     num_children = random.randint(2, 3)
     return {
         "id": uid,
@@ -181,7 +166,9 @@ class AsteroidsGame(object):
           },
         "size": size,
         "stage": 3,
-        "num_children": num_children
+        "num_children": num_children,
+        "rotation": 0,
+        "dead": False,
     }
   
   

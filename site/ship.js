@@ -18,6 +18,9 @@ class Ship {
     this.dir = facing;
     this.speed = movementVector;
   }
+  setBullets(bullets) {
+    this.bullets = bullets;
+  }
   rotate(rads) {
     this.dir += rads;
   }
@@ -57,7 +60,7 @@ class Ship {
     // Then we add the base bullet speed. This should only have noticable effect when travelling quickly and firing forwards.
     var bulletSpeed = this.speed.dotProduct(unitVectorForDirection) + SHIP_BULLET_SPEED;
     var speed = Vector.dirMag(direction, bulletSpeed);
-    return new Bullet(startPoint, direction, speed);
+    return new Bullet(startPoint, speed);
   }
   // Note we could currently do this with a for loop, breaking when we find a dead bullet, since
   // there's a delay, but I want to support a possible future trigun or some-such.

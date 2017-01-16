@@ -49,7 +49,7 @@ window.onload = function() {
   ctx = canvas.getContext("2d");
 
   openSocket();
-  setInterval(sendData, 100);
+  setInterval(sendData, 10);
   
   startGame();
   loop();
@@ -123,6 +123,7 @@ function startGameFromData(data) {
                      new Point(shipData.center.x, shipData.center.y),
                      shipData.dir,
                      new Vector(shipData.speed.x, shipData.speed.y));
+    ship.setBullets(shipData.bullets);
   }
   if (data.game_id) {
     gameId = data.game_id;
