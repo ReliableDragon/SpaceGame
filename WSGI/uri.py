@@ -55,7 +55,7 @@ def forwardPath(path):
     return path
 
 def isValidPage(path):
-  pages = ["/default", "/breakout", "/game", "/ship", "/bullet", "/asteroid", "/utils", "/drawfunctions"]
+  pages = ["/default", "/breakout", "/game", "/ship", "/bullet", "/asteroid", "/utils", "/drawfunctions", "/game_setup"]
   with_endings = itertools.chain.from_iterable([withEndings(a) for a in pages])
   if path in with_endings:
     return True

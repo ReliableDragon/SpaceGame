@@ -1,0 +1,32 @@
+<!doctype html>
+  
+<html lang="en">
+  <head>
+    <title>Game Setup</title>
+    <script type="text/javascript" src="game_setup.js"></script>
+    <link rel="stylesheet" type="text/css" href="game_setup.css">
+  </head>
+  <body>
+    <div id="header">
+      <h1>SET UP:</h1>
+    </div>
+    <div id="options">
+      <form id="optionsForm" onclick="updateVisibility();">
+        <label>
+          <input type="radio" name="isNew" value="New Game" checked>New Game!<br>
+        </label>
+        <label>
+          <input type="radio" name="isNew" value="Join Game">Join Game!<br>
+        </label>
+        <div id="roomDiv" style="display:none">
+          Room Id:<br>
+          <input id="roomName" type="text" name="roomName"><br>
+        </div>
+        Username:<br>
+        <input type="text" name="username"><br>
+        
+      </form>
+    </div>
+    <a href="/game.html">Start The Game!</a>
+  </body>
+</html>
