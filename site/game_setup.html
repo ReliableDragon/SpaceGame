@@ -12,21 +12,22 @@
     </div>
     <div id="options">
       <form id="optionsForm" onclick="updateVisibility();">
-        <label>
-          <input type="radio" name="isNew" value="New Game" checked>New Game!<br>
+        <label class="radioOption">
+          <input type="radio" name="isNew" value="New Game" checked>New Game<br>
         </label>
-        <label>
-          <input type="radio" name="isNew" value="Join Game">Join Game!<br>
+        <label class="radioOption">
+          <input type="radio" name="isNew" value="Join Game">Join Game<br>
         </label>
         <div id="roomDiv" style="display:none">
-          Room Id:<br>
+          <p>Room Id:</p>
           <input id="roomName" type="text" name="roomName"><br>
         </div>
-        Username:<br>
+        <p>Username:</p>
         <input type="text" name="username"><br>
-        
       </form>
     </div>
-    <a href="/game.html">Start The Game!</a>
+    <div class="buttonHolder">
+      <a class="link" href="/game.html">Start The Game!</a>
+    </div>
   </body>
 </html>

@@ -1,0 +1,47 @@
+body {
+  background-image: url("img/space.jpg");
+}
+#header {
+  text-align: center;
+  color: #EB601F;
+}
+div button {
+  text-align: center;
+  margin: auto;
+}
+.link {
+  color: #4B93B3;
+  background: #09210F;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+.link:hover {
+  background-color: #4BA5C3;
+  color: black;
+}
+.radioOption {
+  color: #0FA0A0;
+  text-align: center;
+}
+#options {
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+#options p {
+  color: #0FA0A0;
+}
+.buttonHolder {
+  padding: 25px 0px 0px 0px;
+  margin: auto;
+  width: 25%;
+  align-content: center;
+}
+div a {
+  text-align: center;
+  margin: auto;
+  display: block;
+}
