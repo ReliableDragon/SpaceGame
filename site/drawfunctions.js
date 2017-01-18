@@ -5,13 +5,13 @@ var Y_RAT = 6;  // 600 / 100 = 6
 
 function drawShip(ship) {
   if (!ship.dead) {
-    drawAliveShip();
+    drawAliveShip(ship);
   } else {
-    drawDeadShip();
+    drawDeadShip(ship);
   }
 }
 
-function drawAliveShip() {
+function drawAliveShip(ship) {
   ctx.beginPath();
   ctx.strokeStyle = "#FFFFFF";
   
@@ -26,7 +26,7 @@ function drawAliveShip() {
   ctx.stroke();
 }
 
-function drawDeadShip() {
+function drawDeadShip(ship) {
   console.log("Drawing dead ship!");
   ctx.beginPath();
   ctx.strokeStyle = "#FFFFFF";
@@ -74,6 +74,12 @@ function drawScore(score) {
   ctx.font = "16pt Arial";
   ctx.fillStyle = "#EEEEEE";
   ctx.fillText("Score: " + score, 8, 20);
+}
+
+function drawRoomId(id) {
+  ctx.font = "10pt Arial";
+  ctx.fillStyle = "#EEEEEE";
+  ctx.fillText("Room Id: " + id, 8, 590);
 }
 
 // TODO: Add "YOUR SCORE:", "ENTER YOUR NAME:", "REPLAY? Y/N" fields.

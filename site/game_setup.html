@@ -11,7 +11,7 @@
       <h1>SET UP:</h1>
     </div>
     <div id="options">
-      <form id="optionsForm" onclick="updateVisibility();">
+      <form id="optionsForm" action="/game.html" method="get" onclick="updateVisibility();">
         <label class="radioOption">
           <input type="radio" name="isNew" value="New Game" checked>New Game<br>
         </label>
@@ -24,10 +24,10 @@
         </div>
         <p>Username:</p>
         <input type="text" name="username"><br>
+        <div class="buttonHolder">
+          <input class="link" type="submit" value="Start The Game!">
+        </div>
       </form>
-    </div>
-    <div class="buttonHolder">
-      <a class="link" href="/game.html">Start The Game!</a>
     </div>
   </body>
 </html>

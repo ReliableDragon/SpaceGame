@@ -19,6 +19,7 @@ import utils
 
 lock = threading.Lock()
 
+# TODO: Add more fault-tolerance and error checking.
 class AsteroidsGame(object):
   ACCELERATION = 0.005;
   TURN_SPEED = 0.0075;
@@ -44,13 +45,19 @@ class AsteroidsGame(object):
   def input(self, raw_data):
     data = json.loads(raw_data)
     state = data['gamestate']
-    if state == "new":
+    if state == "new" and (not "game_id" in data or not data["game_id"] in self.games):
+      print("New game: {0}".format(data))
       return self.create_new_game(data)
-    else:
+    elif state == "new" and data["game_id"] in self.games:
+      print("Joining game: {0}".format(data))
+      return self.add_player_to_game(data)
+    elif state == "ongoing":
       self.update_player(data)
       game_id = data["game_id"]
       with lock:
         return json.dumps(self.games[game_id])
+    else:
+      raise Exception("Invalid request!\n{0}".format(data))
     
   def create_new_game(self, data):
     game_key = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(8))
@@ -75,13 +82,24 @@ class AsteroidsGame(object):
       self.games[game_key] = game_state
     return json.dumps(game_state)
   
+  # Preconditions: data contains key "game_id", and game exists.
+  # TODO: Ensure usernames are unique.
+  def add_player_to_game(self, data):
+    game_id = data["game_id"]
+    username = data["name"]
+    with lock:
+      game_data = self.games[game_id]
+    new_ship = self.new_ship(username)
+    game_data["ships"].append(new_ship)
+    #print(game_data["ships"])
+    return json.dumps(game_data)
+  
   def update_player(self, data):
+    #print(data)
     game_id = data["game_id"]
     name = data["name"]
     with lock:
       game_data = self.games[game_id]
-    # List comprehension. Grab the first (only) element in the ships array
-    # where the name matches the username.
     # TODO: Switch to using unique ids for the ships.
     ship_index = -1
     raw_ships = game_data["ships"]
@@ -151,7 +169,7 @@ class AsteroidsGame(object):
       y = random.randint(0, 100)
       
     direction = random.random() * 2 * math.pi
-    speed = random.random() / 5
+    speed = random.random() / 50
     dx = math.cos(direction) * speed
     dy = math.sin(direction) * speed
     size = 8 + random.random() * 2

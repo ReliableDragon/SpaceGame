@@ -13,6 +13,9 @@ class Ship {
     this.bullets = [];
     this.size = SHIP_SIZE;
   }
+  static defaultShip() {
+    return new Ship(new Point(0, 0), 0, new Vector(0, 0));
+  }
   setPosition(point, facing, movementVector) {
     this.center = point;
     this.dir = facing;

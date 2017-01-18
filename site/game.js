@@ -4,12 +4,12 @@ var dir; // In radians.
 var speed;
 var kaleidoscopeMode = false;
 var logSocketCalls = false;
-var lives = 3;
+var lives = 300000;
 var score = 0;
 var level = 1;
 var socket;
 var gameId = -1;
-var username = "testy mc test";
+var username;
 var levelover = false;
 var time;
 var dt = 0;
@@ -17,6 +17,7 @@ var fps = 60;
 var data;
 
 var ship;
+var otherShips;
 var waiting = false;
 var asteroids = [];
 var gameOver = false;
@@ -32,10 +33,11 @@ var spacePressed = false;
 
 var currentFunction = false;
 var resumeFunction = false;
+var params;
 
 var gameData;
 
-//TODO: Have server provide these in the initial data package.
+//TODO: Have server provide these in the initial data package to avoid duplication.
 // Okay, I need to define movement speeds in server units per millisecond instead of client units per frame,
 // so that we can translate between the server and client more accurately.
 // Canonical constants:
@@ -47,7 +49,16 @@ var BULLET_SPEED = 0.05;
 window.onload = function() {
   canvas = document.getElementById("canvas");
   ctx = canvas.getContext("2d");
-
+  otherShips = new Map();
+  
+  params = new Map();
+  var argPairs = window.location.search.substr(1).split("&");
+  for (var i = 0; i < argPairs.length; i++) {
+    var keyValue = argPairs[i].split("=");
+    params.set(keyValue[0], keyValue[1]);
+  }
+  username = params.get("username");
+  
   openSocket();
   
   startGame();
@@ -56,14 +67,20 @@ window.onload = function() {
 
 function openSocket() {
   socket = new WebSocket('ws://spacegame.com:8080');
-  socket.onopen = function() {
-    opened = true;
-    socket.send(JSON.stringify({
+  var dataToSend = {
       id: 1,
       data: "test",
       gamestate: "new",
       name: username,
-      }));
+      };
+  if (params.get("roomName")) {
+    dataToSend.game_id = params.get("roomName");
+  }
+  socket.onopen = function() {
+    opened = true;
+    console.log(params);
+    console.log(dataToSend);
+    socket.send(JSON.stringify(dataToSend));
     setInterval(sendData, 10);
   };
   socket.onmessage = function(s) {
@@ -96,42 +113,42 @@ function sendData() {
       name: username,
       game_id: gameId,
     });
-    //console.log("Sending message:\n" + message);
     socket.send(message);
   }
 }
 
 function startGameFromData(data) {
   // Predeclare loop variables, due to js not having block scope. -_-
-  var i;
+  var i, j;
   
-  //var serverSpeed = new Vector(data.ships[0].speed.x, data.ships[0].speed.y);
-  //if (!serverSpeed.equals(ship.speed)) {
-  //  console.log("Speed:");
-  //  console.log("Server: " + serverSpeed.x + ", " + serverSpeed.y);
-  //  console.log("Local:  " + ship.speed.x + ", " + ship.speed.y);
-  //  console.log("Diff:   " + (ship.speed.x - serverSpeed.x) + ", " + (ship.speed.y - serverSpeed.y));
-  //}
-  //var serverPosition = new Point(data.ships[0].center.x, data.ships[0].center.y);
-  //if (!serverPosition.equals(ship.center)) {
-  //  console.log("Position:");
-  //  console.log("Server: " + serverPosition.x + ", " + serverPosition.y);
-  //  console.log("Local:  " + ship.center.x + ", " + ship.center.y);
-  //  console.log("Diff:   " + (ship.center.x - serverPosition.x) + ", " + (ship.center.y - serverPosition.y));
-  //}
-  
-  if (data.ships[0]) {
-    var shipData = data.ships[0];
-    ship.setPosition(
-                     new Point(shipData.center.x, shipData.center.y),
-                     shipData.rotation,
-                     new Vector(shipData.speed.x, shipData.speed.y));
-    var rawBullets = shipData.bullets;
-    var realBullets = [];
-    for (i = 0; i < rawBullets.length; i++) {
-      realBullets.push(Bullet.fromDict(rawBullets[i]));
+  if (data.ships) {
+    for (i = 0; i < data.ships.length; i++) {
+      var shipData = data.ships[i];
+      var shipName = shipData.name;
+      var updateShip = "";
+      // TODO: Remove ships that exit the game. This only adds.
+      if (shipName === username) {
+        updateShip = ship;
+      } else if (otherShips.get(shipName)) {
+        updateShip = otherShips.get(shipName);
+      } else {
+        console.log("Adding ship to dict: ");
+        console.log(shipData);
+        otherShips.set(shipName, Ship.defaultShip());
+        updateShip = otherShips.get(shipName);
+      }
+      
+      updateShip.setPosition(
+                       new Point(shipData.center.x, shipData.center.y),
+                       shipData.rotation,
+                       new Vector(shipData.speed.x, shipData.speed.y));
+      var rawBullets = shipData.bullets;
+      var realBullets = [];
+      for (j = 0; j < rawBullets.length; j++) {
+        realBullets.push(Bullet.fromDict(rawBullets[j]));
+      }
+      updateShip.setBullets(realBullets);
     }
-    ship.setBullets(realBullets);
   }
   if (data.game_id) {
     gameId = data.game_id;
@@ -180,20 +197,6 @@ function startGame() {
   animate(gameLoop);
 }
 
-//function makeAsteroids(num) {
-//  var asteroidsMade = [];
-//  var asteroidSize = ASTEROID_SIZE + Math.random() * 10 - 5;
-//  
-//  while (asteroidsMade.length < num) {
-//    var asteroid = new Asteroid(Point.random(), Vector.random(2), asteroidSize, 3, Math.floor(Math.random() * 2) + 2);
-//    if (!asteroidIntersectsShip(asteroid, ship)) {
-//      asteroidsMade.push(asteroid);
-//    }
-//  }
-//  
-//  asteroids.push.apply(asteroids, asteroidsMade);
-//}
-
 function handleDeath() {
   if (lives > 0) {
     newShip();
@@ -226,11 +229,15 @@ function draw() {
   }
   if (!gameOver) {
     drawShip(ship);
+    for (var shipValue of otherShips.values()) {
+      drawShip(shipValue);
+    }
     drawBullets(ship.bullets);
     drawAsteroids(asteroids);
   } else {
     drawGameOverText();
   }
+  drawRoomId(gameId);
   drawLives(lives);
   drawScore(score);
 }
@@ -256,9 +263,16 @@ function handleInput() {
 
 function updateObjects() {
   for (var i = 0; i < ship.bullets.length; i++) {
+    // TODO: Move into ship's update function.
     ship.bullets[i].update();
   }
   ship.update();
+  for (var otherShip of otherShips.values()) {
+    for (i = 0; j < otherShip.bullets.length; j++) {
+      otherShip.bullets[i].update();
+    }
+    otherShip.update();
+  }
   i = 0;
   var length = asteroids.length;
   while (i < length) {
