@@ -65,15 +65,17 @@ window.onload = function() {
   loop();
 };
 
+var dataToSend;
 function openSocket() {
   socket = new WebSocket('ws://spacegame.com:8080');
-  var dataToSend = {
+  dataToSend = {
       id: 1,
       data: "test",
       gamestate: "new",
       name: username,
       };
-  if (params.get("roomName")) {
+  if (params.get("isNew") === "Join+Game") {
+    dataToSend.gamestate = "join";
     dataToSend.game_id = params.get("roomName");
   }
   socket.onopen = function() {
@@ -100,7 +102,7 @@ function openSocket() {
 }
 
 function sendData() {
-  if (socket.readyState == 1) {
+  if (socket.readyState == 1 && gameId != -1) {
     var message = JSON.stringify({
       keys: {
         up: upPressed,
@@ -126,7 +128,15 @@ function startGameFromData(data) {
       var shipData = data.ships[i];
       var shipName = shipData.name;
       var updateShip = "";
-      // TODO: Remove ships that exit the game. This only adds.
+      
+      if (shipData.leaving) {
+        if (otherShips.get(shipName)) {
+          console.log("Ship leaving: " + shipName);
+          otherShips.delete(shipName);
+        }
+        continue;
+      }
+      
       if (shipName === username) {
         updateShip = ship;
       } else if (otherShips.get(shipName)) {
@@ -153,7 +163,10 @@ function startGameFromData(data) {
   if (data.game_id) {
     gameId = data.game_id;
   } else {
-    console.log("Error! No game id provided by server.");
+    console.log("Error! No game id provided by server. Message was: ");
+    console.log(data);
+    console.log("Last message sent: ");
+    console.log(dataToSend);
   }
   if (data.asteroids) {
     asteroids = [];
@@ -231,6 +244,7 @@ function draw() {
     drawShip(ship);
     for (var shipValue of otherShips.values()) {
       drawShip(shipValue);
+      drawBullets(shipValue.bullets);
     }
     drawBullets(ship.bullets);
     drawAsteroids(asteroids);

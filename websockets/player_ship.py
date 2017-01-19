@@ -21,7 +21,9 @@ class Ship(object):
     bullet_speed = 2.5,
     dead = False,
     max_bullets = 7,
-    size = 10/6
+    size = 10/6,
+    last_updated = None,
+    leaving = False,
     ):
     self.center = center
     self.speed = speed
@@ -35,6 +37,8 @@ class Ship(object):
     self.dead = dead
     self.max_bullets = max_bullets
     self.size = size
+    self.last_updated = utils.get_time() if last_updated == None else last_updated
+    self.leaving = leaving
     
   @staticmethod
   def from_dict(data):
@@ -51,7 +55,9 @@ class Ship(object):
       data["bullet_speed"],
       data["dead"],
       data["max_bullets"],
-      data["size"])
+      data["size"],
+      data["last_updated"],
+      data["leaving"])
   
   def to_dict(self):
     raw_bullet_list = [bullet.Bullet.to_dict(b) for b in self.bullets]
@@ -68,6 +74,8 @@ class Ship(object):
       "dead": self.dead,
       "max_bullets": self.max_bullets,
       "size": self.size,
+      "last_updated": self.last_updated,
+      "leaving": self.leaving
     }
   
   def fire(self):
@@ -112,6 +120,9 @@ class Ship(object):
       self.bullet_countdown -= 1
     self.move()
     self.update_bullets()
+    
+  def set_update_time(time):
+    self.last_updated = time
     
   def move(self):
     self.center.x += self.speed.x

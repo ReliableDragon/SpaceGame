@@ -42,13 +42,22 @@ class AsteroidsGame(object):
       if sleep_time > 0:
         time.sleep(sleep_time / 1000)
 
+  # TODO: Standardize use of json.dumps, ideally use once at end of function.
   def input(self, raw_data):
-    data = json.loads(raw_data)
+    try:
+      data = json.loads(raw_data)
+    except JSONDecodeError:
+      print("Invalid JSON recieved. Was: {0}".format(raw_data))
+      return json.dumps({"error": "300 invalid json"})
+      
     state = data['gamestate']
-    if state == "new" and (not "game_id" in data or not data["game_id"] in self.games):
+    if "game_id" in data and data["game_id"] not in self.games:
+      print("Attempted to join invalid game: {0}\nFull data dump: {1}".format(data["game_id"], data))
+      return json.dumps({"error": "404 game not found"})
+    if state == "new":
       print("New game: {0}".format(data))
       return self.create_new_game(data)
-    elif state == "new" and data["game_id"] in self.games:
+    elif state == "join":
       print("Joining game: {0}".format(data))
       return self.add_player_to_game(data)
     elif state == "ongoing":
@@ -78,8 +87,10 @@ class AsteroidsGame(object):
         asteroid
       ]
     }
+    
     with lock:
       self.games[game_key] = game_state
+    
     return json.dumps(game_state)
   
   # Preconditions: data contains key "game_id", and game exists.
@@ -87,20 +98,24 @@ class AsteroidsGame(object):
   def add_player_to_game(self, data):
     game_id = data["game_id"]
     username = data["name"]
+    
     with lock:
       game_data = self.games[game_id]
+      
     new_ship = self.new_ship(username)
     game_data["ships"].append(new_ship)
-    #print(game_data["ships"])
+    
     return json.dumps(game_data)
   
   def update_player(self, data):
-    #print(data)
     game_id = data["game_id"]
     name = data["name"]
+    
     with lock:
       game_data = self.games[game_id]
+
     # TODO: Switch to using unique ids for the ships.
+    # TODO: Keep ships as a map keyed by id.
     ship_index = -1
     raw_ships = game_data["ships"]
     for i in range(0, len(raw_ships)):
@@ -111,19 +126,35 @@ class AsteroidsGame(object):
       raise Exception("Failed to find ship!")
     ship_dict = raw_ships[i]
     ship_dict["inputs"] = data["keys"]
+    ship_dict["last_updated"] = utils.get_time()
     with lock:
       self.games[game_id]["ships"][i] = ship_dict
   
   def increment_game(self, game_id):
     with lock:
       game_state = self.games[game_id]
-    time_delta = utils.get_time() - game_state["last_updated"]
+    current_time = utils.get_time()
+    time_delta = current_time - game_state["last_updated"]
     raw_ships = game_state["ships"]
     raw_asteroids = game_state["asteroids"]
     ships = [Ship.from_dict(s) for s in raw_ships]
     asteroids = [Asteroid.from_dict(a) for a in raw_asteroids]
-    for ship in ships:
-      AsteroidsGame.move_ship(ship, time_delta)
+    i = 0
+    shipsLength = len(ships)
+    while i < shipsLength:
+      ship = ships[i]
+      # Remove ships that time out. Update them in case of death effects.
+      if ship.leaving and current_time - ship.last_updated > 500:
+        print("Ship leaving: {0}".format(ship.name))
+        ships.pop(i)
+        shipsLength -= 1
+      elif current_time - ship.last_updated > 5000:
+        ship.leaving = True
+        ship.update()
+        i += 1
+      else:
+        AsteroidsGame.move_ship(ship, time_delta)
+        i += 1
     for asteroid in asteroids:
       asteroid.update()
     raw_ships = [s.to_dict() for s in ships]
