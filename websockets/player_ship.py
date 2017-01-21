@@ -50,7 +50,7 @@ class Ship(Mover):
 
   def from_dict(self, data):
     super().from_dict(data)
-    bullet_list = [Bullet.from_dict(b) for b in data["bullets"]]
+    bullet_list = [Bullet().from_dict(b) for b in data["bullets"]]
 
     self.name = data["name"]
     self.inputs = data["inputs"]
@@ -89,7 +89,7 @@ class Ship(Mover):
   
   def to_dict(self):
     inherited_entries = super().to_dict()
-    raw_bullet_list = [Bullet.to_dict(b) for b in self.bullets]
+    raw_bullet_list = [b.to_dict() for b in self.bullets]
     new_entries = {
       "name": self.name,
       "inputs": self.inputs,
@@ -158,16 +158,16 @@ class Ship(Mover):
     if self.bullet_countdown > 0:
       self.bullet_countdown -= 1
       
-    self.move()
+    super().move()
     self.update_bullets()
     
   def set_update_time(time):
     self.last_updated = time
 
-  def move(self):
-    self.center.x += self.speed.x
-    self.center.y += self.speed.y 
-    self.center = utils.wrap_around(self.center)
+  # def move(self):
+  #   self.center.x += self.speed.x
+  #   self.center.y += self.speed.y 
+  #   self.center = utils.wrap_around(self.center)
     
   def getBoundingBox(self):
     backLeft = Point.rotate(Point(self.center.x - self.size, self.center.y + self.size), self.center, self.rotation)

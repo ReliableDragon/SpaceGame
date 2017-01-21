@@ -6,15 +6,15 @@ class Mover(object):
     self,
     center = Point(utils.X_MAX / 2, utils.Y_MAX / 2),
     speed = Vector(0, 0),
-    rotation = -math.pi/2,
+    rotation = 0,
   ):
     self.center = center
     self.speed = speed
     self.rotation = rotation
     
   def move(self):
-    center.x += speed.x
-    center.y += speed.y
+    self.center.x += self.speed.x
+    self.center.y += self.speed.y
     self.center = utils.wrap_around(self.center)
     
   def to_dict(self):

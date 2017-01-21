@@ -26,6 +26,8 @@ class AsteroidsGame(object):
   SHIP_TOP_SPEED = 5;
   
   def __init__(self):
+    # This should contain the actual objects, not the dictionary versions.
+    # TODO: Make sure we only JSON-ify when sending network data.
     self.games = {}
     
   # TODO: Unpack game once, and pass objects to all loop methods.
@@ -144,7 +146,7 @@ class AsteroidsGame(object):
     raw_asteroids = game_state["asteroids"]
     
     ships = [Ship().from_dict(s) for s in raw_ships]
-    asteroids = [Asteroid.from_dict(a) for a in raw_asteroids]
+    asteroids = [Asteroid().from_dict(a) for a in raw_asteroids]
     
     i = 0
     shipsLength = len(ships)
@@ -247,7 +249,7 @@ class AsteroidsGame(object):
   def collisionDetection(self, game_id):
     game = self.games[game_id]
     ships = [Ship().from_dict(s) for s in game["ships"]]
-    asteroids = [Asteroid.from_dict(a) for a in game["asteroids"]]
+    asteroids = [Asteroid().from_dict(a) for a in game["asteroids"]]
     
     for ship in ships:
       for i in range(0, len(ship.bullets)):
