@@ -55,22 +55,27 @@ class AsteroidsGame(object):
       return json.dumps({"error": "300 invalid json"})
       
     state = data['gamestate']
+    response = None
+      
     if "game_id" in data and data["game_id"] not in self.games:
       print("Attempted to join invalid game: {0}\nFull data dump: {1}".format(data["game_id"], data))
       return json.dumps({"error": "404 game not found"})
+    
     if state == "new":
       print("New game: {0}".format(data))
-      return self.create_new_game(data)
+      response = self.create_new_game(data)
     elif state == "join":
       print("Joining game: {0}".format(data))
-      return self.add_player_to_game(data)
+      response =  self.add_player_to_game(data)
     elif state == "ongoing":
       self.update_player(data)
       game_id = data["game_id"]
       with lock:
-        return json.dumps(self.games[game_id])
+        response = self.games[game_id]
     else:
       raise Exception("Invalid request!\n{0}".format(data))
+    
+    return json.dumps(response)
     
   def create_new_game(self, data):
     game_key = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(8))
@@ -96,7 +101,7 @@ class AsteroidsGame(object):
     with lock:
       self.games[game_key] = game_state
     
-    return json.dumps(game_state)
+    return game_state
   
   # Preconditions: data contains key "game_id", and game exists.
   # TODO: Ensure usernames are unique.
@@ -110,7 +115,7 @@ class AsteroidsGame(object):
     new_ship = self.new_ship(username)
     game_data["ships"].append(new_ship)
     
-    return json.dumps(game_data)
+    return game_data
   
   def update_player(self, data):
     game_id = data["game_id"]
@@ -254,8 +259,6 @@ class AsteroidsGame(object):
 
     game["ships"] = ships
     game["asteroids"] = asteroids
-
-    # self.games[game_id] = game
 
   @staticmethod
   def asteroid_intersects_ship(asteroid, ship):
