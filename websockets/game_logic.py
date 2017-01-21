@@ -28,6 +28,7 @@ class AsteroidsGame(object):
   def __init__(self):
     self.games = {}
     
+  # TODO: Unpack game once, and pass objects to all loop methods.
   def loop(self):
     while True:
       start_time = utils.get_time()
@@ -87,6 +88,7 @@ class AsteroidsGame(object):
       "asteroids": [
         asteroid
       ],
+      "level": 1,
     }
     
     with lock:
@@ -157,14 +159,17 @@ class AsteroidsGame(object):
         shipsLength -= 1
       elif current_time - ship.last_updated > 5000:
         ship.leaving = True
-        ship.update()
+        ship.update(time_delta)
         i += 1
       else:
         AsteroidsGame.move_ship(ship, time_delta)
         i += 1
     
-    for asteroid in asteroids:
+    for i in range(0, asteroids):
+      asteroid = asteroids[i]
       asteroid.update()
+      if asteroid.dead:
+        asteroids.pop(i)
     
     raw_ships = [s.to_dict() for s in ships]
     raw_asteroids = [a.to_dict() for a in asteroids]
@@ -192,7 +197,7 @@ class AsteroidsGame(object):
     if ship.inputs["space"]:
       ship.fire()
     
-    ship.update()
+    ship.update(dt)
     return ship
   
   @staticmethod
@@ -246,29 +251,37 @@ class AsteroidsGame(object):
           distance = math.hypot(bullet.center.x - asteroid.center.x, bullet.center.y - asteroid.center.y)
           
           if distance < asteroid.size and not bullet.dead and not asteroid.dead:
-            ship.score += math.floor(100 * (5 - asteroid.stage) * math.pow(1.2, level-1))
-            bullet.dead = true
-            asteroid.dead = true
+            ship.score += math.floor(100 * (5 - asteroid.stage) * math.pow(1.2, game["level"]-1))
+            bullet.dead = True
+            asteroid.dead = True
             
             new_asteroids = asteroid.split()
             asteroids.push.apply(asteroids, new_asteroids)
             
             if asteroids.length == 0:
-              game.levelover = true
+              game["levelover"] = True
 
         for i in range(0, asteroids.length):
           asteroid = asteroids[i]
           if not asteroid.dead and asteroid_intersects_ship(asteroid, ship):
-              ship.dead = true
+              ship.dead = True
+
+    ships = [s.to_dict(s) for s in ships]
+    asteroids = [a.to_dict(a) for a in asteroids]
+
+    game["ships"] = ships
+    game["asteroids"] = asteroids
+
+    self.games[game_id] = game
 
   def asteroid_intersects_ship(asteroid, ship):
    shipBox = ship.getBoundingBox()
    
    for i in range(0, len(shipBox)):
      if asteroid.center.dist(shipBox[i]) < asteroid.size:
-       return true
+       return True
    
-   return false
+   return False
 
 
 

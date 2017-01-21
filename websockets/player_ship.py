@@ -119,18 +119,29 @@ class Ship(object):
   def rotate(self, rads):
     self.rotation += rads
     
-  def update(self):
+      
+  # TODO: Use delta time for all called methods as well.
+  def update(self, dt):
+    if (self.dead):
+      self.bullets = []
+      self.bullet_countdown = self.bullet_recharge
+      self.death_countdown = 3000
+    
+    if self.death_countdown > 0:
+      self.death_countdown -= dt
+      
     if self.bullet_countdown > 0:
       self.bullet_countdown -= 1
+      
     self.move()
     self.update_bullets()
     
   def set_update_time(time):
     self.last_updated = time
-    
+
   def move(self):
     self.center.x += self.speed.x
-    self.center.y += self.speed.y
+    self.center.y += self.speed.y 
     self.center = utils.wrap_around(self.center)
     
   def getBoundingBox(self):
