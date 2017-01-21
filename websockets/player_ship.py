@@ -24,6 +24,7 @@ class Ship(object):
     size = 10/6,
     last_updated = None,
     leaving = False,
+    score = 0,
     ):
     self.center = center
     self.speed = speed
@@ -39,7 +40,8 @@ class Ship(object):
     self.size = size
     self.last_updated = utils.get_time() if last_updated == None else last_updated
     self.leaving = leaving
-    
+    self.score = score
+
   @staticmethod
   def from_dict(data):
     bullet_list = [bullet.Bullet.from_dict(b) for b in data["bullets"]]
@@ -57,7 +59,8 @@ class Ship(object):
       data["max_bullets"],
       data["size"],
       data["last_updated"],
-      data["leaving"])
+      data["leaving"],
+      data["score"])
   
   def to_dict(self):
     raw_bullet_list = [bullet.Bullet.to_dict(b) for b in self.bullets]
@@ -75,7 +78,8 @@ class Ship(object):
       "max_bullets": self.max_bullets,
       "size": self.size,
       "last_updated": self.last_updated,
-      "leaving": self.leaving
+      "leaving": self.leaving,
+      "score": self.score,
     }
   
   def fire(self):
@@ -128,6 +132,13 @@ class Ship(object):
     self.center.x += self.speed.x
     self.center.y += self.speed.y
     self.center = utils.wrap_around(self.center)
+    
+  def getBoundingBox(self):
+    backLeft = rotate(Point(self.center.x - self.size, self.center.y + self.size), self.center, self.rotation)
+    backRight = rotate(Point(self.center.x + self.size, self.center.y + self.size), self.center, self.rotation)
+    frontLeft = rotate(Point(self.center.x - self.size, self.center.y - self.size), self.center, self.rotation)
+    frontRight = rotate(Point(self.center.x + self.size, self.center.y - self.size), self.center, self.rotation)
+    return (frontLeft, frontRight, backRight, backLeft)
     
     
     

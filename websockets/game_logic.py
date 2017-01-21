@@ -32,6 +32,7 @@ class AsteroidsGame(object):
     while True:
       start_time = utils.get_time()
       for game_id in list(self.games):
+        self.collisionDetection(game_id)
         self.increment_game(game_id)
       end_time = utils.get_time()
       # The goal here is 17ms loops, which corresponds to 60fps, which is the speed that
@@ -85,7 +86,7 @@ class AsteroidsGame(object):
       "last_updated": milli_time,
       "asteroids": [
         asteroid
-      ]
+      ],
     }
     
     with lock:
@@ -133,17 +134,23 @@ class AsteroidsGame(object):
   def increment_game(self, game_id):
     with lock:
       game_state = self.games[game_id]
+    
     current_time = utils.get_time()
     time_delta = current_time - game_state["last_updated"]
+    
     raw_ships = game_state["ships"]
     raw_asteroids = game_state["asteroids"]
+    
     ships = [Ship.from_dict(s) for s in raw_ships]
     asteroids = [Asteroid.from_dict(a) for a in raw_asteroids]
+    
     i = 0
     shipsLength = len(ships)
     while i < shipsLength:
       ship = ships[i]
-      # Remove ships that time out. Update them in case of death effects.
+      # Remove ships that time out. Mark them as leaving for half a second
+      # first, so that the client has time to display some nice blink effect
+      # or something down the road.
       if ship.leaving and current_time - ship.last_updated > 500:
         print("Ship leaving: {0}".format(ship.name))
         ships.pop(i)
@@ -155,16 +162,20 @@ class AsteroidsGame(object):
       else:
         AsteroidsGame.move_ship(ship, time_delta)
         i += 1
+    
     for asteroid in asteroids:
       asteroid.update()
+    
     raw_ships = [s.to_dict() for s in ships]
     raw_asteroids = [a.to_dict() for a in asteroids]
     
     game_state["ships"] = raw_ships
     game_state["asteroids"] = raw_asteroids
     game_state["last_updated"] = utils.get_time()
+    
     with lock:
       self.games[game_id] = game_state
+    
     return json.dumps(game_state)
   
   @staticmethod
@@ -180,7 +191,7 @@ class AsteroidsGame(object):
       ship.rotate(AsteroidsGame.TURN_SPEED * dt)
     if ship.inputs["space"]:
       ship.fire()
-      pass
+    
     ship.update()
     return ship
   
@@ -221,9 +232,46 @@ class AsteroidsGame(object):
         "rotation": 0,
         "dead": False,
     }
-  
-  
+
+  def collisionDetection(self, game_id):
+    game = self.games[game_id]
+    ships = [Ship.from_dict(s) for s in game["ships"]]
+    asteroids = [Asteroid.from_dict(a) for a in game["asteroids"]]
     
+    for ship in ships:
+      for i in range(0, len(ship.bullets)):
+        for j in range(0, len(asteroids)):
+          
+          asteroid = asteroids[j]
+          distance = math.hypot(bullet.center.x - asteroid.center.x, bullet.center.y - asteroid.center.y)
+          
+          if distance < asteroid.size and not bullet.dead and not asteroid.dead:
+            ship.score += math.floor(100 * (5 - asteroid.stage) * math.pow(1.2, level-1))
+            bullet.dead = true
+            asteroid.dead = true
+            
+            new_asteroids = asteroid.split()
+            asteroids.push.apply(asteroids, new_asteroids)
+            
+            if asteroids.length == 0:
+              game.levelover = true
+
+        for i in range(0, asteroids.length):
+          asteroid = asteroids[i]
+          if not asteroid.dead and asteroid_intersects_ship(asteroid, ship):
+              ship.dead = true
+
+  def asteroid_intersects_ship(asteroid, ship):
+   shipBox = ship.getBoundingBox()
+   
+   for i in range(0, len(shipBox)):
+     if asteroid.center.dist(shipBox[i]) < asteroid.size:
+       return true
+   
+   return false
+
+
+
     
     
     
