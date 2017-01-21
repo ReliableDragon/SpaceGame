@@ -1,6 +1,11 @@
 import utils, math
 from utils import Vector, Point
 
+# Base class intended to be inherited from. Mover exists so that
+# all of the various objects which move about the screen can share
+# code, specifically the construction and serialization code.
+
+# Not intended to be initialized directly.
 class Mover(object):
   def __init__(
     self,

@@ -38,6 +38,7 @@ class Asteroid(Mover):
   
   def from_dict(self, data):
     super().from_dict(data)
+    
     self.id = data["id"]
     self.size = data["size"]
     self.stage = data["stage"]

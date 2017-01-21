@@ -37,13 +37,6 @@ class Bullet(Mover):
     }
     oo_data = super().to_dict()
     return {**new_data, **oo_data}
-    
-  # # Repeats ship. Consider inheritance.
-  # def move(self):
-  #   self.center.x += self.speed.x
-  #   self.center.y += self.speed.y
-  #   
-  #   self.center = utils.wrap_around(self.center)
 
   def update(self):
     super().move()

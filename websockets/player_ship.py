@@ -31,9 +31,7 @@ class Ship(Mover):
     score = 0,
     ):
     super().__init__(center, speed, rotation)
-    # self.center = center
-    # self.speed = speed
-    # self.rotation = rotation
+    
     self.name = name
     self.inputs = inputs
     self.bullets = list(bullets)
@@ -68,24 +66,6 @@ class Ship(Mover):
     
     # For chaining.
     return self
-  
-    # return Ship(
-    #   Point(data["center"]["x"], data["center"]["y"]),
-    #   Vector(data["speed"]["x"], data["speed"]["y"]),
-    #   data["rotation"],
-    #   data["name"],
-    #   data["inputs"],
-    #   bullet_list,
-    #   data["bullet_countdown"],
-    #   data["bullet_recharge"],
-    #   data["bullet_speed"],
-    #   data["dead"],
-    #   data["death_countdown"],
-    #   data["max_bullets"],
-    #   data["size"],
-    #   data["last_updated"],
-    #   data["leaving"],
-    #   data["score"])
   
   def to_dict(self):
     inherited_entries = super().to_dict()
@@ -163,11 +143,6 @@ class Ship(Mover):
     
   def set_update_time(time):
     self.last_updated = time
-
-  # def move(self):
-  #   self.center.x += self.speed.x
-  #   self.center.y += self.speed.y 
-  #   self.center = utils.wrap_around(self.center)
     
   def getBoundingBox(self):
     backLeft = Point.rotate(Point(self.center.x - self.size, self.center.y + self.size), self.center, self.rotation)
