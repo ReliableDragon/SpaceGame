@@ -2,8 +2,9 @@ import utils, math, json
 import bullet
 from utils import Point, Vector
 from bullet import Bullet
+from mover import Mover
 
-class Ship(object):
+class Ship(Mover):
   
   def __init__(
     self,
@@ -29,9 +30,10 @@ class Ship(object):
     leaving = False,
     score = 0,
     ):
-    self.center = center
-    self.speed = speed
-    self.rotation = rotation
+    super().__init__(center, speed, rotation)
+    # self.center = center
+    # self.speed = speed
+    # self.rotation = rotation
     self.name = name
     self.inputs = inputs
     self.bullets = list(bullets)
@@ -46,33 +48,49 @@ class Ship(object):
     self.leaving = leaving
     self.score = score
 
-  @staticmethod
-  def from_dict(data):
+  def from_dict(self, data):
+    super().from_dict(data)
     bullet_list = [Bullet.from_dict(b) for b in data["bullets"]]
-    return Ship(
-      Point(data["center"]["x"], data["center"]["y"]),
-      Vector(data["speed"]["x"], data["speed"]["y"]),
-      data["rotation"],
-      data["name"],
-      data["inputs"],
-      bullet_list,
-      data["bullet_countdown"],
-      data["bullet_recharge"],
-      data["bullet_speed"],
-      data["dead"],
-      data["death_countdown"],
-      data["max_bullets"],
-      data["size"],
-      data["last_updated"],
-      data["leaving"],
-      data["score"])
+
+    self.name = data["name"]
+    self.inputs = data["inputs"]
+    self.bullets = bullet_list
+    self.bullet_countdown = data["bullet_countdown"]
+    self.bullet_recharge = data["bullet_recharge"]
+    self.bullet_speed = data["bullet_speed"]
+    self.dead = data["dead"]
+    self.death_countdown = data["death_countdown"]
+    self.max_bullets = data["max_bullets"]
+    self.size = data["size"]
+    self.last_updated = data["last_updated"]
+    self.leaving = data["leaving"]
+    self.score = data["score"]
+    
+    # For chaining.
+    return self
+  
+    # return Ship(
+    #   Point(data["center"]["x"], data["center"]["y"]),
+    #   Vector(data["speed"]["x"], data["speed"]["y"]),
+    #   data["rotation"],
+    #   data["name"],
+    #   data["inputs"],
+    #   bullet_list,
+    #   data["bullet_countdown"],
+    #   data["bullet_recharge"],
+    #   data["bullet_speed"],
+    #   data["dead"],
+    #   data["death_countdown"],
+    #   data["max_bullets"],
+    #   data["size"],
+    #   data["last_updated"],
+    #   data["leaving"],
+    #   data["score"])
   
   def to_dict(self):
+    inherited_entries = super().to_dict()
     raw_bullet_list = [Bullet.to_dict(b) for b in self.bullets]
-    return {
-      "center": self.center.__dict__,
-      "speed": self.speed.__dict__,
-      "rotation": self.rotation,
+    new_entries = {
       "name": self.name,
       "inputs": self.inputs,
       "bullets": raw_bullet_list,
@@ -87,6 +105,7 @@ class Ship(object):
       "leaving": self.leaving,
       "score": self.score,
     }
+    return {**new_entries, **inherited_entries}
   
   def fire(self):
     if self.bullet_countdown == 0 and not self.dead:

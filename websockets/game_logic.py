@@ -143,7 +143,7 @@ class AsteroidsGame(object):
     raw_ships = game_state["ships"]
     raw_asteroids = game_state["asteroids"]
     
-    ships = [Ship.from_dict(s) for s in raw_ships]
+    ships = [Ship().from_dict(s) for s in raw_ships]
     asteroids = [Asteroid.from_dict(a) for a in raw_asteroids]
     
     i = 0
@@ -214,7 +214,7 @@ class AsteroidsGame(object):
   def make_asteroid(uid, stage):
     x = random.randint(0, 200)
     y = random.randint(0, 100)
-    #TODO: Make this actually avoid the ship, so we can simply add new asteroids to start a new level.
+    #TODO: Make this actually avoid the ship(s), so we can simply add new asteroids to start a new level.
     while 40 < x < 60:
       x = random.randint(0, 100)
     while 40 < y < 60:
@@ -246,7 +246,7 @@ class AsteroidsGame(object):
   # TODO: Remove unpacking/repacking and put in main loop.
   def collisionDetection(self, game_id):
     game = self.games[game_id]
-    ships = [Ship.from_dict(s) for s in game["ships"]]
+    ships = [Ship().from_dict(s) for s in game["ships"]]
     asteroids = [Asteroid.from_dict(a) for a in game["asteroids"]]
     
     for ship in ships:
