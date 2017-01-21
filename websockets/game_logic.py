@@ -21,8 +21,6 @@ lock = threading.Lock()
 
 # TODO: Add more fault-tolerance and error checking.
 class AsteroidsGame(object):
-  ACCELERATION = 0.005;
-  TURN_SPEED = 0.0075;
   SHIP_TOP_SPEED = 5;
   
   def __init__(self):
@@ -30,13 +28,15 @@ class AsteroidsGame(object):
     # TODO: Make sure we only JSON-ify when sending network data.
     self.games = {}
     
-  # TODO: Unpack game once, and pass objects to all loop methods.
   def loop(self):
     while True:
       start_time = utils.get_time()
       for game_id in list(self.games):
-        self.collisionDetection(game_id)
-        self.increment_game(game_id)
+        with lock:
+          game = self.games[game_id]
+        self.collisionDetection(game)
+        self.increment_game(game)
+        self.games[game_id] = game
       end_time = utils.get_time()
       # The goal here is 17ms loops, which corresponds to 60fps, which is the speed that
       # the client updates at, so there's not a lot of reason to update faster. However,
@@ -134,10 +134,8 @@ class AsteroidsGame(object):
     ship_dict["last_updated"] = utils.get_time()
     with lock:
       self.games[game_id]["ships"][i] = ship_dict
-  
-  def increment_game(self, game_id):
-    with lock:
-      game_state = self.games[game_id]
+
+  def increment_game(self, game_state):
     
     current_time = utils.get_time()
     time_delta = current_time - game_state["last_updated"]
@@ -164,7 +162,7 @@ class AsteroidsGame(object):
         ship.update(time_delta)
         i += 1
       else:
-        AsteroidsGame.move_ship(ship, time_delta)
+        ship.update(time_delta)
         i += 1
     
     i = 0
@@ -184,29 +182,7 @@ class AsteroidsGame(object):
     game_state["ships"] = raw_ships
     game_state["asteroids"] = raw_asteroids
     game_state["last_updated"] = utils.get_time()
-    
-    with lock:
-      self.games[game_id] = game_state
-    
-    return json.dumps(game_state)
-  
-  @staticmethod
-  def move_ship(ship, dt):
-    # TODO: Potentially move into ship class.
-    if ship.inputs["up"]:
-      ship.accelerate(AsteroidsGame.ACCELERATION * dt)
-    if ship.inputs["down"]:
-      ship.accelerate(-AsteroidsGame.ACCELERATION * dt)
-    if ship.inputs["left"]:
-      ship.rotate(-AsteroidsGame.TURN_SPEED * dt)
-    if ship.inputs["right"]:
-      ship.rotate(AsteroidsGame.TURN_SPEED * dt)
-    if ship.inputs["space"]:
-      ship.fire()
-    
-    ship.update(dt)
-    return ship
-  
+
   @staticmethod
   def new_ship(username):
     ship_dict = Ship(name=username).to_dict()
@@ -245,9 +221,7 @@ class AsteroidsGame(object):
         "dead": False,
     }
 
-  # TODO: Remove unpacking/repacking and put in main loop.
-  def collisionDetection(self, game_id):
-    game = self.games[game_id]
+  def collisionDetection(self, game):
     ships = [Ship().from_dict(s) for s in game["ships"]]
     asteroids = [Asteroid().from_dict(a) for a in game["asteroids"]]
     
@@ -281,7 +255,7 @@ class AsteroidsGame(object):
     game["ships"] = ships
     game["asteroids"] = asteroids
 
-    self.games[game_id] = game
+    # self.games[game_id] = game
 
   @staticmethod
   def asteroid_intersects_ship(asteroid, ship):

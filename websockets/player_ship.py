@@ -29,6 +29,8 @@ class Ship(Mover):
     last_updated = None,
     leaving = False,
     score = 0,
+    acceleration = 0.005,
+    turn_speed = 0.0075,
     ):
     super().__init__(center, speed, rotation)
     
@@ -45,11 +47,13 @@ class Ship(Mover):
     self.last_updated = utils.get_time() if last_updated == None else last_updated
     self.leaving = leaving
     self.score = score
+    self.acceleration = acceleration
+    self.turn_speed = turn_speed
 
   def from_dict(self, data):
     super().from_dict(data)
     bullet_list = [Bullet().from_dict(b) for b in data["bullets"]]
-
+    
     self.name = data["name"]
     self.inputs = data["inputs"]
     self.bullets = bullet_list
@@ -63,10 +67,12 @@ class Ship(Mover):
     self.last_updated = data["last_updated"]
     self.leaving = data["leaving"]
     self.score = data["score"]
+    self.acceleration = data["acceleration"]
+    self.turn_speed = data["turn_speed"]
     
     # For chaining.
     return self
-  
+
   def to_dict(self):
     inherited_entries = super().to_dict()
     raw_bullet_list = [b.to_dict() for b in self.bullets]
@@ -84,6 +90,8 @@ class Ship(Mover):
       "last_updated": self.last_updated,
       "leaving": self.leaving,
       "score": self.score,
+      "acceleration": self.acceleration,
+      "turn_speed": self.turn_speed,
     }
     return {**new_entries, **inherited_entries}
   
@@ -127,6 +135,17 @@ class Ship(Mover):
       
   # TODO: Use delta time for all called methods as well.
   def update(self, dt):
+    if self.inputs["up"]:
+      self.accelerate(self.acceleration * dt)
+    if self.inputs["down"]:
+      self.accelerate(-self.acceleration * dt)
+    if self.inputs["left"]:
+      self.rotate(-self.turn_speed * dt)
+    if self.inputs["right"]:
+      self.rotate(self.turn_speed * dt)
+    if self.inputs["space"]:
+      self.fire()
+    
     if (self.dead):
       self.bullets = []
       self.bullet_countdown = self.bullet_recharge
