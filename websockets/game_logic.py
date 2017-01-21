@@ -165,11 +165,16 @@ class AsteroidsGame(object):
         AsteroidsGame.move_ship(ship, time_delta)
         i += 1
     
-    for i in range(0, asteroids):
+    i = 0
+    asteroidsLen = len(asteroids)
+    while i < asteroidsLen:
       asteroid = asteroids[i]
       asteroid.update()
       if asteroid.dead:
         asteroids.pop(i)
+        asteroidsLen -= 1
+      else:
+        i += 1
     
     raw_ships = [s.to_dict() for s in ships]
     raw_asteroids = [a.to_dict() for a in asteroids]
@@ -238,6 +243,7 @@ class AsteroidsGame(object):
         "dead": False,
     }
 
+  # TODO: Remove unpacking/repacking and put in main loop.
   def collisionDetection(self, game_id):
     game = self.games[game_id]
     ships = [Ship.from_dict(s) for s in game["ships"]]
@@ -247,6 +253,7 @@ class AsteroidsGame(object):
       for i in range(0, len(ship.bullets)):
         for j in range(0, len(asteroids)):
           
+          bullet = ship.bullets[i]
           asteroid = asteroids[j]
           distance = math.hypot(bullet.center.x - asteroid.center.x, bullet.center.y - asteroid.center.y)
           
@@ -256,24 +263,25 @@ class AsteroidsGame(object):
             asteroid.dead = True
             
             new_asteroids = asteroid.split()
-            asteroids.push.apply(asteroids, new_asteroids)
+            asteroids += new_asteroids
             
-            if asteroids.length == 0:
+            if len(asteroids) == 0:
               game["levelover"] = True
 
-        for i in range(0, asteroids.length):
+        for i in range(0, len(asteroids)):
           asteroid = asteroids[i]
-          if not asteroid.dead and asteroid_intersects_ship(asteroid, ship):
+          if not asteroid.dead and AsteroidsGame.asteroid_intersects_ship(asteroid, ship):
               ship.dead = True
 
-    ships = [s.to_dict(s) for s in ships]
-    asteroids = [a.to_dict(a) for a in asteroids]
+    ships = [s.to_dict() for s in ships]
+    asteroids = [a.to_dict() for a in asteroids]
 
     game["ships"] = ships
     game["asteroids"] = asteroids
 
     self.games[game_id] = game
 
+  @staticmethod
   def asteroid_intersects_ship(asteroid, ship):
    shipBox = ship.getBoundingBox()
    

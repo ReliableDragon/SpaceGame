@@ -1,4 +1,4 @@
-import json, math, time
+import json, math, time, random
 
 X_MAX = 200
 Y_MAX = 100
@@ -28,6 +28,9 @@ class Point(object):
   
   def copy(self):
     return Point(self.x, self.y)
+  
+  def dist(self, p2):
+    return math.hypot(self.x - p2.x, self.y - p2.y)
     
 class Vector(object):
   def __init__(self, x, y):
@@ -57,7 +60,7 @@ class Vector(object):
 
   @staticmethod
   def random(max):
-    return Vector.zero().add_in_direction(Math.random() * max, Math.random() * Math.PI * 2)
+    return Vector.zero().add_in_direction(random.random() * max, random.random() * math.pi * 2)
 
   @staticmethod
   def dir_mag(dir, speed):

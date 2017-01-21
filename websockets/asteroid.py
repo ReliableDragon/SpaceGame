@@ -1,19 +1,20 @@
-import random
+import random, math
 import utils
+from utils import Vector, Point
 
 class Asteroid(object):
   def __init__(
       self,
       uid = -1,
-      point = utils.Point(0, 0),
-      speed = utils.Vector(0, 0),
+      center = Point(0, 0),
+      speed = Vector(0, 0),
       size = 45,
       stage = 3,
       num_children = 2,
       rotation = 0,
       dead = False):
     self.id = uid
-    self.center = point
+    self.center = center
     self.speed = speed
     self.size = size
     self.stage = stage
@@ -53,6 +54,22 @@ class Asteroid(object):
       data["dead"]
     )
     
+  def split(self):
+    self.dead = True;
+    if self.stage > 0:
+      babies = []
+      for i in range(0, self.num_children):
+        print("Making asteroid!")
+        babies.append(
+          Asteroid(
+            center = self.center.copy(),
+            speed = Vector.random(0.02),
+            size = self.size * 0.6,
+            stage = self.stage - 1,
+            num_children = math.floor(random.random() * 2) + 2))
+      return babies
+    else:
+      return []
     
     
     
