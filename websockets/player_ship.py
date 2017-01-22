@@ -27,8 +27,9 @@ class Ship(Mover):
     "F": False,},
     bullets = [],
     bullet_countdown = 0,
-    bullet_recharge = 7,
+    bullet_recharge = 120,
     bullet_speed = 2.5,
+    lives = 3,
     dead = False,
     death_countdown = 0,
     max_bullets = 7,
@@ -38,6 +39,7 @@ class Ship(Mover):
     score = 0,
     acceleration = 0.005,
     turn_speed = 0.0075,
+    warp_countdown = 500,
     ):
     # Center and speed must be copied, since Python precomputes the
     # value for default parameters, then passes references.
@@ -50,6 +52,7 @@ class Ship(Mover):
     self.bullet_countdown = bullet_countdown
     self.bullet_recharge = bullet_recharge
     self.bullet_speed = bullet_speed
+    self.lives = lives
     self.dead = dead
     self.death_countdown = death_countdown
     self.max_bullets = max_bullets
@@ -59,6 +62,7 @@ class Ship(Mover):
     self.score = score
     self.acceleration = acceleration
     self.turn_speed = turn_speed
+    self.warp_countdown = warp_countdown
 
   def from_dict(self, data):
     super().from_dict(data)
@@ -70,6 +74,7 @@ class Ship(Mover):
     self.bullet_countdown = data["bullet_countdown"]
     self.bullet_recharge = data["bullet_recharge"]
     self.bullet_speed = data["bullet_speed"]
+    self.lives = data["lives"]
     self.dead = data["dead"]
     self.death_countdown = data["death_countdown"]
     self.max_bullets = data["max_bullets"]
@@ -79,6 +84,7 @@ class Ship(Mover):
     self.score = data["score"]
     self.acceleration = data["acceleration"]
     self.turn_speed = data["turn_speed"]
+    self.warp_countdown = data["warp_countdown"]
     
     # For chaining.
     return self
@@ -93,6 +99,7 @@ class Ship(Mover):
       "bullet_countdown": self.bullet_countdown,
       "bullet_recharge": self.bullet_recharge,
       "bullet_speed": self.bullet_speed,
+      "lives": self.lives,
       "dead": self.dead,
       "death_countdown": self.death_countdown,
       "max_bullets": self.max_bullets,
@@ -102,18 +109,18 @@ class Ship(Mover):
       "score": self.score,
       "acceleration": self.acceleration,
       "turn_speed": self.turn_speed,
+      "warp_countdown": self.warp_countdown
     }
     return {**new_entries, **inherited_entries}
   
   def fire(self):
-    if self.bullet_countdown == 0 and not self.dead:
+    if self.bullet_countdown <= 0 and not self.dead:
       self.bullets.append(self.createBullet())
       if len(self.bullets) > self.max_bullets:
         self.bullets.pop(0)
 
       self.bullet_countdown = self.bullet_recharge
 
-  
   def createBullet(self):
     start_point = self.nose().copy()
     direction = self.rotation
@@ -121,6 +128,7 @@ class Ship(Mover):
     # The bullet will always fire straight, but if the ship is going fast the bullets should still outrun it.
     # To do this, we project the ships speed along the unit vector in the direction the bullet will be travelling.
     # Then we add the base bullet speed. This should only have noticable effect when travelling quickly and firing forwards.
+    # TODO: Fix this. Currently forward/backards produces a huge speed difference.
     bullet_speed = self.speed.dot_product(unit_vector_for_direction) + self.bullet_speed
     speed = Vector.dir_mag(direction, bullet_speed)
     return Bullet(start_point, speed)
@@ -163,12 +171,20 @@ class Ship(Mover):
       self.bullets = []
       self.bullet_countdown = self.bullet_recharge
       self.death_countdown = 3000
+      self.center = Point(utils.X_MAX / 2, utils.Y_MAX / 2)
+      self.invuln_time = 5000
     
     if self.death_countdown > 0:
-      self.death_countdown -= dt
+      self.death_countdown -= min(self.death_countdown, dt)
+      
+    if self.warp_countdown > 0:
+      self.warp_countdown -= min(self.warp_countdown, dt)
       
     if self.bullet_countdown > 0:
-      self.bullet_countdown -= 1
+      self.bullet_countdown -= min(self.bullet_countdown, dt)
+      
+    if self.invuln_time > 0:
+      self.invuln_time -= min(self.invuln_time, dt)
       
     super().move()
     self.update_bullets()
@@ -180,7 +196,12 @@ class Ship(Mover):
     self.inputs = keys
     
   def warp(self):
-    self.center = Point.random()
+    if self.warp_countdown <= 0:
+      self.center = Point.random()
+      self.warp_countdown += 500
+      
+  def is_invulnerable(self):
+    return self.invuln_time > 0
     
   def getBoundingBox(self):
     backLeft = Point.rotate(Point(self.center.x - self.size, self.center.y + self.size), self.center, self.rotation)

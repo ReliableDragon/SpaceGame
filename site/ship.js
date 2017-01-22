@@ -3,6 +3,7 @@ var BULLET_COUNTDOWN = 7;
 var MAX_BULLETS = 7;
 var SHIP_BULLET_SPEED = 2.5;
 
+// TODO: Update this to include new Python methods
 class Ship {
   constructor(point, facing, movementVector) {
     this.center = point;

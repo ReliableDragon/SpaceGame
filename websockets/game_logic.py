@@ -181,6 +181,7 @@ class AsteroidsGame(object):
     game_state["asteroids"] = asteroids
     game_state["last_updated"] = utils.get_time()
 
+  # TODO: Find a better way to handle collisions.
   def collision_detection(self, game):
     ships = game["ships"]
     asteroids = game["asteroids"]
@@ -206,21 +207,21 @@ class AsteroidsGame(object):
 
         for i in range(0, len(asteroids)):
           asteroid = asteroids[i]
-          if not asteroid.dead and AsteroidsGame.asteroid_intersects_ship(asteroid, ship):
+          if not asteroid.dead and AsteroidsGame.asteroid_intersects_ship(asteroid, ship) and not ship.is_invulnerable():
               ship.dead = True
 
     game["ships"] = ships
     game["asteroids"] = asteroids
 
   @staticmethod
-  def asteroid_intersects_ship(asteroid, ship):
-   shipBox = ship.getBoundingBox()
+  def asteroid_intersects_ship(asteroid, ship):    
+    shipBox = ship.getBoundingBox()
    
-   for i in range(0, len(shipBox)):
-     if asteroid.center.dist(shipBox[i]) < asteroid.size:
-       return True
+    for i in range(0, len(shipBox)):
+      if asteroid.center.dist(shipBox[i]) < asteroid.size:
+        return True
    
-   return False
+    return False
 
 
 

@@ -289,6 +289,7 @@ function updateObjects() {
     }
     otherShip.update();
   }
+  
   i = 0;
   var length = asteroids.length;
   while (i < length) {
@@ -300,6 +301,7 @@ function updateObjects() {
       i++;
     }
   }
+  
   if (levelover === true && !waiting) {
     level++;
     drawLevelPassedText();
@@ -312,6 +314,7 @@ function updateObjects() {
       animate(gameLoop);
     }, 1500);
   }
+  
   if (ship.dead && !waiting) {
     keysOff();
     waiting = true;
