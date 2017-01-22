@@ -30,6 +30,7 @@ var rightPressed = false;
 var upPressed = false;
 var downPressed = false;
 var spacePressed = false;
+var fPressed = false;
 
 var currentFunction = false;
 var resumeFunction = false;
@@ -110,6 +111,7 @@ function sendData() {
         left: leftPressed,
         right: rightPressed,
         space: spacePressed,
+        F: fPressed,
       },
       gamestate: "ongoing",
       name: username,
@@ -305,7 +307,6 @@ function updateObjects() {
     animate(false);
     levelover = false;
     setTimeout(function() {
-      //makeAsteroids(level);
       newShip();
       waiting = false;
       animate(gameLoop);
@@ -315,8 +316,6 @@ function updateObjects() {
     keysOff();
     waiting = true;
     ship.speed = Vector.zero();
-    //document.removeEventListener("keydown", keyDownHandler, false);
-    //document.removeEventListener("keyup", keyUpHandler, false);
     setTimeout(function() {
       lives--;
       handleDeath();
@@ -349,6 +348,9 @@ function keyDownHandler(e) {
     case 32:
       if (!waiting)
         spacePressed = true;
+      break;
+    case 70:
+      fPressed = true;
       break;
     case 76: // "l", for log.
       log();
@@ -387,6 +389,8 @@ function keyUpHandler(e) {
     downPressed = false;
   } else if (e.keyCode == 32) {
     spacePressed = false;
+  } else if (e.keyCode == 70) {
+    fPressed = false;
   }
 }
 
@@ -396,6 +400,7 @@ function keysOff() {
   leftPressed = false;
   downPressed = false;
   spacePressed = false;
+  fPressed = false;
 }
 
 function collisionDetection() {

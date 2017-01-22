@@ -23,7 +23,8 @@ class Ship(Mover):
     "down": False,
     "left": False,
     "right": False,
-    "space": False},
+    "space": False,
+    "F": False,},
     bullets = [],
     bullet_countdown = 0,
     bullet_recharge = 7,
@@ -144,16 +145,19 @@ class Ship(Mover):
       
   # TODO: Use delta time for all called methods as well.
   def update(self, dt):
-    if self.inputs["up"]:
+    if self.inputs.get("up"):
       self.accelerate(self.acceleration * dt)
-    if self.inputs["down"]:
+    if self.inputs.get("down"):
       self.accelerate(-self.acceleration * dt)
-    if self.inputs["left"]:
+    if self.inputs.get("left"):
       self.rotate(-self.turn_speed * dt)
-    if self.inputs["right"]:
+    if self.inputs.get("right"):
       self.rotate(self.turn_speed * dt)
-    if self.inputs["space"]:
+    if self.inputs.get("space"):
       self.fire()
+    if self.inputs.get("F"):
+      self.warp()
+      self.invuln_time = 2000
     
     if (self.dead):
       self.bullets = []
@@ -171,6 +175,12 @@ class Ship(Mover):
     
   def set_update_time(time):
     self.last_updated = time
+    
+  def set_inputs(self, keys):
+    self.inputs = keys
+    
+  def warp(self):
+    self.center = Point.random()
     
   def getBoundingBox(self):
     backLeft = Point.rotate(Point(self.center.x - self.size, self.center.y + self.size), self.center, self.rotation)

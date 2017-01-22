@@ -29,6 +29,10 @@ class Point(object):
   def copy(self):
     return Point(self.x, self.y)
   
+  @staticmethod
+  def random(max_x = 200, max_y = 100, min_x = 0, min_y = 0):
+    return Point(random.randint(min_x, max_x), random.randint(min_y, max_y))
+  
   def dist(self, p2):
     return math.hypot(self.x - p2.x, self.y - p2.y)
     

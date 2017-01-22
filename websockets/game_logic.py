@@ -135,7 +135,7 @@ class AsteroidsGame(object):
     if ship_index == -1:
       raise Exception("Failed to find ship!")
     ship = ships[i]
-    ship.inputs = data["keys"]
+    ship.set_inputs(data["keys"])
     ship.last_updated = utils.get_time()
     with lock:
       ships[i] = ship
