@@ -64,6 +64,31 @@ class Asteroid(Mover):
     else:
       return []
     
+  @staticmethod
+  def make_asteroid():
+    # We don't want 70 < x < 130, or 40 < y < 60, so first we generate the values
+    # with the appropriate ranges, then bump them up if they're above the minimum.
+    # This creates a gap in the middle, and doesn't require re-generating.
+    x = random.randint(0, 140)
+    y = random.randint(0, 80)
+    #TODO: Make this actually avoid the ship(s), so we can simply add new asteroids to start a new level.
+    if x > 70:
+      x += 60
+    if y > 40:
+      y += 20
+      
+    center = Point(x, y)
+    
+    direction = random.random() * 2 * math.pi
+    abs_speed = random.random() / 50
+    speed = Vector.zero().add_in_direction(abs_speed, direction)
+    
+    size = 8 + random.random() * 2
+    num_children = random.randint(2, 3)
+    
+    return Asteroid(center = center, speed = speed, size = size, num_children = num_children)
+
+    
     
     
     

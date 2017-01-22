@@ -4,6 +4,12 @@ from utils import Point, Vector
 from bullet import Bullet
 from mover import Mover
 
+# The Ship class represents player (and potentially later AI) driven ships. Currently,
+# it has a very large constructor, as there are a lot of things to keep track
+# of when a player is flying a spaceship. Hopefully in the future this class will
+# include support for powerups, different types of ships, and various other fun
+# things, but those are all theoretical at this point.
+
 class Ship(Mover):
   
   def __init__(
@@ -32,7 +38,10 @@ class Ship(Mover):
     acceleration = 0.005,
     turn_speed = 0.0075,
     ):
-    super().__init__(center, speed, rotation)
+    # Center and speed must be copied, since Python precomputes the
+    # value for default parameters, then passes references.
+    # I am not a fan of this.
+    super().__init__(center.copy(), speed.copy(), rotation)
     
     self.name = name
     self.inputs = inputs

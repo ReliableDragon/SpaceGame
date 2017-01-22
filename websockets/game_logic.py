@@ -25,7 +25,6 @@ class AsteroidsGame(object):
   
   def __init__(self):
     # This should contain the actual objects, not the dictionary versions.
-    # TODO: Make sure we only JSON-ify when sending network data.
     self.games = {}
     
   def loop(self):
@@ -34,7 +33,7 @@ class AsteroidsGame(object):
       for game_id in list(self.games):
         with lock:
           game = self.games[game_id]
-        self.collisionDetection(game)
+        self.collision_detection(game)
         self.increment_game(game)
         self.games[game_id] = game
       end_time = utils.get_time()
@@ -46,7 +45,6 @@ class AsteroidsGame(object):
       if sleep_time > 0:
         time.sleep(sleep_time / 1000)
 
-  # TODO: Standardize use of json.dumps, ideally use once at end of function.
   def input(self, raw_data):
     try:
       data = json.loads(raw_data)
@@ -58,7 +56,6 @@ class AsteroidsGame(object):
     response = None
       
     if "game_id" in data and data["game_id"] not in self.games:
-      print("Attempted to join invalid game: {0}\nFull data dump: {1}".format(data["game_id"], data))
       return json.dumps({"error": "404 game not found"})
     
     if state == "new":
@@ -71,25 +68,28 @@ class AsteroidsGame(object):
       self.update_player(data)
       game_id = data["game_id"]
       with lock:
-        response = self.games[game_id]
+        response = self.games[game_id].copy()
     else:
       raise Exception("Invalid request!\n{0}".format(data))
     
+    response["ships"] = [s.to_dict() for s in response["ships"]]
+    response["asteroids"] = [a.to_dict() for a in response["asteroids"]]
+
     return json.dumps(response)
     
   def create_new_game(self, data):
     game_key = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(8))
     print("New game created! Key is {0}".format(game_key))
     username = data["name"]
-    ship = self.new_ship(username)
+    ship = Ship(name=username)
     milli_time = utils.get_time()
     print("Made ship!")
-    asteroid = self.make_asteroid(1, 2)
+    asteroid = Asteroid.make_asteroid()
     print("Made asteroid!")
     game_state = {
       "game_id": game_key,
       "ships": [
-        ship,
+        ship
       ],
       "last_updated": milli_time,
       "asteroids": [
@@ -101,7 +101,7 @@ class AsteroidsGame(object):
     with lock:
       self.games[game_key] = game_state
     
-    return game_state
+    return game_state.copy()
   
   # Preconditions: data contains key "game_id", and game exists.
   # TODO: Ensure usernames are unique.
@@ -112,10 +112,10 @@ class AsteroidsGame(object):
     with lock:
       game_data = self.games[game_id]
       
-    new_ship = self.new_ship(username)
+    new_ship = Ship(name = username)
     game_data["ships"].append(new_ship)
     
-    return game_data
+    return game_data.copy()
   
   def update_player(self, data):
     game_id = data["game_id"]
@@ -127,29 +127,25 @@ class AsteroidsGame(object):
     # TODO: Switch to using unique ids for the ships.
     # TODO: Keep ships as a map keyed by id.
     ship_index = -1
-    raw_ships = game_data["ships"]
-    for i in range(0, len(raw_ships)):
-      if raw_ships[i]["name"] == name:
+    ships = game_data["ships"]
+    for i in range(0, len(ships)):
+      if ships[i].name == name:
         ship_index = i
         break
     if ship_index == -1:
       raise Exception("Failed to find ship!")
-    ship_dict = raw_ships[i]
-    ship_dict["inputs"] = data["keys"]
-    ship_dict["last_updated"] = utils.get_time()
+    ship = ships[i]
+    ship.inputs = data["keys"]
+    ship.last_updated = utils.get_time()
     with lock:
-      self.games[game_id]["ships"][i] = ship_dict
+      ships[i] = ship
 
   def increment_game(self, game_state):
-    
     current_time = utils.get_time()
     time_delta = current_time - game_state["last_updated"]
     
-    raw_ships = game_state["ships"]
-    raw_asteroids = game_state["asteroids"]
-    
-    ships = [Ship().from_dict(s) for s in raw_ships]
-    asteroids = [Asteroid().from_dict(a) for a in raw_asteroids]
+    ships = game_state["ships"]
+    asteroids = game_state["asteroids"]
     
     i = 0
     shipsLength = len(ships)
@@ -181,54 +177,13 @@ class AsteroidsGame(object):
       else:
         i += 1
     
-    raw_ships = [s.to_dict() for s in ships]
-    raw_asteroids = [a.to_dict() for a in asteroids]
-    
-    game_state["ships"] = raw_ships
-    game_state["asteroids"] = raw_asteroids
+    game_state["ships"] = ships
+    game_state["asteroids"] = asteroids
     game_state["last_updated"] = utils.get_time()
 
-  @staticmethod
-  def new_ship(username):
-    ship_dict = Ship(name=username).to_dict()
-    return ship_dict
-  
-  @staticmethod
-  def make_asteroid(uid, stage):
-    x = random.randint(0, 200)
-    y = random.randint(0, 100)
-    #TODO: Make this actually avoid the ship(s), so we can simply add new asteroids to start a new level.
-    while 40 < x < 60:
-      x = random.randint(0, 100)
-    while 40 < y < 60:
-      y = random.randint(0, 100)
-      
-    direction = random.random() * 2 * math.pi
-    speed = random.random() / 50
-    dx = math.cos(direction) * speed
-    dy = math.sin(direction) * speed
-    size = 8 + random.random() * 2
-    num_children = random.randint(2, 3)
-    return {
-        "id": uid,
-        "center": {
-          "x": x,
-          "y": y
-          },
-        "speed": {
-          "x": dx,
-          "y": dy
-          },
-        "size": size,
-        "stage": 3,
-        "num_children": num_children,
-        "rotation": 0,
-        "dead": False,
-    }
-
-  def collisionDetection(self, game):
-    ships = [Ship().from_dict(s) for s in game["ships"]]
-    asteroids = [Asteroid().from_dict(a) for a in game["asteroids"]]
+  def collision_detection(self, game):
+    ships = game["ships"]
+    asteroids = game["asteroids"]
     
     for ship in ships:
       for i in range(0, len(ship.bullets)):
@@ -253,9 +208,6 @@ class AsteroidsGame(object):
           asteroid = asteroids[i]
           if not asteroid.dead and AsteroidsGame.asteroid_intersects_ship(asteroid, ship):
               ship.dead = True
-
-    ships = [s.to_dict() for s in ships]
-    asteroids = [a.to_dict() for a in asteroids]
 
     game["ships"] = ships
     game["asteroids"] = asteroids
