@@ -13,7 +13,13 @@ function drawShip(ship) {
 
 function drawAliveShip(ship) {
   ctx.beginPath();
-  ctx.strokeStyle = "#FFFFFF";
+  
+  // Magic numbers galore! These constants are just to make this ship fade in nicely.
+  var hue = Math.floor((1000 - Math.min(ship.invulnTime, 800)) / 1000 * 192 + 64);
+  var rgbValue = "rgb(" + hue + ", " + hue + ", " + hue + ")";
+  console.log("RGB value: " + rgbValue + "\nInvuln Time: " + ship.invulnTime);
+  
+  ctx.strokeStyle = rgbValue;
   
   var nose = ship.nose().times2(X_RAT, Y_RAT);
   var backLeft = ship.backLeft().times2(X_RAT, Y_RAT);
@@ -31,7 +37,7 @@ function drawDeadShip(ship) {
   ctx.beginPath();
   ctx.strokeStyle = "#FFFFFF";
   
-  var verts = deadVerts(ship)
+  var verts = deadVerts(ship);
   
   // There's three lines, and six vertices. Hence, three iterations with two steps each.
   for (var i = 0; i < 3; i++) {

@@ -205,16 +205,16 @@ class AsteroidsGame(object):
             if len(asteroids) == 0:
               game["levelover"] = True
 
-        for i in range(0, len(asteroids)):
-          asteroid = asteroids[i]
-          if not asteroid.dead and AsteroidsGame.asteroid_intersects_ship(asteroid, ship) and not ship.is_invulnerable():
-              ship.dead = True
+      for i in range(0, len(asteroids)):
+        asteroid = asteroids[i]
+        if not asteroid.dead and AsteroidsGame.asteroid_intersects_ship(asteroid, ship) and not ship.is_invulnerable():
+          ship.dead = True
 
     game["ships"] = ships
     game["asteroids"] = asteroids
 
   @staticmethod
-  def asteroid_intersects_ship(asteroid, ship):    
+  def asteroid_intersects_ship(asteroid, ship):
     shipBox = ship.getBoundingBox()
    
     for i in range(0, len(shipBox)):

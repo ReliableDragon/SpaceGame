@@ -39,7 +39,8 @@ class Ship(Mover):
     score = 0,
     acceleration = 0.005,
     turn_speed = 0.0075,
-    warp_countdown = 500,
+    warp_countdown = 0,
+    invuln_time = 2000
     ):
     # Center and speed must be copied, since Python precomputes the
     # value for default parameters, then passes references.
@@ -63,6 +64,7 @@ class Ship(Mover):
     self.acceleration = acceleration
     self.turn_speed = turn_speed
     self.warp_countdown = warp_countdown
+    self.invuln_time = invuln_time
 
   def from_dict(self, data):
     super().from_dict(data)
@@ -85,6 +87,7 @@ class Ship(Mover):
     self.acceleration = data["acceleration"]
     self.turn_speed = data["turn_speed"]
     self.warp_countdown = data["warp_countdown"]
+    self.invuln_time = data["invuln_time"]
     
     # For chaining.
     return self
@@ -109,7 +112,8 @@ class Ship(Mover):
       "score": self.score,
       "acceleration": self.acceleration,
       "turn_speed": self.turn_speed,
-      "warp_countdown": self.warp_countdown
+      "warp_countdown": self.warp_countdown,
+      "invuln_time": self.invuln_time,
     }
     return {**new_entries, **inherited_entries}
   
@@ -128,7 +132,8 @@ class Ship(Mover):
     # The bullet will always fire straight, but if the ship is going fast the bullets should still outrun it.
     # To do this, we project the ships speed along the unit vector in the direction the bullet will be travelling.
     # Then we add the base bullet speed. This should only have noticable effect when travelling quickly and firing forwards.
-    # TODO: Fix this. Currently forward/backards produces a huge speed difference.
+    # TODO: Fix this. Currently when travelling at a high speed vertically and firing horizontally, the bullets can
+    # sometimes fly backwards. Something about the projection is off, possibly even the idea.
     bullet_speed = self.speed.dot_product(unit_vector_for_direction) + self.bullet_speed
     speed = Vector.dir_mag(direction, bullet_speed)
     return Bullet(start_point, speed)
@@ -153,29 +158,34 @@ class Ship(Mover):
       
   # TODO: Use delta time for all called methods as well.
   def update(self, dt):
-    if self.inputs.get("up"):
-      self.accelerate(self.acceleration * dt)
-    if self.inputs.get("down"):
-      self.accelerate(-self.acceleration * dt)
-    if self.inputs.get("left"):
-      self.rotate(-self.turn_speed * dt)
-    if self.inputs.get("right"):
-      self.rotate(self.turn_speed * dt)
-    if self.inputs.get("space"):
-      self.fire()
-    if self.inputs.get("F"):
-      self.warp()
-      self.invuln_time = 2000
+    if not self.dead:
+      if self.inputs.get("up"):
+        self.accelerate(self.acceleration * dt)
+      if self.inputs.get("down"):
+        self.accelerate(-self.acceleration * dt)
+      if self.inputs.get("left"):
+        self.rotate(-self.turn_speed * dt)
+      if self.inputs.get("right"):
+        self.rotate(self.turn_speed * dt)
+      if self.inputs.get("space"):
+        self.fire()
+      if self.inputs.get("F"):
+        self.warp()
     
-    if (self.dead):
+    if self.dead and self.death_countdown == 0:
       self.bullets = []
       self.bullet_countdown = self.bullet_recharge
       self.death_countdown = 3000
       self.center = Point(utils.X_MAX / 2, utils.Y_MAX / 2)
+      self.speed = Vector(0, 0)
+      self.rotation = -math.pi/2
+      # Set to 5000 so that after the death countdown finishes, we still have 2000 left over.
       self.invuln_time = 5000
     
     if self.death_countdown > 0:
       self.death_countdown -= min(self.death_countdown, dt)
+      if self.death_countdown == 0:
+        self.dead = False
       
     if self.warp_countdown > 0:
       self.warp_countdown -= min(self.warp_countdown, dt)
@@ -198,7 +208,8 @@ class Ship(Mover):
   def warp(self):
     if self.warp_countdown <= 0:
       self.center = Point.random()
-      self.warp_countdown += 500
+      self.warp_countdown += 1000
+      self.invuln_time += 950
       
   def is_invulnerable(self):
     return self.invuln_time > 0

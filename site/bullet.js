@@ -8,6 +8,7 @@ class Bullet {
     this.center = point;
     this.speed = vector || BULLET_SPEED;
     this.size = BULLET_SIZE;
+    this.lifetime = BULLET_LIFE;
   }
   
   static fromDict(data) {
@@ -15,7 +16,7 @@ class Bullet {
       new Point(data.center.x, data.center.y),
       new Vector(data.speed.x, data.speed.y)
     );
-    bullet.setTicks(data.ticks).setDead(data.dead).setSize(data.size);
+    bullet.setTicks(data.ticks).setDead(data.dead).setSize(data.size).setLifetime(data.lifetime);
     return bullet;
   }
   
@@ -33,6 +34,12 @@ class Bullet {
     this.size = size;
     return this;
   }
+  
+  setLifetime(lifetime) {
+    this.lifetime = lifetime;
+    return this;
+  }
+  
   // Repeats ship. Look into JS inheritance.
   move() {
     this.center.x += this.speed.x;

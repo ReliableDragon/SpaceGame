@@ -14,7 +14,9 @@ var levelover = false;
 var time;
 var dt = 0;
 var fps = 60;
-var data;
+var lastData;
+var lastMessage;
+var sendMessages = true;
 
 var ship;
 var otherShips;
@@ -90,7 +92,9 @@ function openSocket() {
     if (logSocketCalls) {
       console.log("Received Message: " + s.data);
     }
+    lastMessage = s;
     var data = JSON.parse(s.data);
+    lastData = data;
     startGameFromData(data);
   };
 
@@ -103,7 +107,7 @@ function openSocket() {
 }
 
 function sendData() {
-  if (socket.readyState == 1 && gameId != -1) {
+  if (socket.readyState == 1 && gameId != -1 && sendMessages) {
     var message = JSON.stringify({
       keys: {
         up: upPressed,
@@ -150,16 +154,18 @@ function startGameFromData(data) {
         updateShip = otherShips.get(shipName);
       }
       
-      updateShip.setPosition(
-                       new Point(shipData.center.x, shipData.center.y),
-                       shipData.rotation,
-                       new Vector(shipData.speed.x, shipData.speed.y));
-      var rawBullets = shipData.bullets;
-      var realBullets = [];
-      for (j = 0; j < rawBullets.length; j++) {
-        realBullets.push(Bullet.fromDict(rawBullets[j]));
-      }
-      updateShip.setBullets(realBullets);
+      //updateShip.setPosition(
+      //                 new Point(shipData.center.x, shipData.center.y),
+      //                 shipData.rotation,
+      //                 new Vector(shipData.speed.x, shipData.speed.y));
+      updateShip.fromData(shipData);
+      
+      //var rawBullets = shipData.bullets;
+      //var realBullets = [];
+      //for (j = 0; j < rawBullets.length; j++) {
+      //  realBullets.push(Bullet.fromDict(rawBullets[j]));
+      //}
+      //updateShip.setBullets(realBullets);
     }
   }
   if (data.game_id) {
@@ -190,7 +196,7 @@ function loop() {
   time = now;
   
   if (currentFunction) {
-    currentFunction();
+    currentFunction(dt);
   }
   requestId = setTimeout(function() {
     requestAnimationFrame(loop);
@@ -231,11 +237,11 @@ function newShip() {
   ship = new Ship(new Point(x, y), dir, speed);
 }
 
-function gameLoop() {
+function gameLoop(dt) {
   draw();
   collisionDetection();
   handleInput();
-  updateObjects();
+  updateObjects(dt);
 }
 
 function draw() {
@@ -274,20 +280,30 @@ function handleInput() {
   if (spacePressed) {
     ship.fire();
   }
+  if (fPressed) {
+    ship.warp();
+  }
   ship.speed.clamp(SHIP_TOP_SPEED);
 }
 
-function updateObjects() {
+function updateObjects(dt) {
   for (var i = 0; i < ship.bullets.length; i++) {
     // TODO: Move into ship's update function.
     ship.bullets[i].update();
   }
-  ship.update();
+  ship.update(dt);
+  
+  // Read authoritative values, or use default values. This is required because there's a period
+  // between when the game starts and when the server sends back the first packet that's human
+  // noticable.
+  score = ship.score || 0;
+  lives = ship.lives || 3;
+  
   for (var otherShip of otherShips.values()) {
     for (i = 0; j < otherShip.bullets.length; j++) {
       otherShip.bullets[i].update();
     }
-    otherShip.update();
+    otherShip.update(dt);
   }
   
   i = 0;
@@ -352,11 +368,14 @@ function keyDownHandler(e) {
       if (!waiting)
         spacePressed = true;
       break;
-    case 70:
+    case 70: // "F", for warp. Obviously.
       fPressed = true;
       break;
-    case 76: // "l", for log.
+    case 76: // "L", for log.
       log();
+      break;
+    case 77: //"M" for messages.
+      sendMessages = !sendMessages;
       break;
     case 75:
       kaleidoscopeMode = !kaleidoscopeMode;
@@ -379,6 +398,7 @@ function log() {
   console.log("Ship:\n", ship);
   console.log("X-Max: " + canvas.width + "\nY-Max: " + canvas.height);
   console.log("Websocket:\n", socket);
+  console.log("Last data received:\n", lastData);
 }
 
 function keyUpHandler(e) {

@@ -67,8 +67,12 @@ class Point {
     this.x = x;
     this.y = y;
   }
-  static random() {
-    return new Point(Math.floor(Math.random() * X_MAX), Math.floor(Math.random() * Y_MAX));
+  static random(maxX, maxY, minX, minY) {
+    var xScaling = maxX || X_MAX;
+    var yScaling = maxY || Y_MAX;
+    var xTranslation = minX || 0;
+    var yTranslation = minY || 0;
+    return new Point(Math.floor(Math.random() * xScaling + xTranslation), Math.floor(Math.random() * yScaling + yTranslation));
   }
   equals(p2) {
     return this.x === p2.x && this.y === p2.y;
