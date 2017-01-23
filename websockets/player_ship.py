@@ -176,16 +176,21 @@ class Ship(Mover):
       self.bullets = []
       self.bullet_countdown = self.bullet_recharge
       self.death_countdown = 3000
-      self.center = Point(utils.X_MAX / 2, utils.Y_MAX / 2)
       self.speed = Vector(0, 0)
-      self.rotation = -math.pi/2
       # Set to 5000 so that after the death countdown finishes, we still have 2000 left over.
       self.invuln_time = 5000
+      self.lives -= 1
     
     if self.death_countdown > 0:
       self.death_countdown -= min(self.death_countdown, dt)
-      if self.death_countdown == 0:
+      # This rotation is a bit of a hack to make a pretty death animation.
+      self.rotate(self.turn_speed / 3 * dt)
+      # Resurrect them when the countdown runs out, unless they're out of lives, in which case:
+      # Tough luck.
+      if self.death_countdown == 0 and self.lives > 0:
         self.dead = False
+        self.rotation = -math.pi/2
+        self.center = Point(utils.X_MAX / 2, utils.Y_MAX / 2)
       
     if self.warp_countdown > 0:
       self.warp_countdown -= min(self.warp_countdown, dt)

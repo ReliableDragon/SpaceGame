@@ -91,7 +91,13 @@ class Point {
     this.y = this.y * scalar;
   }
   times2(s1, s2) {
-    return new Point(this.x * s1, this.y * s2);
+    this.x *= s1;
+    this.y *= s2;
+    return this;
+  }
+  toScreen() {
+    this.times2(X_RAT, Y_RAT);
+    return this;
   }
 }
 

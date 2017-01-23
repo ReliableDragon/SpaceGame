@@ -96,6 +96,8 @@ class AsteroidsGame(object):
         asteroid
       ],
       "level": 1,
+      "level_over": False,
+      "level_countdown": 0,
     }
     
     with lock:
@@ -143,6 +145,14 @@ class AsteroidsGame(object):
   def increment_game(self, game_state):
     current_time = utils.get_time()
     time_delta = current_time - game_state["last_updated"]
+    
+    level_time = game_state["level_countdown"]
+    if level_time > 0:
+      level_time -= min(level_time, time_delta)
+      if level_time == 0:
+        game_state["level"] += 1
+        game_state["level_over"] = False
+      
     
     ships = game_state["ships"]
     asteroids = game_state["asteroids"]
@@ -203,7 +213,8 @@ class AsteroidsGame(object):
             asteroids += new_asteroids
             
             if len(asteroids) == 0:
-              game["levelover"] = True
+              game["level_over"] = True
+              game["level_countdown"] = 1500
 
       for i in range(0, len(asteroids)):
         asteroid = asteroids[i]

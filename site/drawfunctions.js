@@ -17,7 +17,6 @@ function drawAliveShip(ship) {
   // Magic numbers galore! These constants are just to make this ship fade in nicely.
   var hue = Math.floor((1000 - Math.min(ship.invulnTime, 800)) / 1000 * 192 + 64);
   var rgbValue = "rgb(" + hue + ", " + hue + ", " + hue + ")";
-  console.log("RGB value: " + rgbValue + "\nInvuln Time: " + ship.invulnTime);
   
   ctx.strokeStyle = rgbValue;
   
@@ -41,8 +40,8 @@ function drawDeadShip(ship) {
   
   // There's three lines, and six vertices. Hence, three iterations with two steps each.
   for (var i = 0; i < 3; i++) {
-    ctx.moveTo(X_RAT * verts[2*i].x, Y_RAT * verts[2*i].y);
-    ctx.lineTo(X_RAT * verts[2*i+1].x, Y_RAT * verts[2*i+1].y);
+    ctx.moveTo(verts[2*i].x, verts[2*i].y);
+    ctx.lineTo(verts[2*i+1].x, verts[2*i+1].y);
   }
   ctx.closePath();
   ctx.stroke();
@@ -100,14 +99,19 @@ function drawLevelPassedText() {
   ctx.fillStyle = "#BB0000";
   ctx.fillText("LEVEL PASSED", canvas.width/2 - 220, canvas.height/2);
 }
+function drawRespawnText() {
+  ctx.font = "32pt Arial";
+  ctx.fillStyle = "#BB0000";
+  ctx.fillText("RESPAWNING", canvas.width/2 - 220, canvas.height/2);
+}
 
 function deadVerts(ship) {
   var verts = [];
-  verts.push(rotate(new Point(ship.center.x * X_RAT + 2.5*SHIP_SIZE, ship.center.y * Y_RAT), ship.nose(), 0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), ship.nose(), 0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), ship.nose(), -0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT - SHIP_SIZE), ship.nose(), -0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT + SHIP_SIZE), ship.backRight(), -0.2));
-  verts.push(rotate(new Point(ship.center.x * X_RAT - 0.5*SHIP_SIZE, ship.center.y * Y_RAT - SHIP_SIZE), ship.backRight(), -0.2));
+  verts.push(rotate(new Point(ship.center.x + 2.5*SHIP_SIZE, ship.center.y), ship.nose(), 0.2).toScreen());
+  verts.push(rotate(new Point(ship.center.x - 0.5*SHIP_SIZE, ship.center.y + SHIP_SIZE), ship.nose(), 0.2).toScreen());
+  verts.push(rotate(new Point(ship.center.x - 0.5*SHIP_SIZE, ship.center.y + SHIP_SIZE), ship.nose(), -0.2).toScreen());
+  verts.push(rotate(new Point(ship.center.x - 0.5*SHIP_SIZE, ship.center.y - SHIP_SIZE), ship.nose(), -0.2).toScreen());
+  verts.push(rotate(new Point(ship.center.x - 0.5*SHIP_SIZE, ship.center.y + SHIP_SIZE), ship.backRight(), -0.2).toScreen());
+  verts.push(rotate(new Point(ship.center.x - 0.5*SHIP_SIZE, ship.center.y - SHIP_SIZE), ship.backRight(), -0.2).toScreen());
   return verts;
 }

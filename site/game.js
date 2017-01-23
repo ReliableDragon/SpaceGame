@@ -154,18 +154,7 @@ function startGameFromData(data) {
         updateShip = otherShips.get(shipName);
       }
       
-      //updateShip.setPosition(
-      //                 new Point(shipData.center.x, shipData.center.y),
-      //                 shipData.rotation,
-      //                 new Vector(shipData.speed.x, shipData.speed.y));
       updateShip.fromData(shipData);
-      
-      //var rawBullets = shipData.bullets;
-      //var realBullets = [];
-      //for (j = 0; j < rawBullets.length; j++) {
-      //  realBullets.push(Bullet.fromDict(rawBullets[j]));
-      //}
-      //updateShip.setBullets(realBullets);
     }
   }
   if (data.game_id) {
@@ -188,6 +177,15 @@ function startGameFromData(data) {
                                   dataAsteroid.num_children));
     }
   }
+  if (typeof data.level_over !== 'undefined') {
+    levelover = data.level_over;
+  }
+  if (typeof data.level_countdown !== 'undefined') {
+    levelCountdown = data.level_countdown;
+  }
+  if (typeof data.level !== 'undefined') {
+    level = data.level;
+  }
 }
 
 function loop() {
@@ -209,8 +207,6 @@ function animate(f) {
 
 function startGame() {
   newShip();
-  //makeAsteroids(level);
-  //startGameFromData(data);
   
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
@@ -248,17 +244,22 @@ function draw() {
   if (!kaleidoscopeMode) {
     ctx.clearRect(0, 0, canvas.width, canvas.width);
   }
-  if (!gameOver) {
-    drawShip(ship);
-    for (var shipValue of otherShips.values()) {
-      drawShip(shipValue);
-      drawBullets(shipValue.bullets);
-    }
-    drawBullets(ship.bullets);
-    drawAsteroids(asteroids);
-  } else {
-    drawGameOverText();
+  drawShip(ship);
+  for (var shipValue of otherShips.values()) {
+    drawShip(shipValue);
+    drawBullets(shipValue.bullets);
   }
+  drawBullets(ship.bullets);
+  drawAsteroids(asteroids);
+  if (levelover) {
+    drawLevelPassedText();
+  }
+  if (ship.dead && ship.lives === 0) {
+    drawGameOverText();
+  } else if (ship.dead) {
+    drawRespawnText();
+  }
+  
   drawRoomId(gameId);
   drawLives(lives);
   drawScore(score);
@@ -320,15 +321,16 @@ function updateObjects(dt) {
   
   if (levelover === true && !waiting) {
     level++;
+    levelCountdown = 1000;
     drawLevelPassedText();
     waiting = true;
     animate(false);
-    levelover = false;
-    setTimeout(function() {
-      newShip();
-      waiting = false;
-      animate(gameLoop);
-    }, 1500);
+    //levelover = false;
+    //setTimeout(function() {
+    //  newShip();
+    //  waiting = false;
+    //  animate(gameLoop);
+    //}, 1500);
   }
   
   if (ship.dead && !waiting) {

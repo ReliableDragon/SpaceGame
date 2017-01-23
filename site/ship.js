@@ -81,11 +81,25 @@ class Ship {
     this.speed.addInDirection(amount, this.dir);
   }
   update(dt) {
+    if (this.dead && this.deathCountdown == 0) {
+      this.bullets = [];
+      this.bulletCountdown = this.bulletRecharge;
+      this.deathCountdown = 3000;
+      this.speed = new Vector(0, 0);
+      // Set to 5000 so that after the death countdown finishes, we still have 2000 left over.
+      this.invuln_time = 5000;
+      this.lives -= 1;
+    }
     if (this.bulletCountdown > 0) {
       this.bulletCountdown -= Math.min(this.bulletCountdown, dt);
     }
     if (this.deathCountdown > 0) {
       this.deathCountdown -= Math.min(this.deathCountdown, dt);
+      if (this.deathCountdown === 0) {
+        this.dead = false;
+        this.center = new Point(X_MAX / 2, Y_MAX / 2);
+        this.rotation = -Math.PI/2;
+      }
     }
     if (this.warpCountdown > 0) {
       this.warpCountdown -= Math.min(this.warpCountdown, dt);
