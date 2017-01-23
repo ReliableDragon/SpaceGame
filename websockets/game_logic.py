@@ -146,17 +146,21 @@ class AsteroidsGame(object):
     current_time = utils.get_time()
     time_delta = current_time - game_state["last_updated"]
     
-    level_time = game_state["level_countdown"]
-    if level_time > 0:
-      level_time -= min(level_time, time_delta)
-      if level_time == 0:
-        game_state["level"] += 1
-        game_state["level_over"] = False
-      
-    
     ships = game_state["ships"]
     asteroids = game_state["asteroids"]
     
+    level_time = game_state["level_countdown"]
+    if level_time > 0:
+      level_time -= min(level_time, time_delta)
+      game_state["level_countdown"] = level_time
+      if level_time == 0:
+        game_state["level"] += 1
+        game_state["level_over"] = False
+        new_asteroids = [Asteroid.make_asteroid() for _ in range(0, game_state["level"])]
+        asteroids = new_asteroids
+        for ship in ships:
+          ship.invuln_time += 1000
+
     i = 0
     shipsLength = len(ships)
     while i < shipsLength:
@@ -186,6 +190,10 @@ class AsteroidsGame(object):
         asteroidsLen -= 1
       else:
         i += 1
+        
+    if len(asteroids) == 0 and not game_state["level_over"]:
+      game_state["level_over"] = True
+      game_state["level_countdown"] = 1500
     
     game_state["ships"] = ships
     game_state["asteroids"] = asteroids
@@ -211,10 +219,6 @@ class AsteroidsGame(object):
             
             new_asteroids = asteroid.split()
             asteroids += new_asteroids
-            
-            if len(asteroids) == 0:
-              game["level_over"] = True
-              game["level_countdown"] = 1500
 
       for i in range(0, len(asteroids)):
         asteroid = asteroids[i]

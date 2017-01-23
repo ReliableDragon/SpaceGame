@@ -321,10 +321,10 @@ function updateObjects(dt) {
   
   if (levelover === true && !waiting) {
     level++;
-    levelCountdown = 1000;
-    drawLevelPassedText();
-    waiting = true;
-    animate(false);
+    levelCountdown = 1500;
+    //drawLevelPassedText();
+    //waiting = true;
+    //animate(false);
     //levelover = false;
     //setTimeout(function() {
     //  newShip();
