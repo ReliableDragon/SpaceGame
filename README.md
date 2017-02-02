@@ -41,7 +41,7 @@ This setup is slightly outdated, and Docker is the prefered way to run this proj
 * (Bonus tip! If you set up the document root of your apache server to by symlinked to your github repo, you won't have to worry about copying files back and forth. This works for the WSGI folder too.)
 * (Other bonus tip: If you go to localhost:8000 once the server is running you'll see the WSGI splash page, which includes a link to the setup docs.)
 
-# Set Up Database (Always Manual.)
+# Set Up Database (Always Manual!)
 * Install MySQL locally. Note that even if you're using a containerized version of the site with Docker, you still need to install the database on your host machine. Docker should be set up to talk to it, and this way the data will persist.
 * Using schema.sql as a reference, create the tables with the appropriate columns. This can be done two ways:
   1. Manually.
